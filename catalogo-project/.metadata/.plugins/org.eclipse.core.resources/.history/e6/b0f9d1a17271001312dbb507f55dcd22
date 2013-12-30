@@ -1,0 +1,5 @@
+package com.ideaiseletronics.web.actions;
+
+public class Product {
+
+}

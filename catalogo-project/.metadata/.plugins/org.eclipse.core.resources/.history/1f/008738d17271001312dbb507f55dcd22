@@ -1,0 +1,8 @@
+package com.ideaiseletronics.web.model;
+
+public class Product {
+	
+	private Long idProduct;
+	private String name;
+
+}

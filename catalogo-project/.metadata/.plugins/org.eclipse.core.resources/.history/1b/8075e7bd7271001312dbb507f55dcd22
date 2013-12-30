@@ -1,0 +1,18 @@
+package com.ideaiseletronics.web.actions;
+
+import java.util.List;
+
+import com.ideaiseletronics.web.model.Product;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class ProductAction extends ActionSupport{
+
+	private static final long serialVersionUID = 1L;
+	
+	private List<Product> listProducts = new ArrayList<Product>();
+	
+	public String execute(){
+		return SUCCESS;
+	}
+
+}
