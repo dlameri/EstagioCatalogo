@@ -1,0 +1,7 @@
+INDEX VERSION 1.126
+/home/ideais/EstagioCatalogo/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3987267841.index
+/catalogoRodizio/src/main/java
+/home/ideais/EstagioCatalogo/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1317048846.index
+/catalogoRodizio/src/main/java
+/home/ideais/EstagioCatalogo/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3139864520.index
+/catalogo/src/main/java
