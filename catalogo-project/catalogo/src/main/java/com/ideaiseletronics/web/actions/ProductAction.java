@@ -15,7 +15,7 @@ public class ProductAction extends ActionSupport{
 	public String listProducts(){
 		listProducts.add(new Product(Long.valueOf(1), "Notebook"));
 		listProducts.add(new Product(Long.valueOf(2), "Celular"));
-		listProducts.add(new Product(Long.valueOf(3), "Livro"));	
+		listProducts.add(new Product(Long.valueOf(3), "Livro"));	 
 		return SUCCESS;
 	}
 	
