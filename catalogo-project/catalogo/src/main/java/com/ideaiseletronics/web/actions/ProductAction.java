@@ -19,7 +19,7 @@ public class ProductAction extends ActionSupport{
 		return SUCCESS;
 	}
 	
-	public String showProductDetails(Product product){	
+	public String showProductDetails(){
 		return SUCCESS;
 	}
 	

@@ -1,0 +1,6 @@
+/actions
+/dao
+/domain
+/exceptions
+/hibernate.cfg.xml
+/log4j.properties
