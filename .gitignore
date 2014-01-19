@@ -1,4 +1,5 @@
 *.class
+*~
 
 # Package Files #
 *.jar
@@ -7,3 +8,4 @@
 
 .metadata/
 .settings/
+.gradle/
