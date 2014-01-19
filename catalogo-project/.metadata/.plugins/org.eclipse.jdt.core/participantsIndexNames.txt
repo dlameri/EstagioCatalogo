@@ -1,3 +1,0 @@
-INDEX VERSION 1.126
-/home/ideais/EstagioCatalogo/catalog-project/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3139864520.index
-/catalogo/src/main/java
