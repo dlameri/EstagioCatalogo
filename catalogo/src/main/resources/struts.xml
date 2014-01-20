@@ -4,13 +4,22 @@
 	<constant name="struts.devMode" value="true" />
 	<package name="basicstruts2" extends="struts-default">
 	
-		<action name="home" class="com.ideaiseletronics.web.actions.ProductAction" method="listProducts">
-	 		<result name="success">/home.jsp</result>
+		<global-results>
+	 		<result name="error">/error-page.jsp</result>
+	 	</global-results>
+	 	
+	 	<action name="showcase" class="com.ideaiseletronics.web.actions.ShowcaseAction" method="execute">
+	 		<result name="success">/vitrine.jsp</result>
 	 	</action>
 	 	
-	 	<action name="productDetails" class="com.ideaiseletronics.web.actions.ProductAction" method="showProductDetails">
+	 	<action name="showProductsByCategory" class="com.ideaiseletronics.web.actions.ShowcaseAction" method="showProductsByCategory">
+	 		<result name="success">/vitrine.jsp</result>
+	 	</action>
+	 	
+	 	<action name="showProductDetails" class="com.ideaiseletronics.web.actions.ProductAction" method="showProductDetails">
 	 		<result name="success">/product-details.jsp</result>
 	 	</action>
 	
 	</package>
+	
 </struts>

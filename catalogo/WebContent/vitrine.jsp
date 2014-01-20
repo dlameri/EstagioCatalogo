@@ -10,13 +10,12 @@
 	    <link rel="stylesheet" type="text/css" href="css/style.css">
 	    <meta charset = "utf-8">
 	</head>
-	<!--<s:include value="/header.jsp"></s:include>-->
 
 <body>
-	<header>
+	<div id="container">
 		<div id="header">
 			<div id="logotipo">
-				<img id="logo" src="./images/icons/logo.png" alt="home">
+				<a href="showcase.action"><img id="logo" src="./images/icons/logo.png" alt="home"></a>
 				<h1>
 					IDEAIS <br> ELETRONICS
 				</h1>
@@ -35,37 +34,30 @@
 		</div>
 
 		<div id="menu">
-			<h3>DVDS e Blu-ray | Celulares | Informática | Eletroportáteis |
-				TVs</h3>
+			<ul>
+				<c:forEach items="${listCategories}" var="category">
+					<li><a href="showProductsByCategory.action?idCategory=${category.id}">${category.name}</a></li>
+				</c:forEach>
+			</ul>
 		</div>
-
-	</header>
-
-	<section>
+		
 		<div id="contents">
 			<table>
 				<tbody>
 					<tr>
-						<s:iterator value="listProducts" var="product">
+						<c:forEach items="${listProducts}" var="product">
 							<td>
 								<figure>
-									<s:a action="productDetails">
-										<img alt="foto pequena notebook HP"
-											src="./images/products/notebook-hp-small.jpg">
-									</s:a>
-									<figcaption>
-										<s:a action="productDetails">
-											<s:property value="name" />
-										</s:a>
-									</figcaption>
+									<a href="showProductDetails.action"><img alt="${product.item.shortDescription}" src="${product.imageMain.showcaseUrl}"></a>
+									<figcaption><a href="showProductDetails.action">${product.item.name}</a></figcaption>
 								</figure>
 							</td>
-						</s:iterator>
+						</c:forEach>
 					</tr>
 				</tbody>
 			</table>
 		</div>
-	</section>
+	</div>
 
 </body>
 </html>

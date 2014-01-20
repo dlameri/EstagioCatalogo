@@ -73,11 +73,18 @@ overflow-x:hidden;
 	left:1%;
 	top: -0.15%;
 	width: 98%;
-	color:white;
-	word-spacing: 2em;
-
+	
 	border-radius: 0px 0px 10px 10px;
 
+}
+
+#menu>ul>li {
+	display: inline;
+}
+
+#menu>ul>li>a {
+	color:white;
+	display: inline;
 }
 
 #menu h3{
