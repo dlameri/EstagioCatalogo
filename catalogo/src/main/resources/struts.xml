@@ -9,11 +9,11 @@
 	 	</global-results>
 	 	
 	 	<action name="showcase" class="com.ideaiseletronics.web.actions.ShowcaseAction" method="execute">
-	 		<result name="success">/vitrine.jsp</result>
+	 		<result name="success">/showcase.jsp</result>
 	 	</action>
 	 	
 	 	<action name="showProductsByCategory" class="com.ideaiseletronics.web.actions.ShowcaseAction" method="showProductsByCategory">
-	 		<result name="success">/vitrine.jsp</result>
+	 		<result name="success">/showcase.jsp</result>
 	 	</action>
 	 	
 	 	<action name="showProductDetails" class="com.ideaiseletronics.web.actions.ProductAction" method="showProductDetails">

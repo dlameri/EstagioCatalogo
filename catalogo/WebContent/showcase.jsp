@@ -15,7 +15,7 @@
 	<div id="container">
 		<div id="header">
 			<div id="logotipo">
-				<a href="showcase.action"><img id="logo" src="./images/icons/logo.png" alt="home"></a>
+				<a href="index.jsp"><img id="logo" src="./images/icons/logo.png" alt="home"></a>
 				<h1>
 					IDEAIS <br> ELETRONICS
 				</h1>
