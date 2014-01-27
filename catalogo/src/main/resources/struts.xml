@@ -19,6 +19,10 @@
 	 	<action name="showProductDetails" class="com.ideaiseletronics.web.actions.ProductAction" method="showProductDetails">
 	 		<result name="success">/product-details.jsp</result>
 	 	</action>
+	 	
+	 	<action name="addItem" class="com.ideaiseletronics.web.actions.ShoppingCartAction" method="addItem">
+	 		<result name="success">/product-details.jsp</result>
+	 	</action>
 	
 	</package>
 	

@@ -44,6 +44,10 @@ public class Product {
 		this.images = images;
 	}
 
+	public double getPriceFor() {
+		return priceFor;
+	}
+
 	public Image getImageMain() {
 		for (Image image : this.images) {
 			if( image.getMain() ){
