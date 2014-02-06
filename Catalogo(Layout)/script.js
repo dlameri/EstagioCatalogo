@@ -1,3 +1,3 @@
 $(document).ready(function() {
-		$('#coin-slider').coinslider({ width:1300,navigation: true, delay: 1000 });
+		$('#coin-slider').coinslider({ width:1100,navigation: true, delay: 1000 });
 	});
