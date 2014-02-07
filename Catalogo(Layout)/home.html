@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
 	<meta charset="UTF-8">
@@ -7,218 +7,244 @@
 	<script type="text/javascript" src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 	<script type="text/javascript" src="coin-slider.js"></script>
 	<script type="text/javascript" src="script.js"></script>
+	<link rel="stylesheet" type="text/css" href="coin-slider-styles.css">
 	<link rel="stylesheet" type="text/css" href="estilo.css">
 </head>
 
 <body>
-	<header class="cabecalho">
-		<div id="logo">
-			<figure>
-				<img src="imagens/logo-group.png" alt="logo">
-			</figure>
+	
+	<header id="mainHeader">
+		<div>
+			<img id="logo" src="imagens/logo-group.png" alt="logo do site">
 		</div>
 
-		<div id="shoppingCar">
-			<figure>
-				<img src="imagens/cart.png" width="150" height="100" alt="Carrinho de compras">
+		<div>
+			<img id="shoppingCart" src="imagens/cart.png" alt="Carrinho de compras">
+		</div>
+
+		<nav class="mainMenu">
+			<a href="#" class="navigationButton">Navegue pela loja</a>
+		</nav>
+
+		<div id="search">
+			<input type="text" id="searchField">
 		</div>
 	</header>
 
-		<section id="coin-slider">
-					<ul>
-						<li>
-							<article>
-								<figure>
-									<img src="img/1.jpg" alt="Destaque1">
-								</figure>
-							</article>
-						</li>
-
-						<li>
-							<article>
-								<figure>
-									<img src="img/2.jpg" alt="Destaque2">
-								</figure>
-							</article>
-						</li>
-
-						<li>
-							<article>
-								<figure>
-									<img src="img/3.jpg" alt="Destaque3">
-								</figure>
-							</article>
-						</li>
-
-						<li>
-							<article>
-								<figure>
-									<img src="img/4.jpg" alt="Destaque4">
-								</figure>
-							</article>
-						</li>
-					</ul>
-			</section>
-				
-
-
-	
-		<section id="produtos">
+	<div id="container">
+		<section id="coin-slider" class="promotionsProducts">
 			<article>
 				<ul>
-					<div class="alinhaProd">
-						<li>
-							<article>
-								<figure>
-									<img src="img/1.jpg" class="imgProd" alt="Imagem do produto">
-									<figcaption>
-									<p class="nomeProd">Nome do produto: .....</p>
-									<p class="precoProd">Preço: $$$$</p>	
-									</figcaption>
-								</figure>
-							</article>
-						</li>
-
-						<li>
-							<article>
-								<figure>
-									<img src="img/2.jpg" class="imgProd" alt="Imagem do produto">
-									<figcaption>
-									<p class="nomeProd">Nome do produto: .....</p>
-									<p class="precoProd">Preço: $$$$</p>	
-									</figcaption>
-								</figure>
-							</article>
-						</li>
-
-						<li>
-							<article>
-								<figure>
-									<img src="img/3.jpg" class="imgProd" alt="Imagem do produto">
-									<figcaption>
-									<p class="nomeProd">Nome do produto: .....</p>
-									<p class="precoProd">Preço: $$$$</p>	
-									</figcaption>
-								</figure>
-							</article>
-						</li>
-
-						<li>
-							<article>
-								<figure>
-									<img src="img/4.jpg" class="imgProd" alt="Imagem do produto">
-									<figcaption>
-									<p class="nomeProd">Nome do produto: .....</p>
-									<p class="precoProd">Preço: $$$$</p>	
-									</figcaption>
-								</figure>
-							</article>
-						</li>
-					</div>
-
-					<div class="alinhaProd">
-						<li>
-							<article>
-								<figure>
-									<img src="img/5.jpg" class="imgProd" alt="imagem do produto">
-									<figcaption>
-									<p class="nomeProd">Nome do produto: .....</p>
-									<p class="precoProd">Preço: $$$$</p>	
-									</figcaption>
-								</figure>
-							</article>
-						</li>
-
-						<li>
-							<article>
-								<figure>
-									<img src="img/6.jpg" class="imgProd" alt="imagem do produto">
-									<figcaption>
-									<p class="nomeProd">Nome do produto: .....</p>
-									<p class="precoProd">Preço: $$$$</p>	
-									</figcaption>
-								</figure>
-							</article>
-						</li>
-
-						<li>
-							<article>
-								<figure>
-									<img src="img/7.jpg" class="imgProd" alt="imagem do produto">
-									<figcaption>
-									<p class="nomeProd">Nome do produto: .....</p>
-									<p class="precoProd">Preço: $$$$</p>	
-									</figcaption>
-								</figure>
-							</article>
-						</li>
-
-						<li>
-							<article>
-								<figure>
-									<img src="img/8.jpg" class="imgProd" alt="imagem do produto">
-									<figcaption>
-									<p class="nomeProd">Nome do produto: .....</p>
-									<p class="precoProd">Preço: $$$$</p>	
-									</figcaption>
-								</figure>
-							</article>
-						</li>
-					</div>
-
-					<div class="alinhaProd">
-						<li>
-							<article>
-								<figure>
-									<img src="img/9.jpg" class="imgProd" alt="imagem do produto">
-									<figcaption>
-									<p class="nomeProd">Nome do produto: .....</p>
-									<p class="precoProd">Preço: $$$$</p>	
-									</figcaption>
-								</figure>
-							</article>
-						</li>
-						
-						<li>
-							<article>
-								<figure>
-									<img src="img/10.jpg" class="imgProd" alt="imagem do produto">
-									<figcaption>
-									<p class="nomeProd">Nome do produto: .....</p>
-									<p class="precoProd">Preço: $$$$</p>	
-									</figcaption>
-								</figure>
-							</article>
-						</li>
-
-						<li>
-							<article>
-								<figure>
-									<img src="img/11.jpg" class="imgProd" alt="imagem do produto">
-									<figcaption>
-									<p class="nomeProd">Nome do produto: .....</p>
-									<p class="precoProd">Preço: $$$$</p>	
-									</figcaption>
-								</figure>
-							</article>
-						</li>
-
-						<li>
-							<article>
-								<figure>
-									<img src="img/12.jpg" class="imgProd" alt="imagem do produto">
-									<figcaption>
-									<p class="nomeProd">Nome do produto: .....</p>
-									<p class="precoProd">Preço: $$$$</p>	
-									</figcaption>
-								</figure>
-							</article>
-						</li>
-					</div>
+					<li>
+						<img src="img/1.jpg" alt="Destaque1">
+					</li>
+					<li>				
+						<img src="img/2.jpg" alt="Destaque2">
+					</li>
+					<li>				
+						<img src="img/3.jpg" alt="Destaque3">
+					</li>
+					<li>				
+						<img src="img/4.jpg" alt="Destaque4">
+					</li>
 				</ul>
 			</article>
-		</section>
+		</section>				
 		
+		<section class="produtos">
+			<div class="alinhaProd">
+				<ul>
+					<li>
+						<article>
+							<figure>
+								<img src="img/1.jpg" class="imgProd" alt="Imagem do produto">		
+								<figcaption>
+									<p class="nomeProd">Nome do produto: .....</p>
+								</figcaption>
+							</figure>
+							<div class="productDetail">
+								<p class="precoProd">De: R$10,99</p>
+								<p class="precoProd">Por: R$10,99</p>
+							</div>
+						</article>
+					</li>
+
+					<li>
+						<article>
+							<figure>
+								<img src="img/2.jpg" class="imgProd" alt="Imagem do produto">		
+								<figcaption>
+									<p class="nomeProd">Nome do produto: .....</p>
+								</figcaption>
+							</figure>
+							<div class="productDetail">
+								<p class="precoProd">De: R$10,99</p>
+								<p class="precoProd">Por: R$10,99</p>
+							</div>
+						</article>
+					</li>
+
+					<li>
+						<article>
+							<figure>
+								<img src="img/3.jpg" class="imgProd" alt="Imagem do produto">		
+								<figcaption>
+									<p class="nomeProd">Nome do produto: .....</p>
+								</figcaption>
+							</figure>
+							<div class="productDetail">
+								<p class="precoProd">De: R$10,99</p>
+								<p class="precoProd">Por: R$10,99</p>
+							</div>
+						</article>
+					</li>
+
+					<li>
+						<article>
+							<figure>
+								<img src="img/4.jpg" class="imgProd" alt="Imagem do produto">		
+								<figcaption>
+									<p class="nomeProd">Nome do produto: .....</p>
+								</figcaption>
+							</figure>
+							<div class="productDetail">
+								<p class="precoProd">De: R$10,99</p>
+								<p class="precoProd">Por: R$10,99</p>
+							</div>
+						</article>
+					</li>
+				</ul>
+			</div>
+
+			<div class="alinhaProd">
+				<ul>
+					<li>
+						<article>
+							<figure>
+								<img src="img/5.jpg" class="imgProd" alt="Imagem do produto">		
+								<figcaption>
+									<p class="nomeProd">Nome do produto: .....</p>
+								</figcaption>
+							</figure>
+							<div class="productDetail">
+								<p class="precoProd">De: R$10,99</p>
+								<p class="precoProd">Por: R$10,99</p>
+							</div>
+						</article>
+					</li>
+
+					<li>
+						<article>
+							<figure>
+								<img src="img/6.jpg" class="imgProd" alt="Imagem do produto">		
+								<figcaption>
+									<p class="nomeProd">Nome do produto: .....</p>
+								</figcaption>
+							</figure>
+							<div class="productDetail">
+								<p class="precoProd">De: R$10,99</p>
+								<p class="precoProd">Por: R$10,99</p>
+							</div>
+						</article>
+					</li>
+
+					<li>
+						<article>
+							<figure>
+								<img src="img/7.jpg" class="imgProd" alt="Imagem do produto">		
+								<figcaption>
+									<p class="nomeProd">Nome do produto: .....</p>
+								</figcaption>
+							</figure>
+							<div class="productDetail">
+								<p class="precoProd">De: R$10,99</p>
+								<p class="precoProd">Por: R$10,99</p>
+							</div>
+						</article>
+					</li>
+
+					<li>
+						<article>
+							<figure>
+								<img src="img/8.jpg" class="imgProd" alt="Imagem do produto">		
+								<figcaption>
+									<p class="nomeProd">Nome do produto: .....</p>
+								</figcaption>
+							</figure>
+							<div class="productDetail">
+								<p class="precoProd">De: R$10,99</p>
+								<p class="precoProd">Por: R$10,99</p>
+							</div>
+						</article>
+					</li>
+				</ul>
+			</div>
+
+			<div class="alinhaProd">
+				<ul>
+					<li>
+						<article>
+							<figure>
+								<img src="img/9.jpg" class="imgProd" alt="Imagem do produto">		
+								<figcaption>
+									<p class="nomeProd">Nome do produto: .....</p>
+								</figcaption>
+							</figure>
+							<div class="productDetail">
+								<p class="precoProd">De: R$10,99</p>
+								<p class="precoProd">Por: R$10,99</p>
+							</div>
+						</article>
+					</li>
+
+					<li>
+						<article>
+							<figure>
+								<img src="img/10.jpg" class="imgProd" alt="Imagem do produto">		
+								<figcaption>
+									<p class="nomeProd">Nome do produto: .....</p>
+								</figcaption>
+							</figure>
+							<div class="productDetail">
+								<p class="precoProd">De: R$10,99</p>
+								<p class="precoProd">Por: R$10,99</p>
+							</div>
+						</article>
+					</li>
+
+					<li>
+						<article>
+							<figure>
+								<img src="img/11.jpg" class="imgProd" alt="Imagem do produto">		
+								<figcaption>
+									<p class="nomeProd">Nome do produto: .....</p>
+								</figcaption>
+							</figure>
+							<div class="productDetail">
+								<p class="precoProd">De: R$10,99</p>
+								<p class="precoProd">Por: R$10,99</p>
+							</div>
+						</article>
+					</li>
+
+					<li>
+						<article>
+							<figure>
+								<img src="img/12.jpg" class="imgProd" alt="Imagem do produto">		
+								<figcaption>
+									<p class="nomeProd">Nome do produto: .....</p>
+								</figcaption>
+							</figure>
+							<div class="productDetail">
+								<p class="precoProd">De: R$10,99</p>
+								<p class="precoProd">Por: R$10,99</p>
+							</div>
+						</article>
+					</li>
+				</ul>
+			</div>
+		</section>
+	</div>
 
 	<footer>
 		<nav>
@@ -227,11 +253,18 @@
 				<li>Facebook</li>
 				<li>Farofa</li>
 				<li>Mais farofa</li>
+				<li>Mais farofa</li>
+				<li>Mais farofa</li>
+				<li>Mais farofa</li>
+				<li>Mais farofa</li>
+				<li>Mais farofa</li>
+				<li>Mais farofa</li>
+				<li>Mais farofa</li>
+				<li>Mais farofa</li>
 			</ul>
 			
 		</nav>
 	</footer>
-	</div>
 	
 </body>
 </html>

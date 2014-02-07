@@ -1,59 +1,74 @@
-* {
-	margin: 0;
-}
-
-.cabecalho{
-	background-color: blue;
+/* ------------HEADERS--------------- */
+#mainHeader {
+	background-color: #000000;
 	position: fixed;
 	width: 100%;
 	height: 20%;
-	opacity: 0.70;
-	float: center;
-	z-index: 1000;
-}
-#shoppingCar {
-	text-align: right;
-}
-#logo{
-	float: left;
+	z-index: 1000; 
 }
 
-
-
-html{
-	height: 100%;
-	width: 100%;
-	text-align: center;
-}
-
-body{
-	height: 100%;
-	display: inline-block;
-	background-color: red;
-}
-
-
-/* ------------Rodapé--------------- */
-footer{
-	background-color: grey;
-	display: inline-block;
+#shoppingCart {
+	float: right;
 	position: relative;
-	width: 100%;
+	top: 20px;
+	right: 70px;
+	width: 120px;
+	height: 80px;
 }
 
-/* ------------Conteúdo--------------- */
+#logo {
+	float: left;
+	position: relative;
+	top: 20px;
+	left: 70px;
+}
+
+#search{
+	position: relative;
+	top: 80px;
+	left: 150px;
+}
+#searchField{
+	width: 700px;
+}
 
 
-
-	
-#produtos{
-	background-color: white;
-	text-align: center;
-	margin: 0 auto;
-	width: 80%;
+.navigationButton {
+	background-color:#fb9e25;
+	border-top-left-radius:42px;
+	border-top-right-radius:42px;
+	border-bottom-right-radius:42px;
+	border-bottom-left-radius:42px;
+	text-indent:0px;
+	border:1px solid #eeb44f;
+	display:inline-block;
+	position: absolute;
+	top: 90px;
+	left: 75px;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	font-style:normal;
+	height:36px;
+	line-height:36px;
+	width:190px;
+	text-decoration:none;
+	text-align:center;
+}
+.navigationButton:hover {
+	background-color:#fb9e25;
+}.navigationButton:active {
+	position:relative;
+	top:1px;
 
 }
 
+/* ------------BODY--------------- */
+#container{
+	margin: 0% 10% 0% 10%;
+
+}
 
 .alinhaProd{
 	display: inline-block;
@@ -66,30 +81,31 @@ footer{
 .imgProd{
 	width: 150px;
 	height: 150px;
-	margin:20px 50px 50px 50px; 
-}
 
-#carrosel{
-	float: center;
+}
+	
+#produtos{
+	background-color: white;
 	text-align: center;
+
 }
 
-#coin-slider{
-	text-align: center;
+/* ------------FOOTER--------------- */
+footer{
+	display: inline-block;
+	position: relative;
+	width: 100%;
+	font-family: Arial;
+
+	background-image:
+	-webkit-linear-gradient(#000000, #1C1C1C 100%);
+	background-image: -moz-linear-gradient(black, #1C1C1C 100%);
+	background-image: -o-linear-gradient(black, #1C1C1C 100%);
+
 }
 
-
-
-/* ------------Carrosel--------------- */
-
-.coin-slider { overflow: hidden; zoom: 1; position: relative; }
-.coin-slider a{ text-decoration: none; outline: none; border: none; }
-
-.cs-buttons { font-size: 0px; padding: 10px; float: left; }
-.cs-buttons a { margin-left: 5px; height: 10px; width: 10px; float: left; border: 1px solid #B8C4CF; color: #B8C4CF; text-indent: -1000px; }
-.cs-active { background-color: #B8C4CF; color: #FFFFFF; }
-
-.cs-title { width: 545px; padding: 10px; background-color: #000000; color: #FFFFFF; }
-
-.cs-prev, 
-.cs-next { background-color: #000000; color: #FFFFFF; padding: 0px 10px; }
+/* ------------TAGS--------------- */
+body{
+	width: 100%;
+	margin: 0;
+}
