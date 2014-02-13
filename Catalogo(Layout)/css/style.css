@@ -12,7 +12,7 @@
 	float: right;
 	position: relative;
 	top: 20px;
-	right: 70px;
+	right: 5%;
 	width: 120px;
 	height: 80px;
 }
@@ -21,16 +21,16 @@
 	float: left;
 	position: relative;
 	top: 20px;
-	left: 70px;
+	left: 5%;
 }
 
 #search{
 	position: relative;
-	top: 80px;
-	left: 150px;
+	top: 60%;
+	left: 15%;
 }
 #searchField{
-	width: 700px;
+	width: 50%;
 }
 
 .navigationButton {
@@ -93,6 +93,21 @@
 	text-align: center;
 }
 
+.promotionsProducts{
+	margin-top: 15%;
+}
+
+#prodDescrition{
+	position: relative;
+	display: inline-block;
+	padding-top: 20%;
+	margin-bottom: 30%;
+}
+
+.price-box{
+	background-color: #EEE8AA;
+}
+
 /* ------------FOOTER--------------- */
 footer{
 	display: inline-block;
@@ -105,7 +120,44 @@ footer{
 	-webkit-linear-gradient(#000000, #1C1C1C 100%);
 	background-image: -moz-linear-gradient(black, #1C1C1C 100%);
 	background-image: -o-linear-gradient(black, #1C1C1C 100%);
+}
 
+.footer-logo{
+	background-color: #fb9e25;
+	border-radius: 50%;
+	display: inline-block;
+	height: 2em;
+	width: 2em;
+	float: right;
+	margin-left: 1%;
+}
+.footer-img-logo{
+	height: 2em;
+	width: 2em;
+}
+.footer-mini-logo{
+	margin-bottom: 5%;
+	margin-right: 5%;
+}
+.footer-info a{
+	text-decoration: none;
+}
+.footer-info ul{
+	list-style-type:none;
+}
+
+.footer-info{
+	margin-left: 5%;
+}
+
+.footer-text{
+	font-family: times;
+	size: 1%;
+}
+#footer-address{
+	position: relative;
+	text-align: center;
+	top: 5%;
 }
 
 /* ------------TAGS--------------- */
