@@ -1,7 +1,5 @@
 package com.ideaiseletronics.web.actions;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
