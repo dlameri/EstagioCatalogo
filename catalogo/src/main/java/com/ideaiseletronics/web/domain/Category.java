@@ -18,6 +18,7 @@ import org.hibernate.annotations.CascadeType;
 @Entity
 @Table(name="CATEGORIA")
 public class Category {
+	
 	@Id
 	@SequenceGenerator(name="category_id", sequenceName="category_id")
 	@GeneratedValue(generator="category_id", strategy=GenerationType.AUTO)
@@ -26,7 +27,6 @@ public class Category {
 	
 	@Column(name="NM_NOME", nullable=false, unique=true)
 	private String name;
-	
 	
 	@OneToMany(mappedBy="category", fetch = FetchType.EAGER)
 	@Cascade({CascadeType.DELETE, CascadeType.SAVE_UPDATE})

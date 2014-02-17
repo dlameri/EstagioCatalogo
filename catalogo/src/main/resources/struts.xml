@@ -12,7 +12,7 @@
 	 		<result name="success">/showcase.jsp</result>
 	 	</action>
 	 	
-	 	<action name="showItemsByCategory" class="com.ideaiseletronics.web.actions.ShowcaseAction" method="showItemsByCategory">
+	 	<action name="showProductsByCategory" class="com.ideaiseletronics.web.actions.ShowcaseAction" method="showProductsByCategory">
 	 		<result name="success">/showcase.jsp</result>
 	 	</action>
 	 	

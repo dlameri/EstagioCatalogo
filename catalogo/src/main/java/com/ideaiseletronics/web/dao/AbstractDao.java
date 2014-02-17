@@ -14,15 +14,12 @@ import org.hibernate.service.ServiceRegistryBuilder;
 public class AbstractDao<T> implements DaoBehavior<T>{
 
 private SessionFactory sessionFactory;
-private Class objectClass;
+private Class<T> objectClass;
 	
-	protected AbstractDao( Class objectClass ){
+	protected AbstractDao( Class<T> objectClass ){
 		Configuration configuration = new Configuration().configure("hibernate.cfg.xml");
-		ServiceRegistry serviceRegistry = new ServiceRegistryBuilder()
-				.applySettings(configuration.getProperties())
-				.buildServiceRegistry();
+		ServiceRegistry serviceRegistry = new ServiceRegistryBuilder().applySettings( configuration.getProperties() ).buildServiceRegistry();
 		sessionFactory = configuration.buildSessionFactory(serviceRegistry);
-		
 		this.objectClass = objectClass;
 	}
 	
