@@ -34,7 +34,7 @@
 
 		<div id="menu">
 			<ul>
-				<c:forEach items="${listCategories}" var="category">
+				<c:forEach items="${categories}" var="category">
 					<li><a href="showProductsByCategory.action?idCategory=${category.id}">${category.name}</a></li>
 				</c:forEach>
 			</ul>
@@ -44,11 +44,11 @@
 			<table>
 				<tbody>
 					<tr>
-						<c:forEach items="${listProducts}" var="product">
+						<c:forEach items="${products}" var="product">
 							<td>
 								<figure>
-									<a href="showProductDetails.action"><img alt="${product.item.shortDescription}" src="${product.imageMain.showcaseUrl}"></a>
-									<figcaption><a href="showProductDetails.action">${product.item.name}</a></figcaption>
+									<a href="showProductDetails.action"><img alt="${product.shortDescription}" src=""></a>
+									<figcaption><a href="showProductDetails.action">${product.name}</a></figcaption>
 								</figure>
 							</td>
 						</c:forEach>

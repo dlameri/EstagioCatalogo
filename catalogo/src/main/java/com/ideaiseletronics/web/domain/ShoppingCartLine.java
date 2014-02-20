@@ -3,7 +3,7 @@ package com.ideaiseletronics.web.domain;
 public class ShoppingCartLine {
 
 	private Long id;
-	private Product product;
+	private Item item;
 	private Integer quantity;
 	private Double price;
 	private ShoppingCart shoppingCart;
@@ -12,10 +12,10 @@ public class ShoppingCartLine {
 		
 	}
 	
-	public ShoppingCartLine(Long id, Product product, Integer quantity,
+	public ShoppingCartLine(Long id, Item item, Integer quantity,
 			Double price, ShoppingCart shoppingCart) {
 		this.id = id;
-		this.product = product;
+		this.item = item;
 		this.quantity = quantity;
 		this.price = price;
 		this.shoppingCart = shoppingCart;
@@ -25,8 +25,8 @@ public class ShoppingCartLine {
 		return id;
 	}
 	
-	public Product getProduct() {
-		return product;
+	public Item getItem() {
+		return item;
 	}
 	
 	public Integer getQuantity() {
@@ -50,7 +50,7 @@ public class ShoppingCartLine {
 	}
 	
 	public Double calculatePrice() {
-		return product.getPriceFor() * quantity;
+		return item.getPriceFor() * quantity;
 	}
 	
 	public void increaseByOne() {

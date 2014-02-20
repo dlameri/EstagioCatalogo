@@ -14,8 +14,8 @@ public class ShowcaseAction extends ActionSupport{
 	private final CategoryDao categoryDao = new CategoryDao();
 	private final ProductDao productDao = new ProductDao();
 	
-	private List<Category> listCategories;
-	private List<Product> listProducts;
+	private List<Category> categories;
+	private List<Product> products;
 	private String idCategory;
 	
 	private String message;
@@ -29,7 +29,7 @@ public class ShowcaseAction extends ActionSupport{
 	public String showProductsByCategory() {
 		initializingCategories();
 		
-		this.listProducts = productDao.findProductsByCategory( Long.valueOf( this.idCategory ) );
+		this.products = productDao.findItemsByCategory( Long.valueOf( this.idCategory ) );
 		
 		return SUCCESS;
 	}
@@ -40,19 +40,19 @@ public class ShowcaseAction extends ActionSupport{
 	}
 	
 	public void initializingCategories() {
-		this.listCategories = this.categoryDao.findAll();
+		this.categories = this.categoryDao.findAll();
 	}
 	
 	public void initializingProducts() {
-		this.listProducts = this.productDao.findAll();
+		this.products = this.productDao.findAll();
 	}
 	
-	public List<Category> getListCategories() {
-		return listCategories;
+	public List<Category> getCategories() {
+		return categories;
 	}
 
-	public List<Product> getListProducts() {
-		return listProducts;
+	public List<Product> getProducts() {
+		return products;
 	}
 
 	public void setIdCategory(String idCategory) {

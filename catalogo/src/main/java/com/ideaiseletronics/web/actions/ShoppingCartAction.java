@@ -4,7 +4,7 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.ideaiseletronics.web.domain.Product;
+import com.ideaiseletronics.web.domain.Item;
 import com.ideaiseletronics.web.domain.ShoppingCart;
 import com.ideaiseletronics.web.domain.ShoppingCartLine;
 import com.opensymphony.xwork2.ActionSupport;
@@ -14,7 +14,7 @@ public class ShoppingCartAction extends ActionSupport implements SessionAware{
 	private static final long serialVersionUID = 1L;
 	private Map<String, Object> session;
 	private ShoppingCart shoppingCart;
-	private Product product;
+	private Item item;
 
 	@Override
 	public void setSession(Map<String, Object> session) {
@@ -28,17 +28,17 @@ public class ShoppingCartAction extends ActionSupport implements SessionAware{
 			this.session.put("shoppingCart", shoppingCart );
 		}
 		
-		shoppingCart.add(new ShoppingCartLine( null, product, 0, product.getPriceFor(), shoppingCart) );
+		shoppingCart.add(new ShoppingCartLine( null, item, 0, item.getPriceFor(), shoppingCart) );
 		
 		return SUCCESS;
 	}
 
-	public Product getProduct() {
-		return product;
+	public Item getItem() {
+		return item;
 	}
 
-	public void setProduct( Product product ) {
-		this.product = product;
+	public void setItem( Item item ) {
+		this.item = item;
 	}
 
 	public ShoppingCart getShoppingCart() {
