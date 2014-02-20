@@ -14,14 +14,91 @@
 <body>
 	
 	<header id="mainHeader">
-		<img id="logo" src="imagens/logo-group.png" alt="logo do site">
-		<input id="searchField" type="text">
-		<img id="shoppingCart" src="imagens/cart.png" alt="Carrinho de compras">
+		<div>
+			<img id="logo" src="imagens/logo-group.png" alt="logo do site">
+		</div>
 
-		<nav class="mainMenu">
-			<a href="#" class="navigationButton">Navegue pela loja</a>
-		</nav>
-		
+		<div>
+			<img id="shoppingCart" src="imagens/cart.png" alt="Carrinho de compras">
+		</div>
+
+		<div id="search">
+			<input type="text" id="searchField">
+		</div>
+
+			<nav id="positionMenu">
+				<ul class="menu">
+				    <li>
+				    	<a href="#" class="delimiterMenu">Navegue pelas lojas</a>
+				        	<ul class='submenu'>
+				            	<li><a href="#">Eletrodomesticos</a>
+				            		<ul class='subsubmenu'>
+				                		<li><a href="#">Geladeira</a></li>             
+				                    	<li><a href="#">Fogão</a></li>
+				                    	<li><a href="#">Lava-roupas</a></li>
+				                    	<li><a href="#">Lava-louça</a></li>
+				                    	<li><a href="#">Secadora</a></li>
+				                </ul>
+				            </li>
+
+				    <li>
+				     	<a href="#">Informática</a>
+				    		<ul class='subsubmenu'>
+				        		<li><a href="#">Notebooks</a></li>             
+				                	<li><a href="#">Ultrabooks</a></li>
+				                	<li><a href="#">Desktop</a></li>
+				                	<li><a href="#">Impressoras</a></li>
+				                </ul>
+				        	</li>
+				                    
+				    <li>
+				    	<a href="#">Eletroportateis</a>
+				    		<ul class='subsubmenu'>
+				        		<li><a href="#">Cafeteira</a></li>             
+				            	<li><a href="#">Aspirador de pó</a></li>
+				            	<li><a href="#">Sanduicheira</a></li>
+				            	<li><a href="#">Torradeira</a></li>
+				        	</ul>
+				    	</li>
+
+				    <li>
+				    	<a href="#">TV e aúdio</a>
+				            <ul class='subsubmenu'>
+				            	<li><a href="#">TV LED</a></li>             
+				            	<li><a href="#">Smart TV</a></li>
+				            	<li><a href="#">Home Theater</a></li>
+				            	<li><a href="#">Fones</a></li>
+				            </ul>
+						</li>
+
+				    <li>
+				    	<a href="#">DVDs e Blu-Rays</a>
+				        	<ul class='subsubmenu'>
+				            	<li><a href="#">Musicais</a></li>             
+				                <li><a href="#">Infantil</a></li>
+				                <li><a href="#">Documentários</a></li>
+				                <li><a href="#">Filmes</a></li>
+				            </ul>
+						</li>
+
+				    <li>
+				    	<a href="#">Acessórios</a>
+				        	<ul class='subsubmenu'>
+				            	<li><a href="#">Suporte para TV</a></li>             
+				            	<li><a href="#">Cabos</a></li>
+				            	<li><a href="#">Mesas</a></li>
+				            	<li><a href="#">Controles</a></li>
+				            </ul>
+					    </li>
+				                    
+				    <li>
+				    	<a class="delimiterMenu"> </a>
+				    </li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+
 	</header>
 
 	<div id="container">
@@ -108,9 +185,7 @@
 							</article>
 						</li>
 					</ul>
-				</div>
 
-			<div class="alinhaProd">
 				<label>//Ofertas</label>
 					<ul>
 						<li>
@@ -173,9 +248,7 @@
 							</article>
 						</li>
 					</ul>
-				</div>
 
-			<div class="alinhaProd">
 				<label>//Mais Vendidos</label>
 					<ul>
 						<li>
@@ -238,10 +311,7 @@
 							</article>
 						</li>
 					</ul>
-				</div>
 
-
-			<div class="alinhaProd">
 				<label>//Top Eletronicos</label>
 					<ul>
 						<li>
@@ -304,9 +374,7 @@
 							</article>
 						</li>
 					</ul>
-				</div>
-
-			<div class="alinhaProd">
+					
 				<label>//De tudo um pouco</label>
 					<ul>
 						<li>
@@ -402,7 +470,7 @@
 
 
 			<div id="footer-address">
-				<small class="footer-text"> Rua da Quitanda, 86 - 9º andar Centro - Rio de Janeiro - RJ - Brasil Cep 20091-005 </small>
+				<p class="footer-text"> Rua da Quitanda, 86 - 9º andar Centro - Rio de Janeiro - RJ - Brasil Cep 20091-005 </p>
 			</div>
 			
 		</nav>

@@ -1,68 +1,126 @@
 /* ------------HEADERS--------------- */
 #mainHeader {
-	/*background-color: #000000;*/
-	background-color: #FFFFFF;
+	background-color: #000000;
 	position: fixed;
 	width: 100%;
-	height: 160px;
+	height: 150px;
 	z-index: 1;
-
-	border: 1px solid red;
 	
 }
 
-#logo {
-	display: inline-block;
-	margin: 0% 0% 0% 10%;
-
-	border: 1px solid red;
-}
-
-#searchField{
-	display: inline-block;
-	margin: 0px 0px 0px 0px;
-	width: 500px;
-
-	border: 1px solid red;
-}
-
 #shoppingCart {
-	display: inline-block;
-	margin: 0% 10% 0% 0%;
+	float: right;
+	position: relative;
+	top: 20px;
+	right: 5%;
 	width: 120px;
 	height: 80px;
-
-	border: 1px solid red;
 }
 
-.mainMenu {
-	margin: 1% 0% 0% 10%;
+#logo {
+	float: left;
+	position: relative;
+	top: 20px;
+	left: 5%;
+}
+
+#search{
+	position: relative;
+	top: 60%;
+	left: 15%;
+}
+#searchField{
+	position: relative;
+	width: 50%;
+	border-radius: 20px;
+	padding: 3px 0px 3px 15px;
+	outline: none;
 
 }
 
-.navigationButton {
-	background-color:#fb9e25;
-	border-top-left-radius:42px;
-	border-top-right-radius:42px;
-	border-bottom-right-radius:42px;
-	border-bottom-left-radius:42px;
-	text-indent:0px;
-	border:1px solid #eeb44f;
-	display:inline-block;
-/*	position: absolute;*/
-	top: 90px;
-	left: 75px;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
-	font-style:normal;
-	height:36px;
-	line-height:36px;
-	width:190px;
-	text-decoration:none;
-	text-align:center;
+
+/* ------------MENU NAVIGATION--------------- */
+
+.menu{
+margin: 0;
+padding: 0;
+display: inline-block;
 }
+
+
+.menu li{
+width: 180px;
+height: auto; 
+padding: 0;
+margin: 0;
+position: relative;
+}
+
+.submenu {
+width: 180px;
+height: auto;
+padding: 0;
+margin: 0;
+display: none;
+position: absolute;    
+}
+
+.menu li:hover>ul {
+position:absolute;
+display: block;
+}
+
+.subsubmenu{
+top:0;
+left:140px;
+display: none;
+}
+
+.submenu li:hover>ul {
+    display:block;
+    position:absolute;
+}
+
+
+.menu a{
+display: block;
+text-decoration: none;
+padding: 7px;
+background-color: #fb9e25;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size: 12px;
+font-weight: 400;
+color: #FFFFFF;
+}
+
+.delimiterMenu{
+    border-radius:50px 50px 10px 10px;
+}
+
+.delimiterMenu:last-child{
+    border-radius:10px 10px 50px 50px;
+}
+
+.menu a:hover{
+background-color: #000000;
+text-decoration: none;
+color: #FFFFFF;
+}
+
+#positionMenu{
+	position: absolute;
+    top: 75%;
+    left: 6%;
+    
+}
+
+
+/* hack para o IE não criar margens\*/ 
+* html ul li { float: left; height: 1%; } 
+* html ul li a { height: 1%; } 
+* {list-style:none;}
+/*End */ 
+
 
 /* ------------BODY--------------- */
 #container{
@@ -76,7 +134,12 @@
 
 .alinhaProd li {
 	display: table-cell;
+	float: left;
 }
+
+
+
+
 
 .imgProd{
 	width: 150px;
@@ -125,9 +188,10 @@ footer{
 	background-color: #fb9e25;
 	border-radius: 50%;
 	display: inline-block;
-	height: 2em;
-	width: 2em;
+	height: 3%;
+	width: 3%;
 	float: right;
+	text-align: center;
 	margin-left: 1%;
 }
 .footer-img-logo{
@@ -140,23 +204,30 @@ footer{
 }
 .footer-info a{
 	text-decoration: none;
+	color:#ffffff;
+	display: inline;
 }
 .footer-info ul{
 	list-style-type:none;
 }
 
 .footer-info{
-	margin-left: 5%;
+	margin-left: 24%;
 }
 
 .footer-text{
 	font-family: times;
 	size: 1%;
+
 }
 #footer-address{
 	position: relative;
 	text-align: center;
-	top: 5%;
+}
+
+.footer-info ul li{
+	display: inline;
+	margin-left: 4%;
 }
 
 /* ------------TAGS--------------- */
