@@ -17,6 +17,10 @@ p {
 	margin: 0px;
 }
 
+ul {
+	list-style-type: none;
+}
+
 /* -----------HEADER----------- */
 #main-header {
 	/*border: 1px solid green;*/
@@ -41,7 +45,7 @@ p {
 #main-nav {
 	/*border: 1px solid pink;*/
 	display: inline-block;
-	height: 35px;
+	padding: 8.5px 30px;
 	background-color: #FF4800;
 	cursor: pointer;
 	border-radius: 5px;
@@ -50,7 +54,6 @@ p {
 }
 
 .menu {
-	padding: 10px 30px;
 	margin: 0px;
 }
 
@@ -163,6 +166,30 @@ p {
 /* -----------FOOTER----------- */
 #main-footer {
 	/*border: 1px solid black;*/
-	height: 50px;
+	padding: 10px 0px;
 	background-color: rgba(31, 31, 31, 0.95);
+	text-align: center;
+}
+
+#footer-nav {
+	display: block;
+}
+
+#footer-nav li{
+	display: inline-block;
+	margin: 10px;
+}
+
+#footer-nav li a {
+	color: #7F7570;
+}
+
+#footer-nav li a:hover {
+	color: white;
+}
+
+.footer-address {
+	display: inline-block;
+	padding: 30px 0px;
+	font-size: 0.8em;
 }
