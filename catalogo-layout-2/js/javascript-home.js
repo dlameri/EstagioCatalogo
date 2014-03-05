@@ -1,5 +1,6 @@
 $(function(){
 	setSearchAreaBehaviour();
+	setCarrosselProducts();
 });
 
 function setSearchAreaBehaviour() {
@@ -24,3 +25,13 @@ function setSearchAreaBehaviour() {
 		
 	});
 };
+
+function setCarrosselProducts() {
+	$('.bxslider').bxSlider({
+		mode: 'fade',
+		auto: true,
+		autoControls: true,
+		slideWidth: 400,
+		pause: 2000
+	});
+}
