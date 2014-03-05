@@ -5,47 +5,48 @@ html {
 
 body {
 	margin: 0;
+	color: white;
 }
 
-a, a:visited, a:link, a:active {
+a, a:visited, a:link, a:active, a:hover {
 	text-decoration: none;
 	color: white;
 }
 
+p {
+	margin: 0px;
+}
 
 /* -----------HEADER----------- */
 #main-header {
 	/*border: 1px solid green;*/
+	width: 100%;
 	padding: 10px 0px 10px 0px;
 	background-color: rgba(31, 31, 31, 0.95);
-	color: white;
 	position: fixed;
 	top: 0;
 	z-index: 1;
-	width: 100%;
 }
 
 .logo {
 	/*border: 1px solid pink;*/
 	display: inline-block;
 	width: 100%;
+	height: 36px;
 	margin: 0px;
 	text-align: center;
-	vertical-align: middle;
 	font-size: 2em;
-	height: 35px;
 }
 
 #main-nav {
 	/*border: 1px solid pink;*/
 	display: inline-block;
-	vertical-align: middle;
+	height: 35px;
+	background-color: #FF4800;
 	cursor: pointer;
 	border-radius: 5px;
-	background-color: #FF4800;
 	position: absolute;
 	top: 0px;
-	height: 35px;
 }
 
 .menu {
@@ -53,19 +54,13 @@ a, a:visited, a:link, a:active {
 	margin: 0px;
 }
 
-.menu > p{
-	margin: 0px;
-
-}
-
 .menu-item {
 	display: none;
 }
 
-#search-division {
+#search-area {
 	/*border: 1px solid black;*/
 	display: inline-block;
-	vertical-align: middle;
 	position: absolute;
 	top: 0px;
 	left: 130px;
@@ -74,17 +69,15 @@ a, a:visited, a:link, a:active {
 .search-box {
 	/*border: 1px solid blue;*/
 	display: none;
-	margin: 0px;
 	position: relative;
 	top: 2.5px;
 }
 
-#input-search {
+#input-search-text {
 	/*border: 1px solid black;*/
 	border: none;
 	width: 600px;
 	height: 30px;
-	margin: 0px;
 	padding: 0px 5px;
 	font-size: 1em;
 	color: black;
@@ -111,10 +104,10 @@ a, a:visited, a:link, a:active {
 	vertical-align: top;
 	text-indent: -999999px;
 	cursor: pointer;
+	border-radius: 5px;
 	background: url('../images/search-icon-white.png') no-repeat center center;
 	background-size: 20px 20px;
 	background-color: #FF4D07;
-	border-radius: 5px;
 }
 
 .login-or-register {
@@ -142,17 +135,16 @@ a, a:visited, a:link, a:active {
 
 .shopping-cart {
 	/*border: 1px solid purple;*/
+	display: inline-block;
+	height: 35px;
+	width: 100px;
 	position: absolute;
 	right: 20px;
 	top: 0px;
-	height: 35px;
-	width: 100px;
-	display: inline-block;
-	vertical-align: middle;
 	text-indent: -999999px;
+	cursor: pointer;
 	background: url('../images/shopping-cart1-white.png') no-repeat center center;
 	background-size: 70px 60px;
-	cursor: pointer;
 }
 
 .shopping-cart:hover {
@@ -163,9 +155,6 @@ a, a:visited, a:link, a:active {
 /* -----------BODY----------- */
 .container {
 	/*border: 1px solid red;*/
-	/*max-width: 1266px;
-	margin-left: auto;
-	margin-right: auto;*/
 	margin: 0px 250px 0px 250px;
 	padding: 0px 20px 0px 20px;
 	position: relative;
@@ -173,7 +162,7 @@ a, a:visited, a:link, a:active {
 
 /* -----------FOOTER----------- */
 #main-footer {
-	border: 1px solid black;
+	/*border: 1px solid black;*/
 	height: 50px;
 	background-color: rgba(31, 31, 31, 0.95);
 }
