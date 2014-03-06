@@ -1,37 +1,33 @@
 /* ------------HEADERS--------------- */
 #mainHeader {
-	background-color: #000000;
 	position: fixed;
 	width: 100%;
-	height: 150px;
+	height: 70px;
 	z-index: 1;
-	
+	text-align: center;
+
+	background-image:
+	-webkit-linear-gradient(#0B0B0B, #000000 100%);
+	background-image: -moz-linear-gradient(black, #000000 100%);
+	background-image: -o-linear-gradient(black, #00000 100%);
 }
 
-#shoppingCart {
-	float: right;
-	position: relative;
-	top: 20px;
-	right: 5%;
-	width: 120px;
-	height: 80px;
+header div{
+	display: inline-block;
+	margin-left: 2%;
+}
+
+#shoppingCart{
+	width: 5em;
 }
 
 #logo {
-	float: left;
-	position: relative;
-	top: 20px;
-	left: 5%;
+	width: 40%;
+	height: 40%;
 }
 
-#search{
-	position: relative;
-	top: 60%;
-	left: 15%;
-}
 #searchField{
-	position: relative;
-	width: 50%;
+	width: 30em;
 	border-radius: 20px;
 	padding: 3px 0px 3px 15px;
 	outline: none;
@@ -44,7 +40,6 @@
 .menu{
 margin: 0;
 padding: 0;
-display: inline-block;
 }
 
 
@@ -63,7 +58,9 @@ padding: 0;
 margin: 0;
 display: none;
 position: absolute;    
+margin-top: -3px;
 }
+
 
 .menu li:hover>ul {
 position:absolute;
@@ -98,6 +95,7 @@ color: #FFFFFF;
 }
 
 .delimiterMenu:last-child{
+	margin-top: -3px;
     border-radius:10px 10px 50px 50px;
 }
 
@@ -107,12 +105,17 @@ text-decoration: none;
 color: #FFFFFF;
 }
 
-#positionMenu{
-	position: absolute;
-    top: 75%;
-    left: 6%;
-    
+#lastDelimiter:hover{
+background-color:#fb9e25;
+text-decoration: none;
 }
+
+#delimiterTop:hover{
+background-color:#fb9e25;
+text-decoration: none;
+}
+
+
 
 
 /* hack para o IE não criar margens\*/ 
