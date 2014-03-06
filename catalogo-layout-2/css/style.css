@@ -82,7 +82,7 @@ ul {
 #input-search-text {
 	/*border: 1px solid black;*/
 	border: none;
-	width: 400px;
+	width: 60%;
 	height: 30px;
 	padding: 0px 5px;
 	font-size: 1em;
@@ -120,7 +120,7 @@ ul {
 	display: inline-block;
 	position: absolute;
 	top: 0px;
-	right: 180px;
+	right: 120px;
 
 }
 
@@ -159,8 +159,18 @@ ul {
 }
 
 /* -----------BODY----------- */
+
+.side-menu {
+	border: 1px solid blue;
+	position: fixed;
+	width: 15%;
+	height: 100%;
+	border-radius: 2px;
+	background-color: #FF4D07; 
+}
+
 .container {
-	/*border: 1px solid red;*/
+	border: 1px solid red;
 	margin: 0% 20% 0% 20%;
 	padding: 0px 20px 0px 20px;
 	position: relative;

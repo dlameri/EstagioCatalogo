@@ -17,6 +17,7 @@ repositories {
 
 jettyRun{
 	httpPort=8081
+	webAppSourceDirectory='WEB-INF/webapp/'
 }
 
 dependencies {
