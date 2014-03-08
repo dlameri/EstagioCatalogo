@@ -43,7 +43,6 @@ public class ProductService implements GenericService<Product>{
 		return productDao.findProductsByCategory(idCategory);
 	}
 	
-	/* GETTERS AND SETTERS */
 	public void setProductDao(ProductDao productDao) {
 		this.productDao = productDao;
 	}

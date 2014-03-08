@@ -2,11 +2,11 @@ package com.ideaiseletronics.catalogo.api.rest.service;
 
 import java.util.List;
 
-import org.codehaus.jackson.type.TypeReference;
+import javax.ws.rs.core.GenericType;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ideaiseletronics.catalogo.api.rest.util.RESTClient;
 import com.ideaiseletronics.stock.domain.Category;
 
 @Service
@@ -17,19 +17,15 @@ public class CategoryRESTConsumerService implements GenericConsumerService<Categ
 	@Autowired
 	private ClientMethods restClient;
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Category> list() {
-		return (List<Category>) restClient.get(stockURLCategory, new TypeReference< List<Category> >() {});
+		return (List<Category>) restClient.get(stockURLCategory, new GenericType< List<Category> >() {});
 	}
 
 	@Override
 	public Category findById(Long id) {
-		return (Category) restClient.get(stockURLCategory + id, new TypeReference<Category>() {});
-	}
-	
-	public void setRestClient(RESTClient restClient) {
-		this.restClient = restClient;
-	}
-	
+		return (Category) restClient.get(stockURLCategory + id, new GenericType<Category>() {});
+	}	
 
 }

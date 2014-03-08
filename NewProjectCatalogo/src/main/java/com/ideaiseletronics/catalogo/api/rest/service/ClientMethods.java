@@ -1,10 +1,10 @@
 package com.ideaiseletronics.catalogo.api.rest.service;
 
-import org.codehaus.jackson.type.TypeReference;
+import javax.ws.rs.core.GenericType;
 
 public interface ClientMethods {
 	
-	public <T> Object get(String url, TypeReference<T> type);
+	public <T> Object get(String url, GenericType<T> type);
 	
 	public void post(String url);
 	

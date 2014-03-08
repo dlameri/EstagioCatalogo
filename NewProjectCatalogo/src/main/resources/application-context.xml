@@ -49,7 +49,7 @@
                 <prop key="hibernate.cache.provider_class">
                     net.sf.ehcache.hibernate.SingletonEhCacheProvider
                 </prop>
-                <prop key="hibernate.default_batch_fetch_size">
+                <prop key="hibernate.default_batch_fProductetch_size">
                     100
                 </prop>
             </props>
@@ -68,8 +68,8 @@
 	<bean id="stockURLCategory" class="java.lang.String">  
     	<constructor-arg value="${stock.category}"/>  
 	</bean>
-	<bean id="stockURLProduct" class="java.lang.String">  
-    	<constructor-arg value="${stock.product}"/>  
+	<bean id="stockURLItem" class="java.lang.String">  
+    	<constructor-arg value="${stock.item}"/>  
 	</bean>
 
 </beans>

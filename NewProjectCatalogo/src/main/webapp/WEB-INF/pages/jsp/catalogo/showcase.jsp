@@ -10,13 +10,13 @@
 	
 		<ul>
 			<c:forEach items="${categories}"  var="category">
-				<li><a>${category.name}</a></li>	
+				<li><a href="">${category.name}</a></li>	
 			</c:forEach>
 		</ul>
 		
 		<ul>
-			<c:forEach items="${products}"  var="product">
-				<li><a>${product.name}</a></li>	
+			<c:forEach items="${itens}"  var="item">
+				<li><a href="">${item.product.name}</a></li>	
 			</c:forEach>
 		</ul>
 		

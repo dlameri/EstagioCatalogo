@@ -57,8 +57,6 @@ public class AbstractDao<T> implements DaoBehavior<T>{
 		return (T) session().get(clazz, id);
 	}
 	
-	
-	/* GETTERS AND SETTERS */
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}

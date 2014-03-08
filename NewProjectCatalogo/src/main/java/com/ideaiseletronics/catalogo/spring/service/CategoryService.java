@@ -38,10 +38,5 @@ public class CategoryService implements GenericService<Category> {
 	public Category findById(Long id) {
 		return categoryDao.findById(Category.class, id);
 	}
-	
-	/* GETTERS AND SETTERS */
-	public void setCategoryDao( CategoryDao categoryDao ) {
-		this.categoryDao = categoryDao;
-	}
 
 }

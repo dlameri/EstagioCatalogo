@@ -1,8 +1,8 @@
 package com.ideaiseletronics.catalogo.api.rest.util;
 
+import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.Response;
 
-import org.codehaus.jackson.type.TypeReference;
 import org.jboss.resteasy.client.jaxrs.ResteasyClient;
 import org.jboss.resteasy.client.jaxrs.ResteasyClientBuilder;
 import org.springframework.stereotype.Component;
@@ -19,20 +19,11 @@ public class RESTClient implements ClientMethods{
 	}
 
 	@Override
-	public <T> Object get(String url, TypeReference<T> type) {
+	public <T> Object get(String url, GenericType<T> type) {
 		Response response = client.target(url).request().get();
 		if (response.getStatus() == STATUS_OK) {
-			String json = "[{" 
-					+"\"id\": 1," 
-					+"\"name\": \"categoria 1\","
-					+ "\"subcategories\": []},"
-					+ "{" 
-					+"\"id\": 2," 
-					+"\"name\": \"categoria 2\","
-					+ "\"subcategories\": []}"
-					+ "]";
-
-			return JsonUtil.readJsonToObject(json, type);
+			return response.readEntity(type);
+			//return JsonUtil.readJsonToObject(json, type);
 		}
 
 		return null;
