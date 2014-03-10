@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.ideaiseletronics.catalogo.api.rest.service.GenericConsumerService;
+import com.ideaiseletronics.catalogo.api.service.interfaces.GenericConsumerService;
 import com.ideaiseletronics.stock.domain.Category;
 import com.ideaiseletronics.stock.domain.Item;
 

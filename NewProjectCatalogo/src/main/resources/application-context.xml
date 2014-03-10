@@ -64,9 +64,9 @@
         <property name="dataSource" ref="dataSource" />
         <property name="sessionFactory" ref="sessionFactory" />
     </bean>
-	
+    
 	<bean id="stockURLCategory" class="java.lang.String">  
-    	<constructor-arg value="${stock.category}"/>  
+    	<constructor-arg value="${stock.category}"/>
 	</bean>
 	<bean id="stockURLItem" class="java.lang.String">  
     	<constructor-arg value="${stock.item}"/>  

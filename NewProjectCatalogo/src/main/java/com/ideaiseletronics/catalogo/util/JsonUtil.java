@@ -1,4 +1,4 @@
-package com.ideaiseletronics.catalogo.api.rest.util;
+package com.ideaiseletronics.catalogo.util;
 
 import java.io.IOException;
 

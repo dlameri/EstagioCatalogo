@@ -1,4 +1,4 @@
-package com.ideaiseletronics.catalogo.api.rest.util;
+package com.ideaiseletronics.catalogo.api.service;
 
 import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.Response;
@@ -7,7 +7,7 @@ import org.jboss.resteasy.client.jaxrs.ResteasyClient;
 import org.jboss.resteasy.client.jaxrs.ResteasyClientBuilder;
 import org.springframework.stereotype.Component;
 
-import com.ideaiseletronics.catalogo.api.rest.service.ClientMethods;
+import com.ideaiseletronics.catalogo.api.service.interfaces.ClientMethods;
 
 @Component
 public class RESTClient implements ClientMethods{

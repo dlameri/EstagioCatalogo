@@ -1,4 +1,4 @@
-package com.ideaiseletronics.catalogo.api.rest.service;
+package com.ideaiseletronics.catalogo.api.service.interfaces;
 
 import java.util.List;
 

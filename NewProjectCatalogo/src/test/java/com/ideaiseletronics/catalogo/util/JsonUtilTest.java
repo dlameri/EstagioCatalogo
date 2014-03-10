@@ -1,4 +1,4 @@
-package com.ideaiseletronics.catalogo.api.rest.util;
+package com.ideaiseletronics.catalogo.util;
 
 import static org.junit.Assert.assertEquals;
 
@@ -19,8 +19,7 @@ public class JsonUtilTest {
 	
 	@Before
 	public void setUp() {
-		objectInJsonFormat = "";
-		
+		objectInJsonFormat = "";		
 	}
 	
 	@Test

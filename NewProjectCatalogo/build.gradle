@@ -44,6 +44,7 @@ dependencies {
     compile 'org.slf4j:slf4j-api:1.5.8'
 
     compile 'junit:junit:4.11'
+	compile 'org.apache.ibatis:ibatis-core:3.0'
 
     compile 'javax.servlet:jstl:1.2'
     compile 'javax.servlet:javax.servlet-api:3.0.1'
@@ -62,7 +63,7 @@ dependencies {
 	
 	compile 'org.codehaus.jackson:jackson-core-lgpl:1.9.13'
 	compile 'org.codehaus.jackson:jackson-mapper-lgpl:1.9.13'
-	
+	compile 'org.seleniumhq.selenium:selenium-java:2.40.0'
 
 }
 

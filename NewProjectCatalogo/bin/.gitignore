@@ -1,8 +1,1 @@
-/application-context.xml
-/checkout-integration.properties
 /com
-/config.properties
-/hibernate.cfg.xml
-/log4j.properties
-/stock-integration.properties
-/web-context.xml
