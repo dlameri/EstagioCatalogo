@@ -27,6 +27,7 @@ dependencies {
 	compile group: 'org.springframework', name: 'spring-orm', version: '3.1.3.RELEASE'
 	compile group: 'org.springframework', name: 'spring-web', version: '3.1.3.RELEASE'
 	compile group: 'org.springframework', name: 'spring-webmvc', version: '3.1.3.RELEASE'
+	compile 'org.springframework:spring-test:3.2.8.RELEASE'
 
     compile group: 'asm', name: 'asm', version: '3.3.1'
     compile group: 'asm', name: 'asm-tree', version: '3.3.1'
@@ -40,30 +41,30 @@ dependencies {
     compile 'commons-logging:commons-logging:1.1.3'
 	compile 'commons-dbcp:commons-dbcp:1.4'
 
+	/*Utils*/
     compile 'log4j:log4j:1.2.17'
     compile 'org.slf4j:slf4j-api:1.5.8'
+	compile 'org.apache.ibatis:ibatis-core:3.0'
 
     compile 'junit:junit:4.11'
-	compile 'org.apache.ibatis:ibatis-core:3.0'
+	testCompile 'org.springframework:spring-test:3.1.2.RELEASE'
+	compile 'org.seleniumhq.selenium:selenium-java:2.40.0'
 
     compile 'javax.servlet:jstl:1.2'
     compile 'javax.servlet:javax.servlet-api:3.0.1'
-
-    compile 'org.freemarker:freemarker:2.3.20'
     
     compile 'com.h2database:h2:1.3.161'
     compile 'mysql:mysql-connector-java:5.1.28'
 	compile ('org.hibernate:hibernate-entitymanager:3.5.0-Final')
 	compile 'net.sf.ehcache:ehcache-core:2.5.2'
 
+	/*Integracao rest*/
 	compile 'org.jboss.resteasy:resteasy-servlet-initializer:3.0.6.Final'
 	compile 'org.jboss.resteasy:resteasy-jaxb-provider:3.0.6.Final'
 	compile 'org.jboss.resteasy:resteasy-jackson-provider:3.0.6.Final'
 	compile 'org.jboss.resteasy:resteasy-client:3.0.6.Final'
-	
 	compile 'org.codehaus.jackson:jackson-core-lgpl:1.9.13'
 	compile 'org.codehaus.jackson:jackson-mapper-lgpl:1.9.13'
-	compile 'org.seleniumhq.selenium:selenium-java:2.40.0'
 
 }
 

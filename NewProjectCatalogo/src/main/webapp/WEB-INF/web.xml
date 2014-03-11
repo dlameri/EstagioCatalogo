@@ -13,7 +13,7 @@
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <init-param>
         	<param-name>contextConfigLocation</param-name>
-            <param-value>classpath*:web-context.xml, classpath*:application-context.xml</param-value>
+            <param-value>classpath*:spring/web-context.xml, classpath*:spring/application-context.xml</param-value>
     	</init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
@@ -22,30 +22,5 @@
         <servlet-name>springMvcServlet</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
-    
-    <!-- <servlet>
-        <servlet-name>resteasyServlet</servlet-name>
-        <servlet-class>org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher</servlet-class>
-    </servlet>
-    
-     <servlet-mapping>
-        <servlet-name>resteasyServlet</servlet-name>
-        <url-pattern>/api/rest/*</url-pattern>
-    </servlet-mapping>
-    
-    <context-param>
-        <param-name>resteasy.servlet.mapping.prefix</param-name>
-        <param-value>/api/rest</param-value>
-    </context-param>
-        
-    <context-param>
-        <param-name>resteasy.scan</param-name>
-        <param-value>true</param-value>
-    </context-param>
-     
-    <context-param>
-		<param-name>resteasy.resources</param-name>
-		<param-value>com.ideaiseletronics.catalogo.api.resteasy.RestEasyCategory</param-value>
-	</context-param> -->
 	
 </web-app>

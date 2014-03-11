@@ -1,4 +1,4 @@
-package com.ideaiseletronics.catalogo.util;
+package test.unitary.util;
 
 import static org.junit.Assert.assertEquals;
 
@@ -10,6 +10,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
+import com.ideaiseletronics.catalogo.util.JsonUtil;
 import com.ideaiseletronics.stock.domain.Category;
 
 @RunWith(JUnit4.class)

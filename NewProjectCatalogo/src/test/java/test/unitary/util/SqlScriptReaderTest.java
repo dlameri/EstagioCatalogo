@@ -1,4 +1,4 @@
-package com.ideaiseletronics.catalogo.util;
+package test.unitary.util;
 
 import static org.junit.Assert.fail;
 
@@ -13,6 +13,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+
+import com.ideaiseletronics.catalogo.util.SqlScriptReader;
 
 @RunWith(JUnit4.class)
 public class SqlScriptReaderTest {
