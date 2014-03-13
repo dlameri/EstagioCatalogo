@@ -1,4 +1,4 @@
-package com.ideaiseletronics.stock.domain;
+package com.ideaiseletronics.catalogo.spring.domain;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

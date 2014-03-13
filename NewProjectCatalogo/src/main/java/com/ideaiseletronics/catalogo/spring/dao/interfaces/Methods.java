@@ -1,8 +1,8 @@
-package com.ideaiseletronics.catalogo.api.service.interfaces;
+package com.ideaiseletronics.catalogo.spring.dao.interfaces;
 
 import javax.ws.rs.core.GenericType;
 
-public interface ClientMethods {
+public interface Methods {
 	
 	public <T> Object get(String url, GenericType<T> type);
 	

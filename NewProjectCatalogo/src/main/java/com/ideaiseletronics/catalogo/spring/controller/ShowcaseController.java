@@ -13,35 +13,35 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.ideaiseletronics.catalogo.api.service.interfaces.GenericConsumerService;
-import com.ideaiseletronics.stock.domain.Category;
-import com.ideaiseletronics.stock.domain.Item;
+import com.ideaiseletronics.catalogo.spring.dao.interfaces.GenericDao;
+import com.ideaiseletronics.catalogo.spring.domain.Category;
+import com.ideaiseletronics.catalogo.spring.domain.Product;
 
 @Controller("ShowcaseController")
 @RequestMapping("/")
 @Scope(BeanDefinition.SCOPE_PROTOTYPE)
 public class ShowcaseController {
 	
-	@Autowired @Qualifier("categoryRESTConsumerService")
-	private GenericConsumerService<Category> categoryRESTConsumer;
-	@Autowired @Qualifier("itemRESTConsumerService")
-	private GenericConsumerService<Item> itemRESTConsumer; 
+	@Autowired @Qualifier("categoryDao")
+	private GenericDao<Category> categoryDao;
+	@Autowired @Qualifier("productDao")
+	private GenericDao<Product> productDao; 
 	private Map< String, List<?> > modelsToDisplayInShowcase = new HashMap< String, List<?> >();
 	
 	@RequestMapping( value = "/", method = RequestMethod.GET )
     public ModelAndView initializeShowcase(){
 		getStoreCategories();
-		getStoreItens();
+		getStoreProducts();
 		
 		return new ModelAndView("catalogo/showcase", modelsToDisplayInShowcase);
     }
 	
 	private void getStoreCategories() {
-		modelsToDisplayInShowcase.put("categories", categoryRESTConsumer.list() );
+		modelsToDisplayInShowcase.put("categories", categoryDao.list() );
 	}
 	
-	private void getStoreItens() {
-		modelsToDisplayInShowcase.put("itens", itemRESTConsumer.list());
+	private void getStoreProducts() {
+		modelsToDisplayInShowcase.put("products", productDao.list());
 	}
 
 }

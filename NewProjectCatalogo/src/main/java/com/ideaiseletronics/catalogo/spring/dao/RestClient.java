@@ -1,4 +1,4 @@
-package com.ideaiseletronics.catalogo.api.service;
+package com.ideaiseletronics.catalogo.spring.dao;
 
 import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.Response;
@@ -7,15 +7,15 @@ import org.jboss.resteasy.client.jaxrs.ResteasyClient;
 import org.jboss.resteasy.client.jaxrs.ResteasyClientBuilder;
 import org.springframework.stereotype.Component;
 
-import com.ideaiseletronics.catalogo.api.service.interfaces.ClientMethods;
+import com.ideaiseletronics.catalogo.spring.dao.interfaces.Methods;
 
 @Component
-public class RESTClient implements ClientMethods{
+public class RestClient implements Methods{
 
 	private final static int STATUS_OK = 200;
 	private ResteasyClient client = new ResteasyClientBuilder().build();
 
-	public RESTClient() {
+	public RestClient() {
 	}
 
 	@Override
@@ -23,7 +23,6 @@ public class RESTClient implements ClientMethods{
 		Response response = client.target(url).request().get();
 		if (response.getStatus() == STATUS_OK) {
 			return response.readEntity(type);
-			//return JsonUtil.readJsonToObject(json, type);
 		}
 
 		return null;

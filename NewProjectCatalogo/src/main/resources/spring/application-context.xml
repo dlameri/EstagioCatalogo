@@ -13,14 +13,14 @@
 
     <context:property-placeholder location="classpath:integration/stock-integration.properties"/>
 
-    <bean id="stockURLCategory" class="java.lang.String">  
+    <bean id="stockUrlCategory" class="java.lang.String">  
     	<constructor-arg value="${stock.category}"/>
 	</bean>
-	<bean id="stockURLItem" class="java.lang.String">  
+	<bean id="stockUrlItem" class="java.lang.String">  
     	<constructor-arg value="${stock.item}"/>  
 	</bean>
 	
-	<bean id="urlBase" class="java.lang.String">  
+	<bean id="applicationUrlBase" class="java.lang.String">  
     	<constructor-arg value="http://localhost:8081/NewProjectCatalogo/"/>  
 	</bean>
 

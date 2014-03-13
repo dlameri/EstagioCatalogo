@@ -14,7 +14,7 @@ public abstract class AbstractFuncionalTest extends AbstractTest{
 	@Qualifier("webDriverChrome")
 	protected WebDriver webDriver;
 	@Autowired
-	protected String urlBase;
+	protected String applicationUrlBase;
 
 	@Override
 	protected String getFile() {

@@ -10,8 +10,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
+import com.ideaiseletronics.catalogo.spring.domain.Category;
 import com.ideaiseletronics.catalogo.util.JsonUtil;
-import com.ideaiseletronics.stock.domain.Category;
 
 @RunWith(JUnit4.class)
 public class JsonUtilTest {

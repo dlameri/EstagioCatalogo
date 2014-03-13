@@ -15,8 +15,8 @@
 		</ul>
 		
 		<ul>
-			<c:forEach items="${itens}"  var="item">
-				<li><a href="">${item.product.name}</a></li>	
+			<c:forEach items="${products.items}"  var="item">
+				<li><a href="">${item.optionName}</a></li>	
 			</c:forEach>
 		</ul>
 		
