@@ -3,26 +3,26 @@ package test;
 import org.apache.commons.dbcp.BasicDataSource;
 import org.apache.ibatis.jdbc.SqlRunner;
 import org.junit.Before;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
 
-@ContextConfiguration("classpath:spring/dataTestsContext.xml")
-public abstract class AbstractTest {
+public abstract class AbstractTest{
 	
-	@Autowired
 	protected BasicDataSource dataSource;
 	
 	@Before
 	public void setUp() throws Exception {
+		setDataSource();
 		executeSqlPrepareDatabase();
 
 	}
 	
 	private void executeSqlPrepareDatabase() throws Exception {
 		SqlRunner runner = new SqlRunner(dataSource.getConnection());
-		runner.run(getFile());
+		if("".equals(getFile())){
+			runner.run(getFile());
+		}
 	}
 	
 	protected abstract String getFile();
+	protected abstract void setDataSource();
 
 }

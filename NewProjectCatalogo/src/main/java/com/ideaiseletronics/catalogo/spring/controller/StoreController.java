@@ -17,15 +17,15 @@ import com.ideaiseletronics.catalogo.spring.dao.interfaces.GenericDao;
 import com.ideaiseletronics.catalogo.spring.domain.Category;
 import com.ideaiseletronics.catalogo.spring.domain.Product;
 
-@Controller("ShowcaseController")
+@Controller("StoreController")
 @RequestMapping("/")
 @Scope(BeanDefinition.SCOPE_PROTOTYPE)
-public class ShowcaseController {
+public class StoreController {
 	
 	@Autowired @Qualifier("categoryDao")
 	private GenericDao<Category> categoryDao;
 	@Autowired @Qualifier("productDao")
-	private GenericDao<Product> productDao; 
+	private GenericDao<Product> productDao;
 	private Map< String, List<?> > modelsToDisplayInShowcase = new HashMap< String, List<?> >();
 	
 	@RequestMapping( value = "/", method = RequestMethod.GET )
@@ -33,7 +33,7 @@ public class ShowcaseController {
 		getStoreCategories();
 		getStoreProducts();
 		
-		return new ModelAndView("catalogo/showcase", modelsToDisplayInShowcase);
+		return new ModelAndView("catalogo/store", modelsToDisplayInShowcase);
     }
 	
 	private void getStoreCategories() {

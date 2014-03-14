@@ -5,7 +5,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
-public class ShowcaseTest extends AbstractFuncionalTest{
+public class StoreTest extends AbstractFuncionalTest{
 	
 	@Test
 	public void list_categories() {

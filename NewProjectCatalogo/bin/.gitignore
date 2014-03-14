@@ -1,7 +1,8 @@
 /com
-/test
 /dao
-/sql
+/funcional
+/integration
+/log4j.properties
+/restIntegration
 /spring
-/domain
-/catalogo
+/test

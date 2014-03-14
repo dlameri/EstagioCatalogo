@@ -19,17 +19,12 @@ public class ItemDao extends AbstractDao implements GenericDao<Item>{
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Item> list() {
-		return (List<Item>) restClient.get(urlAccess, new GenericType< List<Item> >() {});
+		return (List<Item>) restClient.get(stockUrlItem, new GenericType< List<Item> >() {});
 	}
 
 	@Override
 	public Item findById(Long id) {
-		return (Item) restClient.get(urlAccess + id, new GenericType<Item>() {});
-	}
-
-	@Override
-	protected void setUrlAccess() {
-		super.urlAccess = stockUrlItem;
+		return (Item) restClient.get(stockUrlItem + id, new GenericType<Item>() {});
 	}
 
 }

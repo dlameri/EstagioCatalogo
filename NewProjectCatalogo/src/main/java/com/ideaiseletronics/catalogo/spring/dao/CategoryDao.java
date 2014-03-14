@@ -19,17 +19,12 @@ public class CategoryDao extends AbstractDao implements GenericDao<Category> {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Category> list() {
-		return (List<Category>) restClient.get(urlAccess, new GenericType< List<Category> >() {});
+		return (List<Category>) restClient.get(stockUrlCategory, new GenericType< List<Category> >() {});
 	}
 
 	@Override
 	public Category findById(Long id) {
-		return (Category) restClient.get(urlAccess + id, new GenericType<Category>() {});
+		return (Category) restClient.get(stockUrlCategory + id, new GenericType<Category>() {});
 	}
-
-	@Override
-	protected void setUrlAccess() {
-		super.urlAccess = stockUrlCategory;
-	}	
 
 }

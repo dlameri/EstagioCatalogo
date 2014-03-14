@@ -11,13 +11,16 @@
 
 	<context:component-scan base-package="com.ideaiseletronics.catalogo"/>
 
-    <context:property-placeholder location="classpath:integration/stock-integration.properties"/>
+    <context:property-placeholder location="classpath:restIntegration/stock-integration.properties"/>
 
     <bean id="stockUrlCategory" class="java.lang.String">  
     	<constructor-arg value="${stock.category}"/>
 	</bean>
 	<bean id="stockUrlItem" class="java.lang.String">  
     	<constructor-arg value="${stock.item}"/>  
+	</bean>
+	<bean id="stockUrlProduct" class="java.lang.String">  
+    	<constructor-arg value="${stock.product}"/>  
 	</bean>
 	
 	<bean id="applicationUrlBase" class="java.lang.String">  

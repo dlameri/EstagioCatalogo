@@ -3,12 +3,12 @@
 <hibernate-configuration>
 	<session-factory>
 		<!-- Dominios que serao mapeados -->
-		<mapping class="com.ideaiseletronics.stock.domain.Item" />
-		<mapping class="com.ideaiseletronics.stock.domain.Product" />
-		<mapping class="com.ideaiseletronics.stock.domain.Category" />
-		<mapping class="com.ideaiseletronics.stock.domain.Subcategory" />
-		<mapping class="com.ideaiseletronics.stock.domain.Image" />
-		<mapping class="com.ideaiseletronics.stock.domain.Dimensions" />
+		<mapping class="com.ideaiseletronics.catalogo.spring.domain.Item" />
+		<mapping class="com.ideaiseletronics.catalogo.spring.domain.Product" />
+		<mapping class="com.ideaiseletronics.catalogo.spring.domain.Category" />
+		<mapping class="com.ideaiseletronics.catalogo.spring.domain.Subcategory" />
+		<mapping class="com.ideaiseletronics.catalogo.spring.domain.Image" />
+		<mapping class="com.ideaiseletronics.catalogo.spring.domain.Dimensions" />
 	</session-factory>
     
 </hibernate-configuration>

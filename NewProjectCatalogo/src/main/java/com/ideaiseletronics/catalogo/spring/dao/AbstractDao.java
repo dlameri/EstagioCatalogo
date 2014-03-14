@@ -9,11 +9,7 @@ import com.ideaiseletronics.catalogo.spring.dao.interfaces.Methods;
 public abstract class AbstractDao {
 	
 	@Autowired
-	protected String urlAccess;
-	@Autowired
 	protected Methods restClient;
-	
-	
-	protected abstract void setUrlAccess();
+
 
 }
