@@ -65,6 +65,12 @@ public class Item {
 
 	@Transient
 	private String formatedPriceFor;
+	
+	@Transient
+	private Long productId;
+	
+	@Transient
+	private String productName;
 
 	
 	@ManyToOne
@@ -154,6 +160,22 @@ public class Item {
 
 	public void setActive(Boolean active) {
 		this.active = active;
+	}
+	
+	public void setProductId(Long productId) {
+		this.productId = productId;
+	}
+	
+	public Long getProductId() {
+		return productId;
+	}
+	
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+	
+	public String getProductName() {
+		return productName;
 	}
 	
 	public int getDiscount() {
