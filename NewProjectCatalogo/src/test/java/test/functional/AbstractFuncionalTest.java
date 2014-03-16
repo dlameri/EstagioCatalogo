@@ -21,7 +21,7 @@ public abstract class AbstractFuncionalTest extends AbstractTest{
 
 	@Override
 	protected String getFile() {
-		return "sql/prepareDatabaseSystemTests.sql";
+		return "/funcional/sql/prepareDatabaseSystemTests.sql";
 	}
 	
 	@Override

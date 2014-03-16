@@ -1,4 +1,4 @@
-package com.ideaiseletronics.catalogo.spring.domain;
+package com.ideaiselectronics.catalogo.spring.domain;
 
 
 import java.util.List;

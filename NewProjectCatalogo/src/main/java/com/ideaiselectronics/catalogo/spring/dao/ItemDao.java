@@ -1,4 +1,4 @@
-package com.ideaiseletronics.catalogo.spring.dao;
+package com.ideaiselectronics.catalogo.spring.dao;
 
 import java.util.List;
 
@@ -7,8 +7,8 @@ import javax.ws.rs.core.GenericType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ideaiseletronics.catalogo.spring.dao.interfaces.GenericDao;
-import com.ideaiseletronics.catalogo.spring.domain.Item;
+import com.ideaiselectronics.catalogo.spring.dao.interfaces.GenericDao;
+import com.ideaiselectronics.catalogo.spring.domain.Item;
 
 @Service
 public class ItemDao extends AbstractDao implements GenericDao<Item>{

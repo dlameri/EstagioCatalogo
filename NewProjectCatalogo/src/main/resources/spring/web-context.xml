@@ -10,10 +10,10 @@
     <context:annotation-config/>
     <mvc:annotation-driven />
 
-	<context:component-scan base-package="com.ideaiseletronics.catalogo"/>
+	<context:component-scan base-package="com.ideaiselectronics.catalogo"/>
 
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/WEB-INF/pages/jsp/" />
+        <property name="prefix" value="/WEB-INF/jsp/" />
         <property name="suffix" value=".jsp" />
     </bean>
     

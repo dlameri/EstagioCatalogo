@@ -1,4 +1,4 @@
-package com.ideaiseletronics.catalogo.spring.dao.interfaces;
+package com.ideaiselectronics.catalogo.spring.dao.interfaces;
 
 import javax.ws.rs.core.GenericType;
 

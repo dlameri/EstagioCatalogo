@@ -1,4 +1,4 @@
-package com.ideaiseletronics.catalogo.spring.controller;
+package com.ideaiselectronics.catalogo.spring.controller;
 
 import java.util.HashMap;
 import java.util.List;
@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.ideaiseletronics.catalogo.spring.dao.interfaces.GenericDao;
-import com.ideaiseletronics.catalogo.spring.domain.Category;
-import com.ideaiseletronics.catalogo.spring.domain.Product;
+import com.ideaiselectronics.catalogo.spring.dao.interfaces.GenericDao;
+import com.ideaiselectronics.catalogo.spring.domain.Category;
+import com.ideaiselectronics.catalogo.spring.domain.Product;
 
 @Controller("StoreController")
 @RequestMapping("/")

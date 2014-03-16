@@ -1,4 +1,4 @@
-package com.ideaiseletronics.catalogo.util;
+package com.ideaiselectronics.catalogo.util;
 
 import java.io.IOException;
 

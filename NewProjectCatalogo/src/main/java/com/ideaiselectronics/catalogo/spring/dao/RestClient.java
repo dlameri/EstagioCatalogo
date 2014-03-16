@@ -1,4 +1,4 @@
-package com.ideaiseletronics.catalogo.spring.dao;
+package com.ideaiselectronics.catalogo.spring.dao;
 
 import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.Response;
@@ -7,7 +7,7 @@ import org.jboss.resteasy.client.jaxrs.ResteasyClient;
 import org.jboss.resteasy.client.jaxrs.ResteasyClientBuilder;
 import org.springframework.stereotype.Component;
 
-import com.ideaiseletronics.catalogo.spring.dao.interfaces.Methods;
+import com.ideaiselectronics.catalogo.spring.dao.interfaces.Methods;
 
 @Component
 public class RestClient implements Methods{
