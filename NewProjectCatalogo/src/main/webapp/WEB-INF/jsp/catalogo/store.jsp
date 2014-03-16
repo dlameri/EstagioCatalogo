@@ -9,10 +9,11 @@
 	
 		<ul>
 			<c:forEach items="${categories}"  var="category">
-				<li><a href="">${category.name}</a></li>
+				<li><a href="./category/${category.id}">${category.name}</a></li>
 				<ul>
 					<c:forEach items="${category.subcategories}"  var="subcategory">
-						<li><a href="">${subcategory.name}</a></li>
+						<!-- implementar essa url de subcategorias -->
+						<li><a href="./subcategory/${subcategory.id}">${subcategory.name}</a></li>
 					</c:forEach>
 				</ul>
 			</c:forEach>
@@ -21,9 +22,9 @@
 		<ul>
 			<c:forEach items="${products}"  var="product">
 				<c:forEach items="${product.items}" var="item">
-					<li><a href="">${item.optionName}</a></li>
-					<li>${item.priceFrom}</li>
-					<li>${item.priceFor}</li>
+					<li><a href="./item/${item.id}">${item.optionName}</a></li>
+					<li>${item.formatedPriceFrom}</li>
+					<li>${item.formatedPriceFor}</li>
 				</c:forEach>
 			</c:forEach>
 		</ul>

@@ -6,8 +6,3 @@ Em seguida, digite:
 > gradle eclipse
 
 Serão gerados os asquivos do eclipse e as dependências do projeto serão baixadas e incluidas no build path do mesmo.
-Finalmente, digite:
-> gradle copyToLib
-
-As dependências do projeto serão adicionadas no diretório WebContent/WEB-INF/lib do seu projeto.
-OBS: É necessária a inclusão das dependências no diretório citado para que a aplicação web funcione.
