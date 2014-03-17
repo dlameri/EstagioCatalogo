@@ -39,6 +39,16 @@ public class StoreController {
 		view.addObject("products", productDao.findByCategoryId(idCategory));
 		
 		return view;
-	}
+	}	
+	@RequestMapping( value="category/subcategory/{idSubcategory}", method = RequestMethod.GET)
+		public ModelAndView productsBySubcategory(@PathVariable("idSubcategory") Long idSubcategory){
+			ModelAndView view = new ModelAndView("catalogo/itemsByCategory/itemsBySubcategory");
+			view.addObject("category", categoryDao.findById(idSubcategory));
+			view.addObject("products", productDao.findByCategoryId(idSubcategory));
+			
+			return view;	
+		
+		}
+	
 
 }
