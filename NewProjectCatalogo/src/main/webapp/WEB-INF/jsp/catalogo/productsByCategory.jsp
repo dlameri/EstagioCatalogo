@@ -17,11 +17,9 @@
 
 	<ul>
 		<c:forEach items="${products}"  var="product">
-			<c:forEach items="${product.items}"  var="item">
-				<li><a href="../item/${item.id}">${item.optionName}</a></li>
-				<li>${item.formatedPriceFrom}</li>
-				<li>${item.formatedPriceFor}</li>
-			</c:forEach>
+			<li><a href="../product/${product.id}">${product.name}</a></li>
+			<!-- <li>${item.formatedPriceFrom}</li>
+			<li>${item.formatedPriceFor}</li> -->
 		</c:forEach>
 	</ul>
 

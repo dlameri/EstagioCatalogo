@@ -3,14 +3,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>${item.optionName}</title>
+	<title>${product.name}</title>
 </head>
 <body>
 
-	<h3>${item.sku}</h3>
-	<h3>${item.optionName}</h3>
-	<h3>${item.formatedPriceFrom}</h3>
-	<h3>${item.formatedPriceFor}</h3>
 
 </body>
 </html>

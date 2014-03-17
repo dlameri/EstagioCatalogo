@@ -32,10 +32,9 @@ public class StoreController {
 		return view;
     }
 	
-	/* Será que seria melhor colocar esse request num controller de categoria ou produto? */
 	@RequestMapping( value="category/{idCategory}", method = RequestMethod.GET )
 	public ModelAndView productsByCategory( @PathVariable("idCategory") Long idCategory) {
-		ModelAndView view = new ModelAndView("catalogo/itemsByCategory");
+		ModelAndView view = new ModelAndView("catalogo/productsByCategory");
 		view.addObject("category", categoryDao.findById(idCategory));
 		view.addObject("products", productDao.findByCategoryId(idCategory));
 		

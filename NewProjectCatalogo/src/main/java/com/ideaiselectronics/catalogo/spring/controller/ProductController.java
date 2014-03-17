@@ -10,19 +10,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.ideaiselectronics.catalogo.spring.dao.interfaces.ItemDaoBehavior;
+import com.ideaiselectronics.catalogo.spring.dao.interfaces.ProductDaoBehavior;
 
-@Controller("itemController")
-@RequestMapping("/item")
+@Controller("productController")
+@RequestMapping("/product")
 @Scope(BeanDefinition.SCOPE_PROTOTYPE)
-public class ItemController {
+public class ProductController {
 	
-	@Autowired @Qualifier("itemDao")
-	private ItemDaoBehavior itemDao;
+	@Autowired @Qualifier("productDao")
+	private ProductDaoBehavior productDao;
 	
-	@RequestMapping( value="/{idItem}", method = RequestMethod.GET )
-	public ModelAndView showItemDetails( @PathVariable("idItem") Long idItem) {
-		return new ModelAndView("catalogo/itemDetails", "item", itemDao.findById(idItem));
+	@RequestMapping( value="/{idProduct}", method = RequestMethod.GET )
+	public ModelAndView showProductDetails( @PathVariable("idProduct") Long idProduct) {
+		return new ModelAndView("catalogo/productDetails", "product", productDao.findById(idProduct));
 	}
 
 }
