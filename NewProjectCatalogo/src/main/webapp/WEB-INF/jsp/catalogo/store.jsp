@@ -13,7 +13,7 @@
 				<ul>
 					<c:forEach items="${category.subcategories}"  var="subcategory">
 						<!-- implementar essa url de subcategorias -->
-						<li><a href="./subcategory/${subcategory.id}">${subcategory.name}</a></li>
+						<li><a href="./category/subcategory/${subcategory.id}">${subcategory.name}</a></li>
 					</c:forEach>
 				</ul>
 			</c:forEach>

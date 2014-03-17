@@ -3,21 +3,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>${category.name}</title>
+	<title>${subcategory.name}</title>
 </head>
 <body>
 
 	
-	<h2>${category.name}</h2>
-	<ul>
-		<c:forEach items="${category.subcategories}"  var="subcategory">
-			<li><a href="../category/subcategory/${subcategory.id}">${subcategory.name}</a></li>
-		</c:forEach>
-	</ul>
-
+	<h2>${subcategory.name}</h2>
+	
 	<ul>
 		<c:forEach items="${products}"  var="product">
-			<li><a href="../product/${product.id}">${product.name}</a></li>
+			<li><a href="../../product/${product.id}">${product.name}</a></li>
 			<!-- <li>${item.formatedPriceFrom}</li>
 			<li>${item.formatedPriceFor}</li> -->
 		</c:forEach>
