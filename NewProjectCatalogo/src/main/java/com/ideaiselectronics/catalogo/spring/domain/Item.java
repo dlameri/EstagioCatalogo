@@ -54,6 +54,9 @@ public class Item {
 	@Column(name="BO_ATIVO", nullable=false)
 	private Boolean active;
 	
+	@Column(name="NM_RANK", nullable=false)
+	private Integer rank;
+	
 	@Transient
 	private int discount;
 	
@@ -71,7 +74,6 @@ public class Item {
 	
 	@Transient
 	private String productName;
-
 	
 	@ManyToOne
 	@JoinColumn(name="CD_PRODUCT", referencedColumnName="CD_PRODUCT", nullable=false)
@@ -176,6 +178,14 @@ public class Item {
 	
 	public String getProductName() {
 		return productName;
+	}
+	
+	public void setRank(Integer rank) {
+		this.rank = rank;
+	}
+	
+	public Integer getRank() {
+		return rank;
 	}
 	
 	public int getDiscount() {

@@ -74,6 +74,9 @@ public class Product {
 	@Cascade(CascadeType.ALL)
 	private Dimensions dimensions;
 	
+	@Column(name = "NR_RANK")
+	private Integer rank;
+	
 	public List<Item> getItems() {
 	    return items;
 	}
@@ -177,4 +180,13 @@ public class Product {
 	public void setActive(Boolean active) {
 		this.active = active;
 	}
+	
+	public Integer getRank() {
+		return rank;
+	}
+	
+	public void setRank(Integer rank) {
+		this.rank = rank;
+	}
+	
 }
