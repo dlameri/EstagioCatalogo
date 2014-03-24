@@ -33,4 +33,10 @@ public class ProductDao extends AbstractDao implements ProductDaoBehavior{
 		return (List<Product>) restClient.get(stockUrlProduct + "bycategoryid/" + idCategory, new GenericType< List<Product> >(){});
 	}
 
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Product> findBySubcategoryId(Long idSubcategory) {
+		return (List<Product>) restClient.get(stockUrlProduct + "bysubcategoryid/"+ idSubcategory, new GenericType<List <Product> >(){});
+	}
+
 }

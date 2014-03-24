@@ -34,11 +34,11 @@
 		</tr>
 		<tr>
 			<td>Altura</td>
-			<td>${dimensions.width}</td>
+			<td>${dimensions.height}</td>
 		</tr>
 		<tr>
 			<td>Largura</td>
-			<td>${dimensions.height}</td>
+			<td>${dimensions.width}</td>
 		</tr>
 		<tr>
 			<td>Comprimento</td>

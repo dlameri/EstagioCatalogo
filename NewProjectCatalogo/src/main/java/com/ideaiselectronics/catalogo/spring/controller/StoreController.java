@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.ideaiselectronics.catalogo.spring.dao.interfaces.CategoryDaoBehavior;
 import com.ideaiselectronics.catalogo.spring.dao.interfaces.ProductDaoBehavior;
+import com.ideaiselectronics.catalogo.spring.dao.interfaces.SubcategoryDaoBehavior;
 
 @Controller("storeController")
 @RequestMapping("/")
@@ -22,6 +23,8 @@ public class StoreController {
 	private CategoryDaoBehavior categoryDao;
 	@Autowired @Qualifier("productDao")
 	private ProductDaoBehavior productDao;
+	@Autowired @Qualifier("subcategoryDao")
+	private SubcategoryDaoBehavior subcategoryDao;
 	
 	@RequestMapping( value = "/", method = RequestMethod.GET )
     public ModelAndView initializeShowcase(){
@@ -39,16 +42,17 @@ public class StoreController {
 		view.addObject("products", productDao.findByCategoryId(idCategory));
 		
 		return view;
-	}	
+	}
+	
 	@RequestMapping( value="category/subcategory/{idSubcategory}", method = RequestMethod.GET)
-		public ModelAndView productsBySubcategory(@PathVariable("idSubcategory") Long idSubcategory){
-			ModelAndView view = new ModelAndView("catalogo/itemsByCategory/itemsBySubcategory");
-			view.addObject("category", categoryDao.findById(idSubcategory));
-			view.addObject("products", productDao.findByCategoryId(idSubcategory));
-			
-			return view;	
+	public ModelAndView productsBySubcategory(@PathVariable("idSubcategory") Long idSubcategory){
+		ModelAndView view = new ModelAndView("catalogo/productsBySubcategory");
+		view.addObject("subcategory", subcategoryDao.findById(idSubcategory));
+		view.addObject("products", productDao.findBySubcategoryId(idSubcategory));
 		
-		}
+		return view;	
+		
+	}
 	
 
 }

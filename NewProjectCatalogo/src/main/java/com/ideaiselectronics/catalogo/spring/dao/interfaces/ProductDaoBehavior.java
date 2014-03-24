@@ -11,5 +11,7 @@ public interface ProductDaoBehavior {
 	public List<Product> list();
 	
 	public List<Product> findByCategoryId(Long idCategory);
+	
+	public List<Product> findBySubcategoryId(Long idSubcategory);
 
 }
