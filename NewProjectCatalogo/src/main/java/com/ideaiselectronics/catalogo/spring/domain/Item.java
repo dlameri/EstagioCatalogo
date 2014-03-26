@@ -193,6 +193,14 @@ public class Item {
 		return discount;
 	}
 	
+	public void setFormatedPriceFrom(String formatedPriceFrom) {
+		this.formatedPriceFrom = formatedPriceFrom;
+	}
+	
+	public void setFormatedPriceFor(String formatedPriceFor) {
+		this.formatedPriceFor = formatedPriceFor;
+	}
+	
 	public LinkedHashMap<Integer, String> getInstallments() {
 		return calculateInstallments(priceFor);
 	}

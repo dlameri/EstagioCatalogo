@@ -6,9 +6,9 @@ public interface Methods {
 	
 	public <T> Object get(String url, GenericType<T> type);
 	
-	public void post(String url);
+	public boolean post(String url, String json);
 	
-	public void put(String url);
+	public void put(String url, String json);
 	
 	public void options();
 

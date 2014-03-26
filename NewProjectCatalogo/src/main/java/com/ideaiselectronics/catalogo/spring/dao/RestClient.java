@@ -1,5 +1,6 @@
 package com.ideaiselectronics.catalogo.spring.dao;
 
+import javax.ws.rs.client.Entity;
 import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.Response;
 
@@ -29,13 +30,16 @@ public class RestClient implements Methods{
 	}
 
 	@Override
-	public void post(String url) {
-		// TODO Auto-generated method stub
-		
+	public boolean post(String url, String json) {
+		Response response = client.target(url).request().post(Entity.entity(json, "application/json"));
+		if (response.getStatus() == STATUS_OK) {
+			return true;
+		}
+		return false;
 	}
 
 	@Override
-	public void put(String url) {
+	public void put(String url, String json) {
 		// TODO Auto-generated method stub
 		
 	}
