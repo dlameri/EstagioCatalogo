@@ -8,10 +8,9 @@
 </head>
 <body>
 	<h1>${product.shortDescription}</h1>
-	<!-- Por enquanto da erro por não ter imagem no banco !
-			<img alt="imagem do produto" src="${product.image.productUrl}">
-	  -->
-
+	
+			<img alt="imagem do produto" src="${product.items[0].images[0].productUrl}">
+	 
 	<hr>
 	<p>${product.longDescription}</p>
 	

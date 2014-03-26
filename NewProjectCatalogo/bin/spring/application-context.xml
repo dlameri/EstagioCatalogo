@@ -22,6 +22,9 @@
 	<bean id="stockUrlProduct" class="java.lang.String">  
     	<constructor-arg value="${stock.product}"/>  
 	</bean>
+	<bean id="stockUrlSubcategory" class="java.lang.String">  
+    	<constructor-arg value="${stock.subcategory}"/>  
+	</bean>
 	
 	<bean id="applicationUrlBase" class="java.lang.String">  
     	<constructor-arg value="http://localhost:8081/NewProjectCatalogo/"/>  

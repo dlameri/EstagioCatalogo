@@ -196,16 +196,7 @@ public class Item {
 	public LinkedHashMap<Integer, String> getInstallments() {
 		return calculateInstallments(priceFor);
 	}
-	
-	/* Preços em String formatados com . e , exemplo-> 2.999,00 */
-	public String getFormatedPriceFrom() {
-	    return valueFormater(priceFrom);
-	}
-
-	public String getFormatedPriceFor() {
-		return valueFormater(priceFor);
-	}
-	
+		
 	public int calculateDescount(BigDecimal priceFrom, BigDecimal priceFor) {
 		double porcentagem = (((Double.valueOf(priceFor.doubleValue()) / Double.valueOf(priceFrom.doubleValue())) - 1) * 100) * -1;
 		porcentagem = Double.valueOf(String.format(Locale.US, "%.0f", Math.floor(porcentagem)));
