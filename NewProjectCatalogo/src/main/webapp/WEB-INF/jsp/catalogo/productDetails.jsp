@@ -8,7 +8,9 @@
 </head>
 <body>
 	<h1>${product.shortDescription}</h1>
-	<img alt="imagem do produto" src="${image.productUrl}">
+	<!-- Por enquanto da erro por não ter imagem no banco !
+			<img alt="imagem do produto" src="${product.image.productUrl}">
+	  -->
 
 	<hr>
 	<p>${product.longDescription}</p>
@@ -34,15 +36,15 @@
 		</tr>
 		<tr>
 			<td>Altura</td>
-			<td>${dimensions.height}</td>
+			<td>${product.dimensions.height}</td>
 		</tr>
 		<tr>
 			<td>Largura</td>
-			<td>${dimensions.width}</td>
+			<td>${product.dimensions.width}</td>
 		</tr>
 		<tr>
 			<td>Comprimento</td>
-			<td>${dimensions.depth}</td>
+			<td>${product.dimensions.depth}</td>
 		</tr>
 		
 	</table>
