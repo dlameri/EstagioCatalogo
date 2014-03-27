@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ideaiselectronics.catalogo.spring.dao.interfaces.SubcategoryDaoBehavior;
-import com.ideaiselectronics.catalogo.spring.domain.Category;
 import com.ideaiselectronics.catalogo.spring.domain.Subcategory;
 
 
@@ -24,6 +23,7 @@ public class SubcategoryDao extends AbstractDao implements SubcategoryDaoBehavio
 	}
 	
 	
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Subcategory> list() {
 		return (List<Subcategory>) restClient.get(stockUrlSubcategory, new GenericType< List<Subcategory> >() {});
