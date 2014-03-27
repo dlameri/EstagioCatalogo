@@ -232,4 +232,12 @@ public class Item {
 	    return df.format(value);
 	}
 
+	public String getFormatedPriceFrom() {
+		return formatedPriceFrom;
+	}
+
+	public String getFormatedPriceFor() {
+		return formatedPriceFor;
+	}
+
 }

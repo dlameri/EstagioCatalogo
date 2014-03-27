@@ -12,10 +12,10 @@
 			<img alt="imagem do produto" src="${product.items[0].images[0].productUrl}">
 	 
 	<hr>
-	<p><strong>De: ${product.items[0].priceFrom}</strong></p>
-	<p><strong>Por: ${product.items[0].priceFor }</strong></p>
-	<p>Desconto de: ${item.discount }</p>
-	<p>Em parcelas de: ${product.items[0].installments }</p>
+	<p><strong>De: ${product.items[0].formatedPriceFrom}</strong></p>
+	<p><strong>Por: ${product.items[0].formatedPriceFor}</strong></p>
+	<p>Desconto de: ${product.items[0].discount} % </p>
+	<p>Em parcelas de: ${product.items[0].installments}</p>
 	
 	<br>
 	<br>
@@ -31,6 +31,7 @@
 			<td>Preço</td>
 			<td><strong>${product.items[0].priceFor}</strong></td>
 		</tr>
+		<tr>
 			<td>Garantia</td>
 			<td>${product.warranty}</td>
 		</tr>
