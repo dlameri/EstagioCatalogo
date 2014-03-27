@@ -232,7 +232,7 @@ public class Item {
 			parcela++;
 			value = Double.valueOf(priceFor.doubleValue()) / parcela;
 		} while(parcela <= 12 && value >= 10.00);
-		
+				
 		return parcelas;
 	}
 	
@@ -254,6 +254,14 @@ public class Item {
 	
 	public boolean isPriceForGreaterThan(BigDecimal price) {
 		return this.priceFor.compareTo(price) == 1;
+	}
+
+	public String getFormatedPriceFrom() {
+		return formatedPriceFrom;
+	}
+
+	public String getFormatedPriceFor() {
+		return formatedPriceFor;
 	}
 
 }
