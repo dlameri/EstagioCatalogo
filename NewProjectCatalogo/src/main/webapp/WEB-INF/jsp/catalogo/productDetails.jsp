@@ -15,7 +15,11 @@
 	<p><strong>De: ${product.items[0].formatedPriceFrom}</strong></p>
 	<p><strong>Por: ${product.items[0].formatedPriceFor}</strong></p>
 	<p>Desconto de: ${product.items[0].discount} % </p>
-	<p>Em parcelas de: ${product.items[0].installments}</p>
+	<p>Parcelas</p>
+		<c:forEach items="${product.items[0].installments}" var="entry">
+    		${entry.key}x de R$ ${entry.value}<br>
+		</c:forEach>
+	
 	
 	<br>
 	<br>
