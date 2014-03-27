@@ -221,7 +221,7 @@ public class Item {
 			parcela++;
 			value = Double.valueOf(priceFor.doubleValue()) / parcela;
 		} while(parcela <= 12 && value >= 10.00);
-		
+				
 		return parcelas;
 	}
 	
