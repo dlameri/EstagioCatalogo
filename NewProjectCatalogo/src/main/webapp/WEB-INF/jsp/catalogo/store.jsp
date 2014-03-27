@@ -12,7 +12,6 @@
 				<li><a href="./category/${category.id}">${category.name}</a></li>
 				<ul>
 					<c:forEach items="${category.subcategories}"  var="subcategory">
-						<!-- implementar essa url de subcategorias -->
 						<li><a href="./category/subcategory/${subcategory.id}">${subcategory.name}</a></li>
 					</c:forEach>
 				</ul>
@@ -21,9 +20,11 @@
 		
 		<ul>
 			<c:forEach items="${products}"  var="product">
+				<li></li>
+				<img src="${product.itemToDisplayOnShowcase.urlImageMain}">
 				<li><a href="./product/${product.id}">${product.name}</a></li>
-				<!-- <li>${item.formatedPriceFrom}</li>
-				<li>${item.formatedPriceFor}</li> -->
+				<li>${product.itemToDisplayOnShowcase.formatedPriceFrom}</li>
+				<li>${product.itemToDisplayOnShowcase.formatedPriceFor}</li>
 			</c:forEach>
 		</ul>
 		

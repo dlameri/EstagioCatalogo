@@ -55,7 +55,16 @@ public class Item {
 	private Boolean active;
 	
 	@Column(name="NM_RANK", nullable=false)
-	private Integer rank;
+	private Integer rank;	
+	
+	@ManyToOne
+	@JoinColumn(name="CD_PRODUCT", referencedColumnName="CD_PRODUCT", nullable=false)
+	@Cascade(CascadeType.SAVE_UPDATE)
+	private Product product;
+	
+	@OneToMany(mappedBy="item", fetch = FetchType.EAGER)
+	@Cascade({CascadeType.DELETE, CascadeType.SAVE_UPDATE})
+	private List<Image> images;
 	
 	@Transient
 	private int discount;
@@ -75,14 +84,8 @@ public class Item {
 	@Transient
 	private String productName;
 	
-	@ManyToOne
-	@JoinColumn(name="CD_PRODUCT", referencedColumnName="CD_PRODUCT", nullable=false)
-	@Cascade(CascadeType.SAVE_UPDATE)
-	private Product product;
-	
-	@OneToMany(mappedBy="item", fetch = FetchType.EAGER)
-	@Cascade({CascadeType.DELETE, CascadeType.SAVE_UPDATE})
-	private List<Image> images;
+	@Transient
+	private String urlImageMain;
 
 	public List<Image> getImages() {
 		return images;
@@ -197,8 +200,16 @@ public class Item {
 		this.formatedPriceFrom = formatedPriceFrom;
 	}
 	
+	public String getFormatedPriceFrom() {
+		return formatedPriceFrom;
+	}
+	
 	public void setFormatedPriceFor(String formatedPriceFor) {
 		this.formatedPriceFor = formatedPriceFor;
+	}
+	
+	public String getFormatedPriceFor() {
+		return formatedPriceFor;
 	}
 	
 	public LinkedHashMap<Integer, String> getInstallments() {
@@ -230,6 +241,19 @@ public class Item {
 	    Locale Local = new Locale("pt", "BR");
 	    DecimalFormat df = new DecimalFormat("#,##0.00", new DecimalFormatSymbols(Local));
 	    return df.format(value);
+	}
+	
+	public String getUrlImageMain() {
+		for (Image image : images) {
+			if(image.getMain()){
+				return image.getShowcaseUrl();
+			}
+		}
+		return ""; //retornar uma url default caso o item não possua uma imagem principal;
+	}
+	
+	public boolean isPriceForGreaterThan(BigDecimal price) {
+		return this.priceFor.compareTo(price) == 1;
 	}
 
 }

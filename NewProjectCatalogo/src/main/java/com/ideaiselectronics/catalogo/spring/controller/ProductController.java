@@ -20,9 +20,9 @@ public class ProductController {
 	@Autowired @Qualifier("productDao")
 	private ProductDaoBehavior productDao;
 	
-	@RequestMapping( value="/{idProduct}", method = RequestMethod.GET )
-	public ModelAndView showProductDetails( @PathVariable("idProduct") Long idProduct) {
-		return new ModelAndView("catalogo/productDetails", "product", productDao.findById(idProduct));
+	@RequestMapping( value="/{productId}", method = RequestMethod.GET )
+	public ModelAndView showProductDetails( @PathVariable("productId") Long productId ) {
+		return new ModelAndView("catalogo/productDetails", "product", productDao.findById(productId));
 	}
 
 }
