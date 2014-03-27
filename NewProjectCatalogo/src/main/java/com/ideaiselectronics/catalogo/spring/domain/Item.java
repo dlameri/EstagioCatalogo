@@ -256,12 +256,4 @@ public class Item {
 		return this.priceFor.compareTo(price) == 1;
 	}
 
-	public String getFormatedPriceFrom() {
-		return formatedPriceFrom;
-	}
-
-	public String getFormatedPriceFor() {
-		return formatedPriceFor;
-	}
-
 }
