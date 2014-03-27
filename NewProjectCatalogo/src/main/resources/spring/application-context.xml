@@ -11,7 +11,7 @@
 
 	<context:component-scan base-package="com.ideaiselectronics.catalogo"/>
 
-    <context:property-placeholder location="classpath:restIntegration/stock-integration.properties"/>
+    <context:property-placeholder location="classpath:restIntegration/stock-integration.properties, classpath:restIntegration/checkout-integration.properties"/>
 
     <bean id="stockUrlCategory" class="java.lang.String">  
     	<constructor-arg value="${stock.category}"/>
@@ -24,6 +24,9 @@
 	</bean>
 	<bean id="stockUrlSubcategory" class="java.lang.String">  
     	<constructor-arg value="${stock.subcategory}"/>  
+	</bean>
+	<bean id="checkoutUrlCart" class="java.lang.String">  
+    	<constructor-arg value="${checkout.cart}"/>  
 	</bean>
 	
 	<bean id="applicationUrlBase" class="java.lang.String">  

@@ -193,6 +193,14 @@ public class Item {
 		return discount;
 	}
 	
+	public void setFormatedPriceFrom(String formatedPriceFrom) {
+		this.formatedPriceFrom = formatedPriceFrom;
+	}
+	
+	public void setFormatedPriceFor(String formatedPriceFor) {
+		this.formatedPriceFor = formatedPriceFor;
+	}
+	
 	public LinkedHashMap<Integer, String> getInstallments() {
 		return calculateInstallments(priceFor);
 	}
@@ -213,7 +221,7 @@ public class Item {
 			parcela++;
 			value = Double.valueOf(priceFor.doubleValue()) / parcela;
 		} while(parcela <= 12 && value >= 10.00);
-		
+				
 		return parcelas;
 	}
 	
