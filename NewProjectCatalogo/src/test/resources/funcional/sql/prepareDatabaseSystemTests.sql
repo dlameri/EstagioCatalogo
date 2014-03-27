@@ -57,3 +57,7 @@ INSERT INTO ITEM VALUES(14, 1, 'Nome opcional', 'Valor opcional', 199.90, 299.90
 INSERT INTO ITEM VALUES(15, 1, 'Nome opcional', 'Valor opcional', 199.90, 299.90, 14, 12345, 15, 8);
 INSERT INTO ITEM VALUES(16, 1, 'Nome opcional', 'Valor opcional', 199.90, 299.90, 36, 12345, 15, 9);
 INSERT INTO ITEM VALUES(17, 0, 'Nome opcional', 'Valor opcional', 199.90, 299.90, 37, 12345, 15, 9);
+
+INSERT INTO IMAGENS VALUES(1, "", "", 1, "", "", "http://isuba.s8.com.br/produtos/01/00/item/117218/9/117218927G1.jpg", "", 15);
+
+UPDATE ITEM SET NR_PRECO_POR=149.90 WHERE CD_ITEM=15;

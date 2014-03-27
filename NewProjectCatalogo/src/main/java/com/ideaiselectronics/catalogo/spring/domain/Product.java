@@ -15,6 +15,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
@@ -76,6 +77,9 @@ public class Product {
 	
 	@Column(name = "NR_RANK")
 	private Integer rank;
+	
+	@Transient
+	private Item itemToDisplayOnShowcase;
 	
 	public List<Item> getItems() {
 	    return items;
@@ -187,6 +191,23 @@ public class Product {
 	
 	public void setRank(Integer rank) {
 		this.rank = rank;
+	}
+	
+	public Item getItemToDisplayOnShowcase() {
+		if(this.itemToDisplayOnShowcase == null){
+			this.itemToDisplayOnShowcase = getItemWithLowerPriceFor();
+		}
+		return this.itemToDisplayOnShowcase;
+	}
+	
+	public Item getItemWithLowerPriceFor() {
+		Item itemToCompare = items.get(0);
+		for (Item item : items) {
+			if( itemToCompare .isPriceForGreaterThan(item.getPriceFor()) ) {
+				itemToCompare = item;
+			}
+		}
+		return itemToCompare;
 	}
 	
 }
