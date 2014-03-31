@@ -30,7 +30,7 @@ public class StoreController {
     public ModelAndView initializeShowcase(){
 		ModelAndView view = new ModelAndView("catalogo/store");
 		view.addObject("categories", categoryDao.list());
-		view.addObject("products", productDao.list());
+		view.addObject("products", productDao.listOrderbyrank());
 		
 		return view;
     }
@@ -50,8 +50,7 @@ public class StoreController {
 		view.addObject("subcategory", subcategoryDao.findById(idSubcategory));
 		view.addObject("products", productDao.findBySubcategoryId(idSubcategory));
 		
-		return view;	
-		
+		return view;
 	}
 	
 

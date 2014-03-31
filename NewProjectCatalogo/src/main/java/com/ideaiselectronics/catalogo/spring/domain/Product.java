@@ -201,9 +201,9 @@ public class Product {
 	}
 	
 	public Item getItemWithLowerPriceFor() {
-		Item itemToCompare = items.get(0);
+		Item itemToCompare = items.get(0); //mudar pra set e tentar retornar o menor de uma maneira mais elegante
 		for (Item item : items) {
-			if( itemToCompare .isPriceForGreaterThan(item.getPriceFor()) ) {
+			if( itemToCompare.isPriceForGreaterThan(item.getPriceFor()) ) {
 				itemToCompare = item;
 			}
 		}
