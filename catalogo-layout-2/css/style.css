@@ -1,6 +1,6 @@
 html {
 	font: 1em SofiaRegular, Arial, Sans-serif;
-	padding-top: 58px;
+	padding-top: 100px;
 }
 
 body {
@@ -160,13 +160,11 @@ ul {
 
 /* -----------BODY----------- */
 
-.side-menu {
+.main-menu {
 	border: 1px solid blue;
-	position: fixed;
-	width: 15%;
-	height: 100%;
+	width: 100%;
+	height: 40px;
 	border-radius: 2px;
-	background-color: #FF4D07; 
 }
 
 .container {
