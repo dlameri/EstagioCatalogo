@@ -65,6 +65,11 @@
 		</tr>
 		
 	</table>
+	
+		<c:forEach items="${product.items}" var="items">
+    		${items.sku} <br>
+		</c:forEach>
+	
 
 </body>
 </html>
