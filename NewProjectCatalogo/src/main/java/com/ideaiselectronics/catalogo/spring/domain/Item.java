@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
@@ -88,6 +89,9 @@ public class Item {
 	private String urlImageMain;
 
 	public List<Image> getImages() {
+		if(images == null) {
+			images = new ArrayList<Image>();
+		}
 		return images;
 	}
 
@@ -235,8 +239,7 @@ public class Item {
 				
 		return parcelas;
 	}
-	
-		
+			
 	public String valueFormater(BigDecimal value) {
 	    Locale Local = new Locale("pt", "BR");
 	    DecimalFormat df = new DecimalFormat("#,##0.00", new DecimalFormatSymbols(Local));

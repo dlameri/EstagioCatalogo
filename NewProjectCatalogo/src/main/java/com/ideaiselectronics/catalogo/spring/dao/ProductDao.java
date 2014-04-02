@@ -26,6 +26,12 @@ public class ProductDao extends AbstractDao implements ProductDaoBehavior{
 	public List<Product> list() {
 		return (List<Product>) restClient.get(stockUrlProduct, new GenericType< List<Product> >(){});
 	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Product> listOrderbyrank() {
+		return (List<Product>) restClient.get(stockUrlProduct + "orderbyrank", new GenericType< List<Product> >(){});
+	}
 
 	@SuppressWarnings("unchecked")
 	@Override
