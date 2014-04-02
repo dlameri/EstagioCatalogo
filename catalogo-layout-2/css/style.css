@@ -72,6 +72,21 @@ ul {
 	display: inline-block;
 }
 
+.menu li{
+	position: relative;
+}
+
+.menu li:hover>ul{
+	position: absolute;
+	display: block;
+}
+
+.sub-menu{
+	
+	display: none;
+	background-color: black;
+}
+
 #search-area {
 	/*border: 1px solid black;*/
 	display: inline-block;
