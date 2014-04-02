@@ -77,7 +77,8 @@ ul {
 	display: inline-block;
 	position: absolute;
 	top: 0px;
-	left: 130px;
+	left: 20px;
+	width: 40%;
 }
 
 .search-box {
