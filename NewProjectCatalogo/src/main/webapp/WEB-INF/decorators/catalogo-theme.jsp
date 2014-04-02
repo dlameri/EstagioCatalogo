@@ -4,8 +4,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
 	<title><decorator:title default="Ideais Electronics"/></title>
+
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+
+	<link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>">
 </head>
 <body>
 	<c:import url="/WEB-INF/jsp/header.jsp"/>
