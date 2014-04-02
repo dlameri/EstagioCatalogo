@@ -82,8 +82,15 @@ ul {
 }
 
 .sub-menu{
+	color: black;
 	display: none;
-	background-color: black;
+	background-color: white;
+}
+
+.submenu-item{
+		max-height: 100px;
+		min-width: 300px;
+
 }
 
 #search-area {
