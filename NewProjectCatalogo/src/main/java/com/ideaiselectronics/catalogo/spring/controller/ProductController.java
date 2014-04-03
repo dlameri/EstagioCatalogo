@@ -28,7 +28,7 @@ public class ProductController {
 		ModelAndView view = new ModelAndView("catalogo/productDetails");
 		view.addObject("categories", categoryDao.list());
 		view.addObject("product", productDao.findById(productId));
-		return view; 
+		return view;
 	}
 
 }

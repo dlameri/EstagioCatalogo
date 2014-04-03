@@ -7,6 +7,24 @@
 		<title>${product.name}</title>
 	</head>
 	<body>
+		<content tag="site-logo">
+			<h1 class="logo"><a href="../">Ideais Electronics</a></h1>
+		</content>
+		<content tag="header-nav">
+			<nav id="main-nav" class="main-menu">
+				<ul class="menu">
+					<c:forEach items="${categories}"  var="category">
+						<li class="menu-item"><a href="../category/${category.id}">${category.name}</a>
+							<ul class="sub-menu">
+								<c:forEach items="${category.subcategories}"  var="subcategory">
+									<li class="submenu-item"><a href="../category/subcategory/${subcategory.id}">${subcategory.name}</a></li>
+								</c:forEach>
+							</ul>
+						</li>
+					</c:forEach>
+				</ul>
+			</nav>
+		</content>
 		<div class="container">
 			<h1>${product.shortDescription}</h1>
 			

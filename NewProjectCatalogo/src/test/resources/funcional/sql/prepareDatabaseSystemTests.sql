@@ -38,7 +38,7 @@ INSERT INTO PRODUTO VALUES(6, 1, 'Nome da Marca', 'Descrição longa', 'Nome do 
 INSERT INTO PRODUTO VALUES(7, 1, 'Nome da Marca', 'Descrição longa', 'Nome do modelo', 'Nome do produto', 100, 'Descrição curta', 2, 5, 3, 1, 6);
 INSERT INTO PRODUTO VALUES(8, 1, 'Nome da Marca', 'Descrição longa', 'Nome do modelo', 'Nome do produto', 90, 'Descrição curta', 2, 5, 3, 1, 8);
 INSERT INTO PRODUTO VALUES(9, 0, 'Nome da Marca', 'Descrição longa', 'Nome do modelo', 'Nome do produto', 17, 'Descrição curta', 2, 5, 4, 1, 8);
-INSERT INTO PRODUTO VALUES(10, 0, 'Nome da Marca', 'Descrição longa', 'Nome do modelo', 'Nome do produto', 0, 'Descrição curta', 2, 5, 4, 1, 8);
+INSERT INTO PRODUTO VALUES(10, 0, 'Nome da Marca', 'Descrição longa', 'Nome do modelo', 'Nome do produto', 35, 'Descrição curta', 2, 5, 4, 1, 8);
 
 INSERT INTO ITEM VALUES(1, 1, 'Nome opcional', 'Valor opcional', 199.90, 299.90, 10, 12345, 15, 1);
 INSERT INTO ITEM VALUES(2, 1, 'Nome opcional', 'Valor opcional', 199.90, 299.90, 15, 12345, 15, 1);
