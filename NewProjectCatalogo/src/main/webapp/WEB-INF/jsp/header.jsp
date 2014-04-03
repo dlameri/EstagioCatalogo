@@ -1,6 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <header id="main-header">
-	<div class="container">
+	<div class="container-header">
 		<h1 class="logo"><a href="">Ideais Electronics</a></h1>
 		<div id="search-area">
 			<div class="search-box">

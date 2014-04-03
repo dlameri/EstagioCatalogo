@@ -29,7 +29,7 @@ public class ProductDao extends AbstractDao implements ProductDaoBehavior{
 	
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Product> listOrderbyrank() {
+	public List<Product> listOrderByRank() {
 		return (List<Product>) restClient.get(stockUrlProduct + "orderbyrank", new GenericType< List<Product> >(){});
 	}
 

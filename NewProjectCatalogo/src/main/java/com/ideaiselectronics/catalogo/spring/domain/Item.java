@@ -252,7 +252,7 @@ public class Item {
 				return image.getShowcaseUrl();
 			}
 		}
-		return ""; //retornar uma url default caso o item não possua uma imagem principal;
+		return ""; //cria um NullObject para a imagem?
 	}
 	
 	public boolean isPriceForGreaterThan(BigDecimal price) {

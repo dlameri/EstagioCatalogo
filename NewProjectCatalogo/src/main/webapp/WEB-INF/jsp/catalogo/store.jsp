@@ -17,7 +17,7 @@
 						<li>
 							<article>
 								<header>
-									<a href="./product/${product.id}"><img src="${product.itemToDisplayOnShowcase.urlImageMain}" alt=""></a>
+									<a href="./product/${product.id}"><img src="${product.itemToDisplayOnShowcase.urlImageMain}" alt="" class="product-main-image"></a>
 								</header>
 								<div class="product-information">
 									<span class="product-name"><a href="./product/${product.id}">${product.name}</a></span>
@@ -38,7 +38,52 @@
 					<li>
 						<article>
 							<header>
-								<a href=""><img src="../images/indisponivel.jpg" alt="descricao da imagem" class="product-main-image"></a>
+								<a href=""><img src="" alt="" class="product-main-image"></a>
+							</header>
+							<div class="product-information">
+								<span class="product-name"><a href="">Nome do produto</a></span>
+								<div class="product-price-box">
+									<span class="price">R$299,99</span> | 
+									<span class="price-sale">R$199,99</span>
+								</div>
+								<span class="installment">10x R$19,99 sem juros</span>
+							</div>
+						</article>
+					</li>
+					<li>
+						<article>
+							<header>
+								<a href=""><img src="" alt="" class="product-main-image"></a>
+							</header>
+							<div class="product-information">
+								<span class="product-name"><a href="">Nome do produto</a></span>
+								<div class="product-price-box">
+									<span class="price">R$299,99</span> | 
+									<span class="price-sale">R$199,99</span>
+								</div>
+								<span class="installment">10x R$19,99 sem juros</span>
+							</div>
+						</article>
+					</li>
+					<li>
+						<article>
+							<header>
+								<a href=""><img src="" alt="" class="product-main-image"></a>
+							</header>
+							<div class="product-information">
+								<span class="product-name"><a href="">Nome do produto</a></span>
+								<div class="product-price-box">
+									<span class="price">R$299,99</span> | 
+									<span class="price-sale">R$199,99</span>
+								</div>
+								<span class="installment">10x R$19,99 sem juros</span>
+							</div>
+						</article>
+					</li>
+					<li>
+						<article>
+							<header>
+								<a href=""><img src="" alt="" class="product-main-image"></a>
 							</header>
 							<div class="product-information">
 								<span class="product-name"><a href="">Nome do produto</a></span>
@@ -58,7 +103,52 @@
 					<li>
 						<article>
 							<header>
-								<a href=""><img src="../images/indisponivel.jpg" alt="descricao da imagem" class="product-main-image"></a>
+								<a href=""><img src="" alt="" class="product-main-image"></a>
+							</header>
+							<div class="product-information">
+								<span class="product-name"><a href="">Nome do produto</a></span>
+								<div class="product-price-box">
+									<span class="price">R$299,99</span> | 
+									<span class="price-sale">R$199,99</span>
+								</div>
+								<span class="installment">10x R$19,99 sem juros</span>
+							</div>
+						</article>
+					</li>
+					<li>
+						<article>
+							<header>
+								<a href=""><img src="" alt="" class="product-main-image"></a>
+							</header>
+							<div class="product-information">
+								<span class="product-name"><a href="">Nome do produto</a></span>
+								<div class="product-price-box">
+									<span class="price">R$299,99</span> | 
+									<span class="price-sale">R$199,99</span>
+								</div>
+								<span class="installment">10x R$19,99 sem juros</span>
+							</div>
+						</article>
+					</li>
+					<li>
+						<article>
+							<header>
+								<a href=""><img src="" alt="" class="product-main-image"></a>
+							</header>
+							<div class="product-information">
+								<span class="product-name"><a href="">Nome do produto</a></span>
+								<div class="product-price-box">
+									<span class="price">R$299,99</span> | 
+									<span class="price-sale">R$199,99</span>
+								</div>
+								<span class="installment">10x R$19,99 sem juros</span>
+							</div>
+						</article>
+					</li>
+					<li>
+						<article>
+							<header>
+								<a href=""><img src="" alt="" class="product-main-image"></a>
 							</header>
 							<div class="product-information">
 								<span class="product-name"><a href="">Nome do produto</a></span>

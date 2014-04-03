@@ -2,8 +2,6 @@ package com.ideaiselectronics.catalogo.spring.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.config.BeanDefinition;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,7 +14,6 @@ import com.ideaiselectronics.catalogo.spring.dao.interfaces.SubcategoryDaoBehavi
 
 @Controller("storeController")
 @RequestMapping("/")
-@Scope(BeanDefinition.SCOPE_PROTOTYPE)
 public class StoreController {
 	
 	@Autowired @Qualifier("categoryDao")
@@ -30,7 +27,7 @@ public class StoreController {
     public ModelAndView initializeShowcase(){
 		ModelAndView view = new ModelAndView("catalogo/store");
 		view.addObject("categories", categoryDao.list());
-		view.addObject("products", productDao.listOrderbyrank());
+		view.addObject("products", productDao.listOrderByRank());
 		
 		return view;
     }

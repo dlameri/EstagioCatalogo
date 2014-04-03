@@ -11,7 +11,7 @@ public interface ProductDaoBehavior {
 	
 	public List<Product> list();
 	
-	public List<Product> listOrderbyrank();
+	public List<Product> listOrderByRank();
 	
 	public List<Product> findByCategoryId(Long idCategory);
 	
