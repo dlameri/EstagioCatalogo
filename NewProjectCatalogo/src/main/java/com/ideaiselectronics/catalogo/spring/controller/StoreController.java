@@ -37,7 +37,7 @@ public class StoreController {
 		ModelAndView view = new ModelAndView("catalogo/productsByCategory");
 		view.addObject("category", categoryDao.findById(idCategory));
 		view.addObject("products", productDao.findByCategoryId(idCategory));
-		
+	
 		return view;
 	}
 	

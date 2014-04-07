@@ -1,7 +1,6 @@
 package com.ideaiselectronics.catalogo.spring.dao.interfaces;
 
 import java.util.List;
-import java.util.Set;
 
 import com.ideaiselectronics.catalogo.spring.domain.Product;
 
@@ -16,5 +15,7 @@ public interface ProductDaoBehavior {
 	public List<Product> findByCategoryId(Long idCategory);
 	
 	public List<Product> findBySubcategoryId(Long idSubcategory);
+	
+	public List<Product> findByName(String name);
 
 }

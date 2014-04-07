@@ -19,12 +19,16 @@
 	<header id="main-header">
 		<div class="container-header">
 			<decorator:getProperty property="page.site-logo"/>
+			
 			<div id="search-area">
-				<div class="search-box">
-					<input type="text" id="input-search-text">
-					<input type="submit" value="Pesquisar" id="input-search-submit" class="search-icon">
-				</div>
+				<form method="get" action="/NewProjectCatalogo/product/search" name="searchProduct">
+					<div class="search-box">
+						<input type="text" name="name" id="input-search-text">
+						<input type="submit" value="Pesquisar" id="input-search-submit" class="search-icon">
+					</div>
+				</form>
 			</div>
+			
 			<div class="login-or-register">
 				<span>Olá, visitante!</span>
 				<a href="">Cadastre-se</a>

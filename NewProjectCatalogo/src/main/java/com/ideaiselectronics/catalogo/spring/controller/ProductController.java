@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ideaiselectronics.catalogo.spring.dao.interfaces.CategoryDaoBehavior;
@@ -28,6 +29,15 @@ public class ProductController {
 		ModelAndView view = new ModelAndView("catalogo/productDetails");
 		view.addObject("categories", categoryDao.list());
 		view.addObject("product", productDao.findById(productId));
+		System.out.println(view);
+		return view;
+	}
+	
+	@RequestMapping ( value = "/search", method = RequestMethod.GET)
+	public ModelAndView searchProduct(@RequestParam(value="name", required=false) String productName ) {
+		ModelAndView view = new ModelAndView("catalogo/productSearch");
+		view.addObject("product", productDao.findByName(productName));
+		
 		return view;
 	}
 

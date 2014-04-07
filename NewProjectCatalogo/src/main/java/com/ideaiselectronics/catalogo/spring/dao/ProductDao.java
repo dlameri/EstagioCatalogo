@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.ideaiselectronics.catalogo.spring.dao.interfaces.ProductDaoBehavior;
 import com.ideaiselectronics.catalogo.spring.domain.Product;
 
+@SuppressWarnings("unchecked") 
 @Service
 public class ProductDao extends AbstractDao implements ProductDaoBehavior{
 	
@@ -21,28 +22,33 @@ public class ProductDao extends AbstractDao implements ProductDaoBehavior{
 		return (Product) restClient.get(stockUrlProduct + id, new GenericType<Product>() {});
 	}
 
-	@SuppressWarnings("unchecked")
+
 	@Override
 	public List<Product> list() {
 		return (List<Product>) restClient.get(stockUrlProduct, new GenericType< List<Product> >(){});
 	}
 	
-	@SuppressWarnings("unchecked")
+
 	@Override
 	public List<Product> listOrderByRank() {
 		return (List<Product>) restClient.get(stockUrlProduct + "orderbyrank", new GenericType< List<Product> >(){});
 	}
 
-	@SuppressWarnings("unchecked")
+
 	@Override
 	public List<Product> findByCategoryId(Long idCategory) {
 		return (List<Product>) restClient.get(stockUrlProduct + "bycategoryid/" + idCategory, new GenericType< List<Product> >(){});
 	}
 
-	@SuppressWarnings("unchecked")
+
 	@Override
 	public List<Product> findBySubcategoryId(Long idSubcategory) {
 		return (List<Product>) restClient.get(stockUrlProduct + "bysubcategoryid/"+ idSubcategory, new GenericType<List <Product> >(){});
+	}
+
+	@Override
+	public List<Product> findByName(String name) {
+		return (List<Product>) restClient.get(stockUrlProduct + "seach/"+ name, new GenericType<List <Product> >(){});
 	}
 
 }
