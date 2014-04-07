@@ -37,8 +37,9 @@
 				<p><strong>Por: ${product.items[0].formatedPriceFor}</strong>
 				<p>Desconto de: ${product.items[0].discount} % </p>
 				
+				
+				<p><strong>Parcelas</strong></p>
 				<ul class="installments">
-					<p><strong>Parcelas</strong></p>
 					<c:forEach items="${product.items[0].installments}" var="entry">
 			    		<li>${entry.key}x de R$ ${entry.value}</li>
 					</c:forEach>
@@ -48,7 +49,6 @@
 			<br>
 			<br>
 			<br>
-			
 			
 			<p>${product.longDescription}</p>
 			

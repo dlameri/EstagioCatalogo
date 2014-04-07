@@ -360,6 +360,15 @@ ul {
 }
 
 .installments {
-	margin-top: 5px;
+	
+	margin-top: 10px;
 }
 
+ul.installments {
+	height: 80px;
+	margin-top: 10px;
+}
+
+ul.installments li{
+
+}
