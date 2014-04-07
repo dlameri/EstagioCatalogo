@@ -25,6 +25,7 @@
 				</ul>
 			</nav>
 		</content>
+		
 		<div id="id" class="container">
 			<section class="top-sellers-product">
 				<h3>Produtos</h3>
@@ -33,10 +34,10 @@
 						<li>
 							<article>
 								<header>
-									<a href="./product/${product.id}"><img src="${product.itemToDisplayOnShowcase.urlImageMain}" alt="" class="product-main-image"></a>
+									<a href="./${product.id}"><img src="${product.itemToDisplayOnShowcase.urlImageMain}" alt="" class="product-main-image"></a>
 								</header>
 								<div class="product-information">
-									<span class="product-name"><a href="./product/${product.id}">${product.name}</a></span>
+									<span class="product-name"><a href="./${product.id}">${product.name}</a></span>
 									<div class="product-price-box">
 										<span class="price">${product.itemToDisplayOnShowcase.formatedPriceFrom}</span> | 
 										<span class="price-sale">${product.itemToDisplayOnShowcase.formatedPriceFor}</span>

@@ -340,3 +340,26 @@ ul {
 	font-size: 0.8em;
 	color: #7F7570;
 }
+
+/* -----------PRODUCT DETAILS----------- */
+.container > .details {
+	display: inline-block;
+	position: absolute;
+	top: 30px;	
+	left: 50%;
+	height: 400px;
+}
+
+.container > img {
+	display: inline-block;
+	position: relative;
+	top: 30px;
+	width: 400px;
+	height: 400px;
+	
+}
+
+.installments {
+	margin-top: 5px;
+}
+

@@ -25,24 +25,29 @@
 				</ul>
 			</nav>
 		</content>
+		
+		
 		<div class="container">
-			<h1>${product.shortDescription}</h1>
-			
-					<img alt="imagem do produto" src="${product.items[0].images[0].productUrl}">
-			 
-			<hr>
-			<p><strong>De: ${product.items[0].formatedPriceFrom}</strong></p>
-			<p><strong>Por: ${product.items[0].formatedPriceFor}</strong></p>
-			<p>Desconto de: ${product.items[0].discount} % </p>
-			<p>Parcelas</p>
-				<c:forEach items="${product.items[0].installments}" var="entry">
-		    		${entry.key}x de R$ ${entry.value}<br>
-				</c:forEach>
-			
+			<img alt="imagem do produto" src="${product.items[0].images[0].productUrl}">
+			<div class="details">
+				<h1>${product.shortDescription}</h1>
+				
+				<hr>
+				<p><strong>De: ${product.items[0].formatedPriceFrom}</strong>
+				<p><strong>Por: ${product.items[0].formatedPriceFor}</strong>
+				<p>Desconto de: ${product.items[0].discount} % </p>
+				
+				<ul class="installments">
+					<p><strong>Parcelas</strong></p>
+					<c:forEach items="${product.items[0].installments}" var="entry">
+			    		<li>${entry.key}x de R$ ${entry.value}</li>
+					</c:forEach>
+				</ul>
+			</div>
 			
 			<br>
 			<br>
-			
+			<br>
 			
 			
 			<p>${product.longDescription}</p>

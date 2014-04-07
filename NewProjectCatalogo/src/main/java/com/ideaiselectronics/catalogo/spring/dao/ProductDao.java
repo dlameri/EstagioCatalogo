@@ -31,7 +31,7 @@ public class ProductDao extends AbstractDao implements ProductDaoBehavior{
 
 	@Override
 	public List<Product> listOrderByRank() {
-		return (List<Product>) restClient.get(stockUrlProduct + "orderbyrank", new GenericType< List<Product> >(){});
+		return (List<Product>) restClient.get(stockUrlProduct, new GenericType< List<Product> >(){});
 	}
 
 
@@ -48,7 +48,7 @@ public class ProductDao extends AbstractDao implements ProductDaoBehavior{
 
 	@Override
 	public List<Product> findByName(String name) {
-		return (List<Product>) restClient.get(stockUrlProduct + "seach/"+ name, new GenericType<List <Product> >(){});
+		return (List<Product>) restClient.get(stockUrlProduct + "search/"+ name, new GenericType<List <Product> >(){});
 	}
 
 }
