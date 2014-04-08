@@ -68,8 +68,9 @@ ul {
 .main-menu {
 	/* border: 1px solid blue; */
 	width: 100%;
+	position: relative;
+	top: 15px;
 	margin: 0px;
-	margin-top: 10px;
 	text-align: center;
 }
 
@@ -77,16 +78,21 @@ ul {
 	/* border: 1px solid blue; */
 	padding: 4px 0px;
 	display: inline-block;
+	
 }
 
 .menu-item {
 	/*border: 1px solid pink;*/
 	display: inline-block;
 	padding: 4px 4px;
+
 }
 
 .menu-item:hover {
 	background-color: white;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+
 }
 
 .menu-item:hover > a {
@@ -109,6 +115,7 @@ ul {
 	display: none;
 	background-color: white;
 	padding: 10px 10px;
+	box-shadow: 5px 5px 5px #888;
 }
 
 .sub-menu a {
