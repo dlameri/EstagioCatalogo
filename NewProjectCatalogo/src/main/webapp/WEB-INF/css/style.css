@@ -221,6 +221,33 @@ ul {
 	background-size: 70px 60px;
 }
 
+
+/* -----------CARROUSEL (TEXTOS FORMATADOS)----------- */
+.product-name-carrousel{
+	font-size: 180%;
+	color: #000000;
+	font-weight: bold;
+
+}
+
+.short-description{
+	font-size: 90%;
+	font-weight: bolder;
+	color:#708090;
+}
+
+.price-from{
+	text-decoration: line-through;
+}
+
+.price-for{
+	color:#120a8f;
+	font-size: 200%;
+}
+
+
+/* ------------------------------- */
+
 /* -----------BODY----------- */
 
 .container {
@@ -241,10 +268,17 @@ ul {
 }
 
 .featured-products {
-	border: 1px solid green;
 	width: 100%;
-	height: 400px;
+	height: 450px;
 	margin-top: 20px;
+}
+
+.featured-products article{
+	float: right;
+	position: relative;
+	margin-right: 15%;
+	margin-top: 5%;
+	color: #000000;
 }
 
 .top-sellers-product {

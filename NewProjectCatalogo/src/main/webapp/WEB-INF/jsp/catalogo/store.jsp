@@ -26,8 +26,99 @@
 			</nav>
 		</content>
 		<div id="id" class="container">
-			<section class="featured-products">		
-			</section>
+			<div>
+				<section class="featured-products">
+					<ul class="bxslider">
+  						<li>
+  							<section>
+  								<a href="">
+  									<article>
+  										<p class="product-name-carrousel">${products[0].name }</p>
+  										<p class="short-description">${products[0].shortDescription}</p>
+  										<p class="price-from">Preço de: ${products[0].items[0].formatedPriceFrom}</p>
+  										<p>por: <span class="price-for">${products[0].items[0].formatedPriceFor}</span></p>
+  									</article>
+  									<img src="<c:url value="/resources/images/indisponivel.jpg"/>" alt="imagem"/>
+								</a>
+							</section>
+  						</li>
+
+  						<li>
+  							<section>
+  								<a href="">
+  									<article>
+  										<p class="product-name-carrousel">${products[0].name }</p>
+  										<p class="short-description">${products[0].shortDescription}</p>
+  										<p class="price-from">Preço de: ${products[0].items[0].formatedPriceFrom}</p>
+  										<p>por: <span class="price-for">${products[0].items[0].formatedPriceFor}</span></p>
+  									</article>
+  									<img src="<c:url value="/resources/images/indisponivel.jpg"/>" alt="imagem"/>
+								</a>
+							</section>
+  						</li>
+
+  						<li>
+  							<section>
+  								<a href="">
+  									<article>
+  										<p class="product-name-carrousel">${products[0].name }</p>
+  										<p class="short-description">${products[0].shortDescription}</p>
+  										<p class="price-from">Preço de: ${products[0].items[0].formatedPriceFrom}</p>
+  										<p>por: <span class="price-for">${products[0].items[0].formatedPriceFor}</span></p>
+  									</article>
+  									<img src="<c:url value="/resources/images/indisponivel.jpg"/>" alt="imagem"/>
+								</a>
+							</section>
+  						</li>
+
+  						<li>
+  							<section>
+  								<a href="">
+  									<article>
+  										<p class="product-name-carrousel">${products[0].name }</p>
+  										<p class="short-description">${products[0].shortDescription}</p>
+  										<p class="price-from">Preço de: ${products[0].items[0].formatedPriceFrom}</p>
+  										<p>por: <span class="price-for">${products[0].items[0].formatedPriceFor}</span></p>
+  									</article>
+  									<img src="<c:url value="/resources/images/indisponivel.jpg"/>" alt="imagem"/>
+								</a>
+							</section>
+  						</li>
+
+  						<li>
+  							<section>
+  								<a href="">
+  									<article>
+  										<p class="product-name-carrousel">${products[0].name }</p>
+  										<p class="short-description">${products[0].shortDescription}</p>
+  										<p class="price-from">Preço de: ${products[0].items[0].formatedPriceFrom}</p>
+  										<p>por: <span class="price-for">${products[0].items[0].formatedPriceFor}</span></p>
+  									</article>
+  									<img src="<c:url value="/resources/images/indisponivel.jpg"/>" alt="imagem"/>
+								</a>
+							</section>
+  						</li>
+
+  						<li>
+  							<section>
+  								<a href="">
+  									<article>
+  										<p class="product-name-carrousel">${products[0].name }</p>
+  										<p class="short-description">${products[0].shortDescription}</p>
+  										<p class="price-from">Preço de: ${products[0].items[0].formatedPriceFrom}</p>
+  										<p>por: <span class="price-for">${products[0].items[0].formatedPriceFor}</span></p>
+  									</article>
+  									<img src="<c:url value="/resources/images/indisponivel.jpg"/>" alt="imagem"/>
+								</a>
+							</section>
+  						</li>
+
+
+					</ul>	
+				</section>
+			</div>
+		</div>
+
 			<section class="top-sellers-product">
 				<h3>Produtos mais vendidos</h3>
 				<ul>
