@@ -27,6 +27,8 @@
 		</content>
 		
 		<div id="id" class="container">
+			<!-- os produtos encontrados na pesquisa serão exibidos na section dos mais vendidos?? 
+				E não é uma lista de produtos não?? -->
 			<section class="top-sellers-product">
 				<h3>Produtos</h3>
 				<ul>
