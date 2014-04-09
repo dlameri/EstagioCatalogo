@@ -14,10 +14,10 @@
 			<nav id="main-nav" class="main-menu">
 				<ul class="menu">
 					<c:forEach items="${categories}"  var="category">
-						<li class="menu-item"><a href="./category/${category.id}">${category.name}</a>
+						<li class="menu-item"><a href="./category/${category.id}/product">${category.name}</a>
 							<ul class="sub-menu">
 								<c:forEach items="${category.subcategories}"  var="subcategory">
-									<li class="submenu-item"><a href="./category/subcategory/${subcategory.id}">${subcategory.name}</a></li>
+									<li class="submenu-item"><a href="./category/subcategory/${subcategory.id}/product">${subcategory.name}</a></li>
 								</c:forEach>
 							</ul>
 						</li>
