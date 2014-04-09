@@ -29,10 +29,8 @@ public class ProductController extends BaseController {
 	@RequestMapping ( value = "/search", method = RequestMethod.GET)
 	public ModelAndView searchProduct(@RequestParam(value="name", required=false) String productName ) {
 		ModelAndView view = getBaseView("catalogo/productSearch");
-		
-		// isso aqui não retorna uma lista de produtos não?
 		view.addObject("product", productDao.findByName(productName));
-		
+		System.out.println(view);
 		return view;
 	}
 

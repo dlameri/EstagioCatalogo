@@ -134,19 +134,20 @@ ul {
 	position: absolute;
 	top: 0px;
 	left: 20px;
-	width: 40%;
+	width: 30%;
 }
 
 .search-box {
 	/*border: 1px solid blue;*/
 	position: relative;
 	top: 2.5px;
+	
 }
 
 #input-search-text {
 	/*border: 1px solid black;*/
 	border: none;
-	width: 60%;
+	width: 80%;
 	height: 30px;
 	padding: 0px 5px;
 	font-size: 1em;
