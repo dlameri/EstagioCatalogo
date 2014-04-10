@@ -30,11 +30,11 @@ public class CategoryController extends BaseController {
 	}
 	
 	@RequestMapping( value="/subcategory/{idSubcategory}/product", method = RequestMethod.GET)
-	public ModelAndView productsBySubcategory(@PathVariable("subcategoryId") Long subcategoryId){
+	public ModelAndView productsBySubcategory(@PathVariable("idSubcategory") Long subcategoryId){
 		ModelAndView view = getBaseView("catalogo/productsBySubcategory");
 		view.addObject("subcategory", subcategoryDao.findById(subcategoryId));
 		view.addObject("products", productDao.findBySubcategoryId(subcategoryId));
-		
+			
 		return view;
 	}
 

@@ -7,11 +7,7 @@
 		<title>${product.name}</title>
 	</head>
 	<body>
-		<content tag="site-logo">
-			<h1 class="logo"><a href="../">Ideais Electronics</a></h1>
-		</content>
-		
-		
+				
 		<div class="container">
 			<img alt="imagem do produto" src="${product.items[0].images[0].productUrl}">
 			<div class="details">

@@ -7,17 +7,10 @@
 	</head>
 	<body>
 		<h2>${category.name}</h2>
-		<ul>
-			<c:forEach items="${category.subcategories}"  var="subcategory">
-				<li><a href="../category/subcategory/${subcategory.id}">${subcategory.name}</a></li>
-			</c:forEach>
-		</ul>
 	
 		<ul>
 			<c:forEach items="${products}"  var="product">
-				<li><a href="../product/${product.id}">${product.name}</a></li>
-				<!-- <li>${item.formatedPriceFrom}</li>
-				<li>${item.formatedPriceFor}</li> -->
+				<li>${product.name}</li>
 			</c:forEach>
 		</ul>
 

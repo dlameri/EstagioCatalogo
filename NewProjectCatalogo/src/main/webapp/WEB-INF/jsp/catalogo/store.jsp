@@ -7,9 +7,6 @@
 	</head>
 
 	<body>
-		<content tag="site-logo">
-			<h1 class="logo"><a href="./">Ideais Electronics</a></h1>
-		</content>
 		<div id="id" class="container">
 				<section class="featured-products">
 					<ul class="bxslider">
