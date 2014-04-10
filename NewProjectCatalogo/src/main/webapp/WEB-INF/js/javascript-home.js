@@ -1,4 +1,4 @@
-$(function(){
+/*$(function(){
 	setSearchAreaBehaviour();
 	setCarrosselProducts();
 });
@@ -35,3 +35,12 @@ function setCarrosselProducts() {
 		pause: 2000
 	});
 }
+*/
+
+$(document).ready(function(){
+  $('.bxslider').bxSlider({
+  	auto:true,
+  	autoControls:true
+  });
+
+});
