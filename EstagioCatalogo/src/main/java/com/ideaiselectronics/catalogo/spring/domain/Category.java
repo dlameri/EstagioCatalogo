@@ -30,6 +30,17 @@ public class Category {
 	@OneToMany(mappedBy="category", fetch = FetchType.EAGER, orphanRemoval=true)
 	@Cascade({CascadeType.DELETE, CascadeType.SAVE_UPDATE})
 	private List<Subcategory> subcategories;
+	
+	@Column(name="BO_ATIVO", nullable=false)
+	private Boolean active;
+
+	public Boolean getActive() {
+		return active;
+	}
+
+	public void setActive(Boolean active) {
+		this.active = active;
+	}
 
 	public List<Subcategory> getSubcategories() {
 		return subcategories;

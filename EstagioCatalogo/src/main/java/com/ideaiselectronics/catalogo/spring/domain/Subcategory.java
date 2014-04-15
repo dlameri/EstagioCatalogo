@@ -1,34 +1,38 @@
 package com.ideaiselectronics.catalogo.spring.domain;
 
+import java.util.List;
+
 import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
 
-import org.hibernate.annotations.Cascade;
-import org.hibernate.annotations.CascadeType;
 
-@Entity
-@Table(name="SUBCATEGORIA")
+
 public class Subcategory {
-	@Id
-	@SequenceGenerator(name="subcategory_id", sequenceName="subcategory_id")
-	@GeneratedValue(generator="subcategory_id", strategy=GenerationType.AUTO)
-	@Column(name="CD_SUBCATEGORIA")
 	private Long id;
 	
-	@Column(name="NM_NOME", nullable=false)
+	public List<Product> getProducts() {
+		return products;
+	}
+
+	public void setProducts(List<Product> products) {
+		this.products = products;
+	}
+
 	private String name;
 	
-	@ManyToOne
-	@JoinColumn(name="CD_CATEGORIA", referencedColumnName="CD_CATEGORIA", nullable=false)
-	@Cascade(CascadeType.SAVE_UPDATE)
 	private Category category;
+	
+	@Column(name="BO_ATIVO", nullable=false)
+	private Boolean active;
+	
+	private List<Product> products;
+
+	public Boolean getActive() {
+		return active;
+	}
+
+	public void setActive(Boolean active) {
+		this.active = active;
+	}
 
 	public Long getId() {
 		return id;
