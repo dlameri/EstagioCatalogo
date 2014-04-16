@@ -22,7 +22,7 @@
 				<p><strong>Parcelas</strong></p>
 				<ul class="installments">
 					<c:forEach items="${product.items[0].installments}" var="entry">
-			    		<li>${entry.key}x de R$ ${entry.value}</li>
+			    		<li>${entry.number}x de R$ ${entry.value}</li>
 					</c:forEach>
 				</ul>
 			</div>
