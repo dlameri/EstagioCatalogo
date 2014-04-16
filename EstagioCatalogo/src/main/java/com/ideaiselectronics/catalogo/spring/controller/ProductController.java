@@ -30,7 +30,7 @@ public class ProductController extends BaseController {
 	public ModelAndView searchProduct(@RequestParam(value="name", required=false) String productName ) {
 		ModelAndView view = getBaseView("catalogo/productSearch");
 		view.addObject("product", productDao.findByName(productName));
-		System.out.println(view);
+		
 		return view;
 	}
 
