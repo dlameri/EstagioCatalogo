@@ -14,10 +14,10 @@
 				<h1>${product.shortDescription}</h1>
 				
 				<hr>
-				<p><strong>De: ${product.items[0].formatedPriceFrom}</strong>
-				<p><strong>Por: ${product.items[0].formatedPriceFor}</strong>
-				<p>Desconto de: ${product.items[0].discount} % </p>
-				
+				<p><strong class="priceFrom">De: ${product.items[0].formatedPriceFrom}</strong>
+				<p><strong class="priceFor">Por: ${product.items[0].formatedPriceFor} </strong>
+				<p class="discount">( desconto de: ${product.items[0].discount} % )</p>
+				<span class="installment">${product.items[0].lastInstallment} sem juros</span>
 				
 				<p><strong>Parcelas</strong></p>
 				<ul class="installments">
@@ -25,6 +25,8 @@
 			    		<li>${entry.number}x de R$ ${entry.value}</li>
 					</c:forEach>
 				</ul>
+
+				<input type="submit" class="BuyButton" value="">
 			</div>
 			
 			<br>

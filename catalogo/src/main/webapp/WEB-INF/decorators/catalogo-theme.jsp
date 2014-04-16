@@ -9,6 +9,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
+	
 	<title><decorator:title default="Ideais Electronics"/></title>
 
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
@@ -39,8 +40,12 @@
 				<a href="">Cadastre-se</a>
 				<a href="">Entre</a>
 			</div>
-			<span class="shopping-cart">Carrinho</span>
-			
+
+			<div class="cart">
+				<span class="shopping-cart">Carrinho</span>
+				<span class="qtCart">${cart}</span>
+			</div>
+
 			<nav id="main-nav" class="main-menu">
 				<ul class="menu">
 					<c:forEach items="${categories}"  var="category">
