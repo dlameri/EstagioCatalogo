@@ -30,7 +30,7 @@
 	</bean>
 	
 	<bean id="applicationUrlBase" class="java.lang.String">  
-    	<constructor-arg value="http://localhost:8081/NewProjectCatalogo/"/>  
+    	<constructor-arg value="http://localhost:8081/catalogo/"/>  
 	</bean>
 
 </beans>

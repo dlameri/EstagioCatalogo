@@ -15,10 +15,11 @@
 	  							<section>
 	  								<a href="">
 	  									<article>
-	  										<p class="product-name-carrousel">${product.name }</p>
+	  										<p class="product-name-carrousel">${product.name}</p>
 	  										<p class="short-description">${product.shortDescription}</p>
 	  										<p class="price-from">Preço de: ${product.items[0].formatedPriceFrom}</p>
 	  										<p>por: <span class="price-for">${product.items[0].formatedPriceFor}</span></p>
+	  										<p>ou em até: ${product.items[0].lastInstallment}</p>
 	  									</article>
 	  									<img src="<c:url value="/resources/images/indisponivel.jpg"/>" alt="imagem"/>
 									</a>
@@ -63,7 +64,7 @@
 								<span class="product-name"><a href="">Nome do produto</a></span>
 								<div class="product-price-box">
 									<span class="price">R$299,99</span> | 
-									<span class="price-sale">R$199,99</span>
+									<span class="price-sale">${product.name}</span>
 								</div>
 								<span class="installment">10x R$19,99 sem juros</span>
 							</div>

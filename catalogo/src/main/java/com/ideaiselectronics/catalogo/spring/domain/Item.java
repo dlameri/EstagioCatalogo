@@ -1,4 +1,4 @@
-package com.ideaiselectronics.catalogo.spring.domain;
+	package com.ideaiselectronics.catalogo.spring.domain;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
+import java.util.TreeMap;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -71,7 +73,7 @@ public class Item {
 	private int discount;
 	
 	@Transient
-	private LinkedHashMap<Integer, BigDecimal> installments;
+	private List<Installment> installments;
 	
 	@Transient
 	private String formatedPriceFrom;
@@ -87,6 +89,12 @@ public class Item {
 	
 	@Transient
 	private String urlImageMain;
+	
+	@Transient
+	private int maxOption;
+	
+	@Transient
+	private BigDecimal lastInstallment;
 
 	public List<Image> getImages() {
 		if(images == null) {
@@ -216,8 +224,14 @@ public class Item {
 		return formatedPriceFor;
 	}
 	
-	public LinkedHashMap<Integer, String> getInstallments() {
+	public List<Installment> getInstallments() {
 		return calculateInstallments(priceFor);
+	}
+	
+	public String getLastInstallment() {
+		installments = calculateInstallments(priceFor);
+		
+		return installments.get(installments.size() - 1).toString();
 	}
 		
 	public int calculateDescount(BigDecimal priceFrom, BigDecimal priceFor) {
@@ -226,20 +240,22 @@ public class Item {
 		return (int) porcentagem;
 	}
 	
-	public LinkedHashMap<Integer, String> calculateInstallments(BigDecimal priceFor) {
-		int parcela = 1;
-		LinkedHashMap<Integer, String> parcelas = new LinkedHashMap<Integer, String>();
-		double value = Double.valueOf(priceFor.doubleValue()) / parcela;
+	public List<Installment> calculateInstallments(BigDecimal priceFor) {
+		int installment = 1;
+		installments = new ArrayList<Installment>();
+		double value = Double.valueOf(priceFor.doubleValue()) / installment;
 		
 		do{
-			parcelas.put(parcela, valueFormater(new BigDecimal(value).setScale(2, RoundingMode.HALF_EVEN)));
-			parcela++;
-			value = Double.valueOf(priceFor.doubleValue()) / parcela;
-		} while(parcela <= 12 && value >= 10.00);
-				
-		return parcelas;
-	}
+			installments.add(
+					new Installment(installment, valueFormater(new BigDecimal(value).setScale(2, RoundingMode.HALF_EVEN))));
 			
+			installment++;
+			value = Double.valueOf(priceFor.doubleValue()) / installment;
+		} while(installment <= 12 && value >= 10.00);
+				
+		return installments;
+	}
+
 	public String valueFormater(BigDecimal value) {
 	    Locale Local = new Locale("pt", "BR");
 	    DecimalFormat df = new DecimalFormat("#,##0.00", new DecimalFormatSymbols(Local));

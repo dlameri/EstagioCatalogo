@@ -27,6 +27,9 @@ public class Category {
 	@Column(name="NM_NOME", nullable=false, unique=true)
 	private String name;
 	
+	@Column(name="BO_ATIVO", nullable=false)
+	private Boolean active;
+	
 	@OneToMany(mappedBy="category", fetch = FetchType.EAGER, orphanRemoval=true)
 	@Cascade({CascadeType.DELETE, CascadeType.SAVE_UPDATE})
 	private List<Subcategory> subcategories;
@@ -54,7 +57,15 @@ public class Category {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	public Boolean getActive() {
+		return active;
+	}
 
+	public void setActive(Boolean active) {
+		this.active = active;
+	}
+	
 	@Override
 	public String toString() {
 		return name;
