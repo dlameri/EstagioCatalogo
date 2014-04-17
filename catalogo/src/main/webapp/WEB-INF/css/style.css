@@ -431,8 +431,8 @@ ul.installments li{
 
 .BuyButton{
 	position: absolute;
-	top: 94px;
-	left: 205px;
+	top: 125px;
+	right: 210px;
 	width: 166px;
 	height: 51px;
 	background-image: url(../images/icons/buyButton.jpg);

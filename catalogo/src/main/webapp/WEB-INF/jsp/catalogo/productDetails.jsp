@@ -26,7 +26,6 @@
 					</c:forEach>
 				</ul>
 
-				<input type="submit" class="BuyButton" value="">
 			</div>
 			
 			<br>
@@ -73,8 +72,12 @@
 				
 			</table>
 			
-			<c:forEach items="${product.items}" var="items">
-				${items.sku} <br>
+			<c:forEach items="${product.items}" var="item">
+				${item.sku} <br>
+				<form action="${pageContext.request.contextPath}/shoppingCart/add" method="post">
+					<input type="hidden" name="itemId" value="${item.id}">
+					<input type="submit" class="BuyButton" value="">
+				</form>
 			</c:forEach>
 		</div>
 	</body>
