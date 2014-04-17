@@ -6,19 +6,25 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ideaiselectronics.catalogo.spring.dao.interfaces.CategoryDaoBehavior;
+import com.ideaiselectronics.catalogo.spring.dao.interfaces.ShoppingCartBehavior;
 
 @Component
 public abstract class BaseController {
 	
 	@Autowired @Qualifier("categoryDao")
 	protected CategoryDaoBehavior categoryDao;
+	@Autowired @Qualifier("shoppingCartDao")
+	protected ShoppingCartBehavior shoppingCartDao;
 	
 	public BaseController() {
 		
 	}
 	
 	public ModelAndView getBaseView(String pageName) {
-		return new ModelAndView(pageName).addObject("categories", categoryDao.list());
+		ModelAndView view = new ModelAndView(pageName);
+		view.addObject("categories", categoryDao.list());
+		view.addObject("cart", shoppingCartDao.cartQtd());
+		return view;
 	}
 
 }
