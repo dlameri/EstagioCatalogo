@@ -217,6 +217,21 @@ ul {
 	background-size: 70px 60px;
 }
 
+.cart .qtCart {
+	background: #fff;
+	padding: 4px;
+	border-radius: 50px;
+	min-width: 12px;
+	display: inline-block;
+	text-align: center;
+	color: black;
+	font-weight: bold;
+	font-size: 10px;
+	position: absolute;
+	top: 15px;
+	right: 30px;
+}
+
 .shopping-cart:hover {
 	background: url('../images/icons/shopping-cart1-white.png') no-repeat center center;
 	background-size: 70px 60px;
@@ -400,7 +415,6 @@ ul {
 }
 
 .installments {
-	
 	margin-top: 10px;
 }
 
@@ -410,5 +424,36 @@ ul.installments {
 }
 
 ul.installments li{
+
+}
+
+.BuyButton{
+	position: absolute;
+	top: 94px;
+	left: 205px;
+	width: 166px;
+	height: 51px;
+	background-image: url(../images/icons/buyButton.jpg);
+	background-position: -2px 252px; 
+}
+
+.priceFrom{
+	font-size: 12px;
+	text-decoration: line-through;
+}
+
+.priceFor{
+	font-size: 20px;
+}
+
+.discount{
+	position: absolute;
+	top: 92px;
+	left: 75px;
+	font-size: 12px;
+	color: green;
+}
+
+.installment{
 
 }

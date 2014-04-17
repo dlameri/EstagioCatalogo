@@ -13,7 +13,7 @@
 
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 	<script type="text/javascript" src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-	<script type="text/javascript" src="<c:url value="/resources/js/jquery.bxslider/jquery.bxslider.js"/>"/></script>
+	<script type="text/javascript" src="<c:url value="/resources/js/jquery.bxslider/jquery.bxslider.js"/>"/>
 	<script type="text/javascript" src="<c:url value="/resources/js/javascript-home.js"/>"></script>
 	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
 	<link rel="stylesheet" href="<c:url value="/resources/js/jquery.bxslider/jquery.bxslider.css"/>">
@@ -42,7 +42,7 @@
 
 			<div class="cart">
 				<span class="shopping-cart">Carrinho</span>
-				<span class="qtCart">0</span>
+				<span class="qtCart">${cart}</span>
 			</div>
 
 			<nav id="main-nav" class="main-menu">

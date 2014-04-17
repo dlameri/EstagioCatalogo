@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.ideaiselectronics.catalogo.spring.dao.interfaces.ItemDaoBehavior;
 import com.ideaiselectronics.catalogo.spring.domain.Item;
 
+@SuppressWarnings("unchecked")
 @Service
 public class ItemDao extends AbstractDao implements ItemDaoBehavior {
 	
@@ -21,7 +22,6 @@ public class ItemDao extends AbstractDao implements ItemDaoBehavior {
 		return (Item) restClient.get(stockUrlItem + id, new GenericType<Item>() {});
 	}
 	
-	@SuppressWarnings("unchecked")
 	@Override
 	public List<Item> list() {
 		return (List<Item>) restClient.get(stockUrlItem, new GenericType< List<Item> >() {});
