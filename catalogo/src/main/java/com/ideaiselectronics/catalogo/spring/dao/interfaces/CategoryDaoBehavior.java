@@ -9,7 +9,5 @@ public interface CategoryDaoBehavior {
 	public Category findById(Long id);
 	
 	public List<Category> list();
-	
-	public Boolean clearCache();
 
 }

@@ -1,28 +1,30 @@
 package test;
 
 import org.apache.commons.dbcp.BasicDataSource;
-import org.apache.ibatis.jdbc.SqlRunner;
 import org.junit.Before;
+import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
 
-public abstract class AbstractTest{
+public abstract class AbstractTest extends AbstractTransactionalJUnit4SpringContextTests {
 	
 	protected BasicDataSource dataSource;
 	
-	@Before
-	public void setUp() throws Exception {
-		setDataSource();
-		executeSqlPrepareDatabase();
-
+	public AbstractTest() {
+		System.out.println("passou aqui primeiro");
 	}
 	
-	private void executeSqlPrepareDatabase() throws Exception {
-		SqlRunner runner = new SqlRunner(dataSource.getConnection());
-		if("".equals(getFile())){
-			runner.run(getFile());
-		}
+	@Before
+	public void setUp() throws Exception {
+		System.out.println("passou pelo before");
+		BasicDataSource dataSource = getDataSource();
+		setDataSource(dataSource);
+		executeSqlScript(getFile(), false);
+	}
+	
+	private void setDataSource(BasicDataSource dataSource) {
+		this.dataSource = dataSource;
 	}
 	
 	protected abstract String getFile();
-	protected abstract void setDataSource();
+	protected abstract BasicDataSource getDataSource();
 
 }

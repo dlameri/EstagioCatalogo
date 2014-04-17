@@ -42,7 +42,4 @@
 	<!-- pra que esse bean serve? -->
 	<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
 
-    <bean id="webDriverFirefox" class="org.openqa.selenium.firefox.FirefoxDriver"/>
-    <bean id="webDriverChrome" class="org.openqa.selenium.chrome.ChromeDriver" />
-
 </beans>

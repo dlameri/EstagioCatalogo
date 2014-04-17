@@ -7,12 +7,12 @@
 	</head>
 	<body>
 		<h2>${category.name}</h2>
-	
-		<ul>
-			<c:forEach items="${products}"  var="product">
-				<li>${product.name}</li>
-			</c:forEach>
-		</ul>
-
+		<div class="container">
+			<ul>
+				<c:forEach items="${products}"  var="product">
+					<li>${product.name}</li>
+				</c:forEach>
+			</ul>
+		</div>
 	</body>
 </html>
