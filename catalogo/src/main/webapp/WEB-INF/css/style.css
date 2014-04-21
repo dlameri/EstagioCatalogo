@@ -262,8 +262,6 @@ ul {
 }
 
 
-/* ------------------------------- */
-
 /* -----------BODY----------- */
 
 .container {
@@ -338,7 +336,8 @@ ul {
 }
 
 .product-name {
-
+	color: #171515;
+	line-height: 100%;
 }
 
 .product-price-box {
@@ -356,6 +355,35 @@ ul {
 .installment{
 
 }
+
+
+/* -----------Carrousel de Produtos----------- */
+.featured-products-info{
+	font-size: 15px;
+	line-height: 75%;
+	width: 100%;
+}
+
+.item-price-for{
+	font-size: 20px;
+	font-weight: bold;
+	color: #4f86f7;
+}
+
+.item-price-from{
+	text-decoration: line-through;
+}
+
+
+
+.item-short-description{
+	font-size: 13px;
+	color: #d4d4d4;
+	line-height: 90%;
+}
+
+
+
 /* -----------FOOTER----------- */
 .container-footer {
 	/*border: 1px solid red;*/
@@ -429,8 +457,8 @@ ul.installments li{
 
 .BuyButton{
 	position: absolute;
-	top: 94px;
-	left: 205px;
+	top: 125px;
+	right: 210px;
 	width: 166px;
 	height: 51px;
 	background-image: url(../images/icons/buyButton.jpg);

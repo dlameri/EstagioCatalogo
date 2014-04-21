@@ -7,7 +7,7 @@ import org.springframework.test.context.ContextConfiguration;
 import test.AbstractTest;
 
 @ContextConfiguration("classpath*:spring/integrationTestContext.xml")
-public class AbstractIntegrationTest extends AbstractTest{
+public class AbstractIntegrationTest extends AbstractTest {
 	
 	@Autowired
 	private BasicDataSource dataSource;
@@ -18,8 +18,8 @@ public class AbstractIntegrationTest extends AbstractTest{
 	}
 
 	@Override
-	protected void setDataSource() {
-		super.dataSource = this.dataSource;
+	protected BasicDataSource getDataSource() {
+		return this.dataSource;
 	}
 
 }

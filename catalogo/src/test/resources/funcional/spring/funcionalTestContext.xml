@@ -25,6 +25,6 @@
 	</bean>
 
     <bean id="webDriverFirefox" class="org.openqa.selenium.firefox.FirefoxDriver"/>
-    <bean id="webDriverChrome" class="org.openqa.selenium.chrome.ChromeDriver" />
+    <!-- <bean id="webDriverChrome" class="org.openqa.selenium.chrome.ChromeDriver" />-->
 
 </beans>

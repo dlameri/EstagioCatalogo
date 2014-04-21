@@ -1,11 +1,13 @@
 package test.functional;
 
+import static org.junit.Assert.assertTrue;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-@RunWith(JUnit4.class)
-public class StoreTest extends AbstractFuncionalTest{
+@RunWith(SpringJUnit4ClassRunner.class)
+public class StoreTest extends AbstractFuncionalTest {
 	
 	@Test
 	public void list_categories() {

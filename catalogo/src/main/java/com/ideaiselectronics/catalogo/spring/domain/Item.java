@@ -1,15 +1,10 @@
-	package com.ideaiselectronics.catalogo.spring.domain;
+package com.ideaiselectronics.catalogo.spring.domain;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.text.DecimalFormat;
-import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
-import java.util.Map;
-import java.util.TreeMap;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -26,6 +21,8 @@ import javax.persistence.Transient;
 
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
+
+import com.ideaiselectronics.catalogo.util.Formatter;
 
 @Entity
 @Table(name="ITEM")
@@ -204,7 +201,9 @@ public class Item {
 	}
 	
 	public int getDiscount() {
-		discount = calculateDescount(getPriceFrom(), getPriceFor());
+		if(discount == 0){
+			discount = calculateDescount(getPriceFrom(), getPriceFor());
+		}
 		return discount;
 	}
 	
@@ -225,12 +224,16 @@ public class Item {
 	}
 	
 	public List<Installment> getInstallments() {
-		return calculateInstallments(priceFor);
+		if(installments == null){
+			installments = calculateInstallments(priceFor);
+		}
+		return installments;
 	}
 	
 	public String getLastInstallment() {
-		installments = calculateInstallments(priceFor);
-		
+		if(installments == null ){
+			getInstallments();
+		}		
 		return installments.get(installments.size() - 1).toString();
 	}
 		
@@ -247,19 +250,13 @@ public class Item {
 		
 		do{
 			installments.add(
-					new Installment(installment, valueFormater(new BigDecimal(value).setScale(2, RoundingMode.HALF_EVEN))));
+					new Installment(installment, Formatter.valueFormater(new BigDecimal(value).setScale(2, RoundingMode.HALF_EVEN))));
 			
 			installment++;
 			value = Double.valueOf(priceFor.doubleValue()) / installment;
 		} while(installment <= 12 && value >= 10.00);
 				
 		return installments;
-	}
-
-	public String valueFormater(BigDecimal value) {
-	    Locale Local = new Locale("pt", "BR");
-	    DecimalFormat df = new DecimalFormat("#,##0.00", new DecimalFormatSymbols(Local));
-	    return df.format(value);
 	}
 	
 	public String getUrlImageMain() {
