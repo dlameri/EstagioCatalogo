@@ -38,9 +38,19 @@ function setCarrosselProducts() {
 */
 
 $(document).ready(function(){
+	
   $('.bxslider').bxSlider({
   	auto:true,
   	autoControls:true
   });
+  
+  $('.item-show-carrousel').bxSlider({
+	  	pager:false,
+	  	slideWidth: 250,
+	    minSlides: 3,
+	    maxSlides: 4,
+	    slideMargin: 45,
+	    speed:1900,
+	  });
 
 });

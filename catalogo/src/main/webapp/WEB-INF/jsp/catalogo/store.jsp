@@ -95,6 +95,28 @@
 					</c:forEach>
 				</ul>
 			</section>
+			
+			<section class="top-sellers-product">
+				<h3>Produtos EM CARROUSEL (TESTE)</h3>
+					<ul class="item-show-carrousel">
+						<c:forEach items="${products}"  var="product" begin="0" end="5">
+	  						<li>
+	  							<section>
+	  								<a href="./product/${product.id}">
+	  									<img src="${product.itemToDisplayOnShowcase.urlImageMain}" alt="" class="product-main-image">
+		  									<article class="featured-products-info">
+		  										<p class="product-name">${product.name}</p>
+		  										<p class="item-short-description">${product.shortDescription}</p>
+		  										<p class="item-price-from">Preço de: ${product.items[0].formatedPriceFrom}</p>
+		  										<p>por: <span class="item-price-for">${product.items[0].formatedPriceFor}</span></p>
+		  								</article>
+									</a>
+								</section>
+		  					</li>
+						</c:forEach>
+					</ul>
+				</section>
+			
 		</div>	
 	</body>
 </html>

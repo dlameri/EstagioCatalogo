@@ -24,8 +24,7 @@
 .bx-wrapper img {
 	max-width: 100%;
 	width: 50%;
-	margin-left: 5%;
-	height: 22em;
+	margin-left: 20%;
 	display: block;
 }
 
@@ -33,10 +32,6 @@
 ===================================*/
 
 .bx-wrapper .bx-viewport {
-	-moz-box-shadow: 0 0 5px #ccc;
-	-webkit-box-shadow: 0 0 5px #ccc;
-	box-shadow: 0 0 5px #ccc;
-	border: solid #fff 5px;
 	left: -5px;
 	background: #fff;
 }
@@ -100,21 +95,25 @@
 /* DIRECTION CONTROLS (NEXT / PREV) */
 
 .bx-wrapper .bx-prev {
-	left: 10px;
+	left: -50px;
 	background: url(images/controls.png) no-repeat 0 -32px;
+	z-index: 9999;
 }
 
 .bx-wrapper .bx-next {
-	right: 10px;
+	right: -45px;
 	background: url(images/controls.png) no-repeat -43px -32px;
+	z-index: 9999;
 }
 
 .bx-wrapper .bx-prev:hover {
 	background-position: 0 0;
+	z-index: 9999;
 }
 
 .bx-wrapper .bx-next:hover {
 	background-position: -43px 0;
+	z-index: 9999;
 }
 
 .bx-wrapper .bx-controls-direction a {
@@ -130,6 +129,7 @@
 
 .bx-wrapper .bx-controls-direction a.disabled {
 	display: none;
+	z-index: 9999;
 }
 
 /* AUTO CONTROLS (START / STOP) */
