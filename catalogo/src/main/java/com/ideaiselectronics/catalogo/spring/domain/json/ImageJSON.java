@@ -4,6 +4,7 @@ public class ImageJSON {
 	
 	private Long id;
 	private String showcaseUrl;
+	private String promo;
 	private String productUrl;
 	private String superzoomUrl;
 	private String shoppingCartUrl;
@@ -29,6 +30,14 @@ public class ImageJSON {
 
 	public void setShowcaseUrl(String showcaseUrl) {
 		this.showcaseUrl = showcaseUrl;
+	}
+	
+	public String getPromo() {
+		return promo;
+	}
+	
+	public void setPromo(String promo) {
+		this.promo = promo;
 	}
 
 	public String getProductUrl() {

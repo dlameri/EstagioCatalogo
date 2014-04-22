@@ -27,7 +27,7 @@ public class ItemJSON {
 	
 	/* atributos usados para vizualizacao nos jsp - nao fazem parte do json */
 	private List<ImageJSON> images;
-	private String imageMain;
+	private ImageJSON imageMain;
 	private Integer discount;
 	private List<Installment> installments;
 	private Installment lastInstallment;
@@ -148,7 +148,7 @@ public class ItemJSON {
 		this.images = images;
 	}
 
-	public String getImageMain() {
+	public ImageJSON getImageMain() {
 		if(imageMain == null) {
 			imageMain = getUrlImageMain();
 		}
@@ -180,13 +180,13 @@ public class ItemJSON {
 		return this.priceFor.compareTo(price) == 1;
 	}
 	
-	public String getUrlImageMain() {
+	public ImageJSON getUrlImageMain() {
 		for (ImageJSON image : images) {
 			if(image.getMain()){
-				return image.getShowcaseUrl();
+				return image;
 			}
 		}
-		return ""; //cria um NullObject para a imagem?
+		return new ImageJSON(); //cria um NullObject para a imagem?  -- strings vazias, vai dar null pointer caso bata aqui!!
 	}
 	
 	public int calculateDescount(BigDecimal priceFrom, BigDecimal priceFor) {

@@ -23,7 +23,7 @@ public abstract class BaseController {
 	public ModelAndView getBaseView(String pageName) {
 		ModelAndView view = new ModelAndView(pageName);
 		view.addObject("menuCategories", categoryJSONDao.listCategoriesWithSubcategories());
-		view.addObject("cart", shoppingCartJSONDao.cartQtd());
+		//view.addObject("cart", shoppingCartJSONDao.cartQtd());
 		return view;
 	}
 

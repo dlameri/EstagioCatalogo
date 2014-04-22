@@ -17,22 +17,20 @@
 .bx-wrapper {
 	position: relative;
 	margin: 0 auto 60px;
-	padding: 0;
+	padding: 0% 10%;
 	*zoom: 1;
 }
 
 .bx-wrapper img {
 	max-width: 100%;
 	width: 50%;
-	margin-left: 20%;
-	display: block;
+	display: inline-block;
 }
 
 /** THEME
 ===================================*/
 
 .bx-wrapper .bx-viewport {
-	left: -5px;
 	background: #fff;
 }
 
@@ -41,6 +39,7 @@
 	position: absolute;
 	bottom: -30px;
 	width: 100%;
+	padding-right: 12%;
 }
 
 /* LOADER */
@@ -96,13 +95,13 @@
 
 .bx-wrapper .bx-prev {
 	left: -50px;
-	background: url(images/controls.png) no-repeat 0 -32px;
+	background: url(images/arrow-left.png) no-repeat;
 	z-index: 9999;
 }
 
 .bx-wrapper .bx-next {
 	right: -45px;
-	background: url(images/controls.png) no-repeat -43px -32px;
+	background: url(images/arrow-right.png) no-repeat;
 	z-index: 9999;
 }
 
@@ -112,7 +111,7 @@
 }
 
 .bx-wrapper .bx-next:hover {
-	background-position: -43px 0;
+	background-position: 0 0;
 	z-index: 9999;
 }
 
