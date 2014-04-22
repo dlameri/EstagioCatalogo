@@ -48,11 +48,11 @@
 
 			<nav id="main-nav" class="main-menu">
 				<ul class="menu">
-					<c:forEach items="${categories}"  var="category">
+					<c:forEach items="${menuCategories}"  var="category">
 						<li class="menu-item"><a href="${pageContext.request.contextPath}/category/${category.id}/product">${category.name}</a>
 							<ul class="sub-menu">
 								<c:forEach items="${category.subcategories}" var="subcategory">
-									<li class="submenu-item"><a href="${pageContext.request.contextPath}/category/subcategory/${subcategory.id}/product">${subcategory.name}</a></li>
+									<li class="submenu-item"><a href="${pageContext.request.contextPath}/subcategory/${subcategory.id}/product">${subcategory.name}</a></li>
 								</c:forEach>
 							</ul>
 						</li>

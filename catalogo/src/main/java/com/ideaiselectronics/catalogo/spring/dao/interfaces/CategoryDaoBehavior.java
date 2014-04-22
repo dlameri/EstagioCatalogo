@@ -2,12 +2,20 @@ package com.ideaiselectronics.catalogo.spring.dao.interfaces;
 
 import java.util.List;
 
-import com.ideaiselectronics.catalogo.spring.domain.Category;
+import com.ideaiselectronics.catalogo.spring.domain.json.CategoryJSON;
+import com.ideaiselectronics.catalogo.spring.domain.json.ProductJSON;
+import com.ideaiselectronics.catalogo.spring.domain.json.SubcategoryJSON;
 
 public interface CategoryDaoBehavior {
 	
-	public Category findById(Long id);
+	public CategoryJSON findById(Long id);
 	
-	public List<Category> list();
+	public List<CategoryJSON> list();
+	
+	public List<CategoryJSON> listCategoriesWithSubcategories();
+	
+	public List<SubcategoryJSON> listSubcategories(Long categoryId);
+	
+	public List<ProductJSON> listTopSellersProducts(Long categoryId);
 
 }

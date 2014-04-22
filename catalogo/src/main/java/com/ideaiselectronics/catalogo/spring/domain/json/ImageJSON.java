@@ -1,53 +1,19 @@
-package com.ideaiselectronics.catalogo.spring.domain;
+package com.ideaiselectronics.catalogo.spring.domain.json;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
-
-import org.hibernate.annotations.Cascade;
-import org.hibernate.annotations.CascadeType;
-
-
-@Entity
-@Table(name="IMAGENS")
-public class Image {
-	@Id
-	@SequenceGenerator(name="image_id", sequenceName="image_id")
-	@GeneratedValue(generator="image_id", strategy=GenerationType.AUTO)
-	@Column(name="CD_IMAGEM")
+public class ImageJSON {
+	
 	private Long id;
-	
-	@Column(name="NM_CAMINHO_VITRINE")
 	private String showcaseUrl;
-	
-	@Column(name="NM_CAMINHO_PRODUTO")
 	private String productUrl;
-	
-	@Column(name="NM_CAMINHO_SUPERZOOM")
 	private String superzoomUrl;
-	
-	@Column(name="NM_CAMINHO_CARRINHO")
 	private String shoppingCartUrl;
-	
-	@Column(name="NM_CAMINHO_ANDROID_VITRINE")
 	private String androidShowcaseUrl;
-	
-	@Column(name="NM_CAMINHO_ANDROID_PRODUTO")
 	private String androidProductUrl;
-	
-	@Column(name="BO_PRINCIPAL")
 	private Boolean main;
 	
-	@ManyToOne
-	@JoinColumn(name="CD_ITEM", referencedColumnName="CD_ITEM", nullable=false)
-	@Cascade(CascadeType.SAVE_UPDATE)
-	private Item item;
+	public ImageJSON() {
+
+	}
 
 	public Long getId() {
 		return id;
@@ -111,19 +77,6 @@ public class Image {
 
 	public void setMain(Boolean main) {
 		this.main = main;
-	}
-
-	public Item getItem() {
-		return item;
-	}
-
-	public void setItem (Item item) {
-		this.item = item;
-	}
-	
-	@Override
-	public String toString() {
-		return productUrl;
 	}
 	
 }

@@ -2,6 +2,9 @@ package com.ideaiselectronics.catalogo.spring.dao.interfaces;
 
 import javax.ws.rs.core.GenericType;
 
+//import org.jboss.resteasy.util.GenericType;
+
+
 public interface Methods {
 	
 	public <T> Object get(String url, GenericType<T> type);

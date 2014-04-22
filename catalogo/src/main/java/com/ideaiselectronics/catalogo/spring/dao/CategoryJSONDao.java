@@ -1,0 +1,56 @@
+package com.ideaiselectronics.catalogo.spring.dao;
+
+import java.util.List;
+
+import javax.ws.rs.core.GenericType;
+
+
+
+//import org.jboss.resteasy.util.GenericType; retorna um linkedHashMap ao inves de um List, nao sei pq
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ideaiselectronics.catalogo.spring.dao.interfaces.CategoryDaoBehavior;
+import com.ideaiselectronics.catalogo.spring.domain.json.CategoryJSON;
+import com.ideaiselectronics.catalogo.spring.domain.json.ProductJSON;
+import com.ideaiselectronics.catalogo.spring.domain.json.SubcategoryJSON;
+
+@Service
+public class CategoryJSONDao extends AbstractDao implements CategoryDaoBehavior {
+
+	@Autowired
+	private String stockUrlCategory;
+	
+	@Override
+	public CategoryJSON findById(Long id) {
+		return (CategoryJSON) restClient.get(stockUrlCategory + id, new GenericType<CategoryJSON>(){} );
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<CategoryJSON> list() {
+		return (List<CategoryJSON>) restClient.get(stockUrlCategory, new GenericType< List<CategoryJSON> >(){});
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<SubcategoryJSON> listSubcategories(Long categoryId) {
+		return (List<SubcategoryJSON>) restClient.get(stockUrlCategory + categoryId + "/subcategory", new GenericType< List<SubcategoryJSON> >(){});
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<ProductJSON> listTopSellersProducts(Long categoryId) {
+		return (List<ProductJSON>) restClient.get(stockUrlCategory + categoryId + "/topproducts", new GenericType< List<ProductJSON> >(){});
+	}
+
+	@Override
+	public List<CategoryJSON> listCategoriesWithSubcategories() {
+		List<CategoryJSON> categoriesJSON = this.list();
+		for (CategoryJSON categoryJSON : categoriesJSON) {
+			categoryJSON.setSubcategories( this.listSubcategories(categoryJSON.getId()) );
+		}
+		return categoriesJSON;
+	}
+
+}

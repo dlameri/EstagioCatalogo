@@ -2,20 +2,25 @@ package com.ideaiselectronics.catalogo.spring.dao.interfaces;
 
 import java.util.List;
 
-import com.ideaiselectronics.catalogo.spring.domain.Product;
+import com.ideaiselectronics.catalogo.spring.domain.json.ItemJSON;
+import com.ideaiselectronics.catalogo.spring.domain.json.ProductJSON;
 
 public interface ProductDaoBehavior {
 	
-	public Product findById(Long id);
+	public ProductJSON findById(Long id);
 	
-	public List<Product> list();
+	public List<ProductJSON> list();
 	
-	public List<Product> listOrderByRank();
+	public List<ProductJSON> listOrderByRank(int quantity);
 	
-	public List<Product> findByCategoryId(Long idCategory);
+	public List<ItemJSON> listItems(Long productId);
 	
-	public List<Product> findBySubcategoryId(Long idSubcategory);
+	public List<ProductJSON> listTopSellersProducts(int quantity);
 	
-	public List<Product> findByName(String name);
+	public List<ProductJSON> findByCategoryId(Long categoryId);
+	
+	public List<ProductJSON> findBySubcategoryId(Long subcategoryId);
+	
+	public List<ProductJSON> findByName(String name);
 
 }

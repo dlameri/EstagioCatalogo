@@ -1,5 +1,6 @@
 package com.ideaiselectronics.catalogo.spring.dao;
 
+/*import org.jboss.resteasy.util.GenericType;*/
 import javax.ws.rs.core.GenericType;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,8 +11,7 @@ import com.ideaiselectronics.catalogo.spring.dao.interfaces.ShoppingCartBehavior
 import com.ideaiselectronics.catalogo.util.JsonUtil;
 
 @Service
-public class ShoppingCartDao extends AbstractDao implements
-		ShoppingCartBehavior {
+public class ShoppingCartJSONDao extends AbstractDao implements ShoppingCartBehavior {
 
 	@Autowired
 	@Qualifier("checkoutUrlCart")

@@ -17,11 +17,11 @@
   									<article>
   										<p class="product-name-carrousel">${product.name}</p>
   										<p class="short-description">${product.shortDescription}</p>
-  										<p class="price-from">Preço de: ${product.items[0].formatedPriceFrom}</p>
-  										<p>por: <span class="price-for">${product.items[0].formatedPriceFor}</span></p>
+  										<p class="price-from">Preço de: ${product.items[0].formattedPriceFrom}</p>
+  										<p>por: <span class="price-for">${product.items[0].formattedPriceFor}</span></p>
   										<p>ou em até: ${product.items[0].lastInstallment}</p>
   									</article>
-  									<img src="${product.itemToDisplayOnShowcase.urlImageMain}" alt="" class="product-main-image">
+  									<img src="${product.itemToDisplayOnShowcase.imageMain}" alt="" class="product-main-image">
 								</a>
 							</section>
   						</li>
@@ -32,19 +32,63 @@
 			<section class="top-sellers-product">
 				<h3>Produtos mais vendidos</h3>
 				<ul>
-					<c:forEach items="${products}"  var="product" begin="0" end="7">
+					<c:forEach items="${topSellersProducts}"  var="topSellerProduct">
 						<li>
 							<article>
 								<header>
-									<a href="./product/${product.id}"><img src="${product.itemToDisplayOnShowcase.urlImageMain}" alt="" class="product-main-image"></a>
+									<a href="./product/${topSellerProduct.id}"><img src="${topSellerProduct.itemToDisplayOnShowcase.imageMain}" alt="" class="product-main-image"></a>
 								</header>
 								<div class="product-information">
-									<span class="product-name"><a href="./product/${product.id}">${product.name}</a></span>
+									<span class="product-name"><a href="./product/${topSellerProduct.id}">${topSellerProduct.name}</a></span>
 									<div class="product-price-box">
-										<span class="price">De: ${product.itemToDisplayOnShowcase.formatedPriceFrom}</span> | 
-										<span class="price-sale">Por: ${product.itemToDisplayOnShowcase.formatedPriceFor}</span>
+										<span class="price">De: ${topSellerProduct.itemToDisplayOnShowcase.formattedPriceFrom}</span> | 
+										<span class="price-sale">Por: ${topSellerProduct.itemToDisplayOnShowcase.formattedPriceFor}</span>
 									</div>
-									<span class="installment">ou em ${product.items[0].lastInstallment}</span>
+									<span class="installment">ou em ${topSellerProduct.items[0].lastInstallment}</span>
+								</div>
+							</article>
+						</li>
+					</c:forEach>
+				</ul>
+			</section>
+			<section class="top-sellers-product">
+				<h3>Produtos mais vendidos</h3>
+				<ul>
+					<c:forEach items="${topSellersProductsFirstSection}"  var="topSellerProduct">
+						<li>
+							<article>
+								<header>
+									<a href="./product/${topSellerProduct.id}"><img src="${topSellerProduct.itemToDisplayOnShowcase.imageMain}" alt="" class="product-main-image"></a>
+								</header>
+								<div class="product-information">
+									<span class="product-name"><a href="./product/${topSellerProduct.id}">${topSellerProduct.name}</a></span>
+									<div class="product-price-box">
+										<span class="price">De: ${topSellerProduct.itemToDisplayOnShowcase.formattedPriceFrom}</span> | 
+										<span class="price-sale">Por: ${topSellerProduct.itemToDisplayOnShowcase.formattedPriceFor}</span>
+									</div>
+									<span class="installment">ou em ${topSellerProduct.items[0].lastInstallment}</span>
+								</div>
+							</article>
+						</li>
+					</c:forEach>
+				</ul>
+			</section>
+			<section class="top-sellers-product">
+				<h3>Produtos mais vendidos</h3>
+				<ul>
+					<c:forEach items="${topSellersProductsSecondSection}"  var="topSellerProduct">
+						<li>
+							<article>
+								<header>
+									<a href="./product/${topSellerProduct.id}"><img src="${topSellerProduct.itemToDisplayOnShowcase.imageMain}" alt="" class="product-main-image"></a>
+								</header>
+								<div class="product-information">
+									<span class="product-name"><a href="./product/${topSellerProduct.id}">${topSellerProduct.name}</a></span>
+									<div class="product-price-box">
+										<span class="price">De: ${topSellerProduct.itemToDisplayOnShowcase.formattedPriceFrom}</span> | 
+										<span class="price-sale">Por: ${topSellerProduct.itemToDisplayOnShowcase.formattedPriceFor}</span>
+									</div>
+									<span class="installment">ou em ${topSellerProduct.items[0].lastInstallment}</span>
 								</div>
 							</article>
 						</li>

@@ -1,4 +1,4 @@
-package com.ideaiselectronics.catalogo.spring.domain;
+package com.ideaiselectronics.catalogo.spring.domain.stock;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

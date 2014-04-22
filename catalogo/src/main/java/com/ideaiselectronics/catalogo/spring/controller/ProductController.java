@@ -15,13 +15,13 @@ import com.ideaiselectronics.catalogo.spring.dao.interfaces.ProductDaoBehavior;
 @RequestMapping("/product")
 public class ProductController extends BaseController {
 	
-	@Autowired @Qualifier("productDao")
-	private ProductDaoBehavior productDao;
+	@Autowired @Qualifier("productJSONDao")
+	private ProductDaoBehavior productJSONDao;
 	
 	@RequestMapping( value="/{productId}", method = RequestMethod.GET )
 	public ModelAndView showProductDetails( @PathVariable("productId") Long productId ) {
 		ModelAndView view = getBaseView("catalogo/productDetails");
-		view.addObject("product", productDao.findById(productId));
+		view.addObject("product", productJSONDao.findById(productId));
 		
 		return view;
 	}
@@ -29,7 +29,7 @@ public class ProductController extends BaseController {
 	@RequestMapping ( value = "/search", method = RequestMethod.GET)
 	public ModelAndView searchProduct(@RequestParam(value="name", required=false) String productName ) {
 		ModelAndView view = getBaseView("catalogo/productSearch");
-		view.addObject("product", productDao.findByName(productName));
+		view.addObject("product", productJSONDao.findByName(productName));
 		System.out.println(view);
 		return view;
 	}

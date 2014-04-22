@@ -11,11 +11,13 @@ import org.apache.commons.logging.LogFactory;
 import org.jboss.resteasy.client.jaxrs.ResteasyClient;
 import org.jboss.resteasy.client.jaxrs.ResteasyClientBuilder;
 import org.springframework.stereotype.Component;
+//import org.jboss.resteasy.util.GenericType;
+
 
 import com.ideaiselectronics.catalogo.spring.dao.interfaces.Methods;
 
 @Component
-public class RestClient implements Methods{
+public class RestClient implements Methods {
 	
 	private static Log LOGGER = LogFactory.getLog(RestClient.class);
 	private final static int STATUS_OK = 200;
@@ -32,13 +34,13 @@ public class RestClient implements Methods{
 	}
 
 	@Override
-	public <T> Object get(String url, GenericType<T> type) {
+	public <T> Object get(String url, GenericType<T> entity) {
 		ResteasyClient client = openConnection();
 		Response response = null;
 		try{
 			response = client.target(url).request().get();
 			if (response.getStatus() == STATUS_OK) {
-				T entityResponse = response.readEntity(type);
+				T entityResponse = response.readEntity(entity);
 				response.close();
 				return entityResponse;
 			}

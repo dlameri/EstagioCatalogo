@@ -10,7 +10,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-import com.ideaiselectronics.catalogo.spring.domain.Category;
+import com.ideaiselectronics.catalogo.spring.domain.stock.Category;
 import com.ideaiselectronics.catalogo.util.JsonUtil;
 
 @RunWith(JUnit4.class)

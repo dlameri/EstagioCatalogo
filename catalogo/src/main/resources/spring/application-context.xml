@@ -12,6 +12,10 @@
 	<context:component-scan base-package="com.ideaiselectronics.catalogo"/>
 
     <context:property-placeholder location="classpath:restIntegration/stock-integration.properties, classpath:restIntegration/checkout-integration.properties"/>
+    
+    <bean id="apiStockUrlBase" class="java.lang.String">  
+    	<constructor-arg value="${stock.api}"/>
+	</bean>
 
     <bean id="stockUrlCategory" class="java.lang.String">  
     	<constructor-arg value="${stock.category}"/>

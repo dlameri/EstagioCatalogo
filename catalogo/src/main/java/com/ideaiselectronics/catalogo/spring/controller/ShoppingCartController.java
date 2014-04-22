@@ -13,12 +13,12 @@ import com.ideaiselectronics.catalogo.spring.dao.interfaces.ShoppingCartBehavior
 @RequestMapping("/shoppingCart")
 public class ShoppingCartController extends BaseController {
 	
-	@Autowired @Qualifier("shoppingCartDao")
-	private ShoppingCartBehavior shoppingCartDao;
+	@Autowired @Qualifier("shoppingCartJSONDao")
+	private ShoppingCartBehavior shoppingCartJSONDao;
 	
 	@RequestMapping(value="/add", method = RequestMethod.POST)
 	public String addToShoppingCart(@RequestParam("itemId") Long itemId){
-		if(shoppingCartDao.addToCart(itemId)){
+		if(shoppingCartJSONDao.addToCart(itemId)){
 			return "redirect: ../"; //redirecionar para a pagina de sucesso
 		}
 		return "redirect: ../"; //redirecionar para a pagina de erro

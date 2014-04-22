@@ -9,7 +9,8 @@ import com.ideaiselectronics.catalogo.spring.dao.interfaces.Methods;
 public abstract class AbstractDao {
 	
 	@Autowired
+	protected String apiStockUrlBase;
+	@Autowired
 	protected Methods restClient;
-
 
 }

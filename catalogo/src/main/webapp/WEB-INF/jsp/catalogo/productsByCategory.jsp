@@ -6,8 +6,8 @@
 		<title>${category.name}</title>
 	</head>
 	<body>
-		<h2>${category.name}</h2>
 		<div class="container">
+			<h2>${category.name}</h2>
 			<ul>
 				<c:forEach items="${products}"  var="product">
 					<li>${product.name}</li>

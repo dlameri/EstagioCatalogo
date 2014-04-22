@@ -11,10 +11,10 @@ import com.ideaiselectronics.catalogo.spring.dao.interfaces.ShoppingCartBehavior
 @Component
 public abstract class BaseController {
 	
-	@Autowired @Qualifier("categoryDao")
-	protected CategoryDaoBehavior categoryDao;
-	@Autowired @Qualifier("shoppingCartDao")
-	protected ShoppingCartBehavior shoppingCartDao;
+	@Autowired @Qualifier("categoryJSONDao")
+	protected CategoryDaoBehavior categoryJSONDao;
+	@Autowired @Qualifier("shoppingCartJSONDao")
+	protected ShoppingCartBehavior shoppingCartJSONDao;
 	
 	public BaseController() {
 		
@@ -22,8 +22,8 @@ public abstract class BaseController {
 	
 	public ModelAndView getBaseView(String pageName) {
 		ModelAndView view = new ModelAndView(pageName);
-		view.addObject("categories", categoryDao.list());
-		view.addObject("cart", shoppingCartDao.cartQtd());
+		view.addObject("menuCategories", categoryJSONDao.listCategoriesWithSubcategories());
+		view.addObject("cart", shoppingCartJSONDao.cartQtd());
 		return view;
 	}
 

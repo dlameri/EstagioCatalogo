@@ -11,21 +11,6 @@ public class JsonUtil {
 	
 	private static ObjectMapper mapper = new ObjectMapper();
 	
-	public static Object readJsonToObject(String objectInJsonFormat, Class<?> classDomain) {
-		try {
-			return mapper.readValue(objectInJsonFormat, classDomain);
-		} catch (JsonParseException e) {
-			e.printStackTrace();
-			return new Object();
-		} catch (JsonMappingException e) {
-			e.printStackTrace();
-			return new Object();
-		} catch (IOException e) {
-			e.printStackTrace();
-			return new Object();
-		}
-	}
-	
 	public static <T> Object readJsonToObject(String objectInJsonFormat, TypeReference<T> type){
 	
 		try {
