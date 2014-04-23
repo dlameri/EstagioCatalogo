@@ -1,6 +1,6 @@
-/*$(function(){
-	setSearchAreaBehaviour();
-	setCarrosselProducts();
+$(function(){
+	setCarouselFeaturedProductsBehaviour();
+	setCarouselTopSellersProductsBehaviour();
 });
 
 function setSearchAreaBehaviour() {
@@ -26,31 +26,23 @@ function setSearchAreaBehaviour() {
 	});
 };
 
-function setCarrosselProducts() {
-	$('.bxslider').bxSlider({
-		mode: 'fade',
+function setCarouselFeaturedProductsBehaviour() {
+	$('.carousel-featured-products').bxSlider({
+		// mode: 'fade', depois voltar com isso
 		auto: true,
 		autoControls: true,
-		slideWidth: 400,
-		pause: 2000
+		pause: 3000
 	});
 }
-*/
 
-$(document).ready(function(){
-	
-  $('.bxslider').bxSlider({
-  	auto:true,
-  	autoControls:true
-  });
-  
-  $('.item-show-carrousel').bxSlider({
-	  	pager:false,
+function setCarouselTopSellersProductsBehaviour() {
+	$('.carousel-top-sellers-products').bxSlider({
+	  	pager: false,
+	  	minSlides: 4,
+	    maxSlides: 5,
 	  	slideWidth: 250,
-	    minSlides: 3,
-	    maxSlides: 4,
-	    slideMargin: 45,
-	    speed:1900,
-	  });
-
-});
+	    slideMargin: 10,
+	    speed: 1900,
+	    infiniteLoop: false
+	});
+}

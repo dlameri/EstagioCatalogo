@@ -1,8 +1,8 @@
 /**
- * BxSlider v4.0 - Fully loaded, responsive content slider
+ * BxSlider v4.1.2 - Fully loaded, responsive content slider
  * http://bxslider.com
  *
- * Written by: Steven Wanderski, 2012
+ * Written by: Steven Wanderski, 2014
  * http://stevenwanderski.com
  * (while drinking Belgian ales and listening to jazz)
  *
@@ -17,21 +17,32 @@
 .bx-wrapper {
 	position: relative;
 	margin: 0 auto 60px;
-	padding: 0% 10%;
+	padding: 0;
 	*zoom: 1;
 }
 
 .bx-wrapper img {
 	max-width: 100%;
-	width: 50%;
-	display: inline-block;
+	display: block;
 }
 
 /** THEME
 ===================================*/
 
 .bx-wrapper .bx-viewport {
+	-moz-box-shadow: 0 0 5px #ccc;
+	-webkit-box-shadow: 0 0 5px #ccc;
+	box-shadow: 0 0 5px #ccc;
+	border:  5px solid #fff;
+	left: -5px;
 	background: #fff;
+	
+	/*fix other elements on the page moving (on Chrome)*/
+	-webkit-transform: translatez(0);
+	-moz-transform: translatez(0);
+    	-ms-transform: translatez(0);
+    	-o-transform: translatez(0);
+    	transform: translatez(0);
 }
 
 .bx-wrapper .bx-pager,
@@ -39,7 +50,6 @@
 	position: absolute;
 	bottom: -30px;
 	width: 100%;
-	padding-right: 12%;
 }
 
 /* LOADER */
@@ -94,25 +104,21 @@
 /* DIRECTION CONTROLS (NEXT / PREV) */
 
 .bx-wrapper .bx-prev {
-	left: -50px;
-	background: url(images/arrow-left.png) no-repeat;
-	z-index: 9999;
+	left: 10px;
+	background: url(images/controls.png) no-repeat 0 -32px;
 }
 
 .bx-wrapper .bx-next {
-	right: -45px;
-	background: url(images/arrow-right.png) no-repeat;
-	z-index: 9999;
+	right: 10px;
+	background: url(images/controls.png) no-repeat -43px -32px;
 }
 
 .bx-wrapper .bx-prev:hover {
 	background-position: 0 0;
-	z-index: 9999;
 }
 
 .bx-wrapper .bx-next:hover {
-	background-position: 0 0;
-	z-index: 9999;
+	background-position: -43px 0;
 }
 
 .bx-wrapper .bx-controls-direction a {
@@ -128,7 +134,6 @@
 
 .bx-wrapper .bx-controls-direction a.disabled {
 	display: none;
-	z-index: 9999;
 }
 
 /* AUTO CONTROLS (START / STOP) */
