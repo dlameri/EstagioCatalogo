@@ -25,10 +25,7 @@ public class ProductController extends BaseController {
 	@Qualifier("dimensionJSONDao")
 	private DimensionDaoBehavior dimensionJSONDao;
 	
-	@Autowired
-	@Qualifier("itemJSONDao")
-	private DimensionDaoBehavior itemJSONDao;
-
+	
 	@RequestMapping(value = "/{productId}", method = RequestMethod.GET)
 	public ModelAndView showProductDetails(
 			@PathVariable("productId") Long productId) {
