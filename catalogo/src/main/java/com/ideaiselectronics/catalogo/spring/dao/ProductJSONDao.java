@@ -6,8 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ideaiselectronics.catalogo.spring.dao.interfaces.ProductDaoBehavior;
+import com.ideaiselectronics.catalogo.spring.domain.json.DimensionsJSON;
 import com.ideaiselectronics.catalogo.spring.domain.json.ItemJSON;
 import com.ideaiselectronics.catalogo.spring.domain.json.ProductJSON;
+
 
 
 //import org.jboss.resteasy.util.GenericType; retorna um linkedHashMap ao inves de um List, nao sei pq
@@ -59,5 +61,11 @@ public class ProductJSONDao extends AbstractDao implements ProductDaoBehavior {
 	public List<ProductJSON> listTopSellersProducts(int quantity) {
 		return this.listOrderByRank(quantity);
 	}	
+	
+	@Override
+	public List<DimensionsJSON> setDimensions(Long productId) {
+		
+		return (List<DimensionsJSON>) restClient.get(stockUrlProduct + productId + "dimensions", new GenericType< List<DimensionsJSON> >() {});
+	}
 
 }

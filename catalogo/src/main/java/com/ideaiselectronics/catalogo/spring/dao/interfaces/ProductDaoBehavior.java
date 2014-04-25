@@ -2,6 +2,7 @@ package com.ideaiselectronics.catalogo.spring.dao.interfaces;
 
 import java.util.List;
 
+import com.ideaiselectronics.catalogo.spring.domain.json.DimensionsJSON;
 import com.ideaiselectronics.catalogo.spring.domain.json.ItemJSON;
 import com.ideaiselectronics.catalogo.spring.domain.json.ProductJSON;
 
@@ -22,5 +23,7 @@ public interface ProductDaoBehavior {
 	public List<ProductJSON> findBySubcategoryId(Long subcategoryId);
 	
 	public List<ProductJSON> findByName(String name);
+
+	public List<DimensionsJSON> setDimensions(Long productId);
 
 }

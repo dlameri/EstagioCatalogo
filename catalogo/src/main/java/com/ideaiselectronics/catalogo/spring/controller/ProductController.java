@@ -9,28 +9,47 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.ideaiselectronics.catalogo.spring.dao.interfaces.DimensionDaoBehavior;
 import com.ideaiselectronics.catalogo.spring.dao.interfaces.ProductDaoBehavior;
+import com.ideaiselectronics.catalogo.spring.domain.json.ProductJSON;
 
 @Controller("productController")
 @RequestMapping("/product")
 public class ProductController extends BaseController {
-	
-	@Autowired @Qualifier("productJSONDao")
+
+	@Autowired
+	@Qualifier("productJSONDao")
 	private ProductDaoBehavior productJSONDao;
-	
-	@RequestMapping( value="/{productId}", method = RequestMethod.GET )
-	public ModelAndView showProductDetails( @PathVariable("productId") Long productId ) {
+
+	@Autowired
+	@Qualifier("dimensionJSONDao")
+	private DimensionDaoBehavior dimensionJSONDao;
+
+	@RequestMapping(value = "/{productId}", method = RequestMethod.GET)
+	public ModelAndView showProductDetails(
+			@PathVariable("productId") Long productId) {
 		ModelAndView view = getBaseView("catalogo/productDetails");
-		view.addObject("product", productJSONDao.findById(productId));
-		
+
+		ProductJSON product = creatingProduct(productId);
+
+		view.addObject("product", product);
+
 		return view;
 	}
-	
-	@RequestMapping ( value = "/search", method = RequestMethod.GET)
-	public ModelAndView searchProduct(@RequestParam(value="name", required=false) String productName ) {
+
+	private ProductJSON creatingProduct(Long productId) {
+		ProductJSON product = new ProductJSON();
+		product = productJSONDao.findById(productId);
+		product.setDimensions(dimensionJSONDao.list(productId));
+		return product;
+	}
+
+	@RequestMapping(value = "/search", method = RequestMethod.GET)
+	public ModelAndView searchProduct(
+			@RequestParam(value = "name", required = false) String productName) {
 		ModelAndView view = getBaseView("catalogo/productSearch");
 		view.addObject("product", productJSONDao.findByName(productName));
-		System.out.println(view);
+
 		return view;
 	}
 
