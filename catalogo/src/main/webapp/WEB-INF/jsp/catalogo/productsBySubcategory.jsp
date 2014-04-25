@@ -11,10 +11,9 @@
 			<h2>${subcategory.name}</h2>
 			<ul>
 				<c:forEach items="${products}"  var="product">
-					<li>${product.name}</li>
+					<li>${product.id}</li>
 				</c:forEach>
 			</ul>
 		</div>
-
 	</body>
 </html>
