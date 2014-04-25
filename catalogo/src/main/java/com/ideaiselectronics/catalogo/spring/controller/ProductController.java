@@ -24,6 +24,10 @@ public class ProductController extends BaseController {
 	@Autowired
 	@Qualifier("dimensionJSONDao")
 	private DimensionDaoBehavior dimensionJSONDao;
+	
+	@Autowired
+	@Qualifier("itemJSONDao")
+	private DimensionDaoBehavior itemJSONDao;
 
 	@RequestMapping(value = "/{productId}", method = RequestMethod.GET)
 	public ModelAndView showProductDetails(
@@ -33,7 +37,6 @@ public class ProductController extends BaseController {
 		ProductJSON product = creatingProduct(productId);
 
 		view.addObject("product", product);
-
 		return view;
 	}
 
@@ -48,8 +51,8 @@ public class ProductController extends BaseController {
 	public ModelAndView searchProduct(
 			@RequestParam(value = "name", required = false) String productName) {
 		ModelAndView view = getBaseView("catalogo/productSearch");
-		view.addObject("product", productJSONDao.findByName(productName));
 
+		view.addObject("product", productJSONDao.findByName(productName));
 		return view;
 	}
 
