@@ -17,6 +17,7 @@
 	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
 	<script type="text/javascript" src="<c:url value="/resources/carousel/jquery.bxslider/jquery.bxslider.js"/>"></script>
 	<script type="text/javascript" src="<c:url value="/resources/js/javascript-home.js"/>"></script>
+	<script type="text/javascript" src="<c:url value="/resources/js/shoppingcart.js"/>"></script>
 	<link rel="stylesheet" href="<c:url value="/resources/carousel/jquery.bxslider/jquery.bxslider.css"/>">
 	<link rel="stylesheet" href="<c:url value="/resources/css/carousels-bxslider.css"/>">
 	<link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>">
@@ -45,7 +46,7 @@
 
 			<div class="cart">
 				<span class="shopping-cart">Carrinho</span>
-				<span class="qtCart">${cart}</span>
+				<span class="qtCart"></span>
 			</div>
 
 			<nav id="main-nav" class="main-menu">

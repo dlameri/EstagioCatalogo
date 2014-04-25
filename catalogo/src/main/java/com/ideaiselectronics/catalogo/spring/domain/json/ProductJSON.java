@@ -3,7 +3,7 @@ package com.ideaiselectronics.catalogo.spring.domain.json;
 import java.util.List;
 
 public class ProductJSON {
-	
+
 	private Long id;
 	private String name;
 	private String shortDescription;
@@ -16,11 +16,21 @@ public class ProductJSON {
 	private Integer rank;
 	private List<LinkJSON> links;
 	private Integer count;
-	
+
 	/* atributos usados para vizualizacao nos jsp - nao fazem parte do json */
 	private List<ItemJSON> items;
 	private ItemJSON itemToDisplayOnShowcase;
-	
+	private DimensionsJSON dimensions;
+
+	/*----Getters and Setters----*/
+	public DimensionsJSON getDimensions() {
+		return dimensions;
+	}
+
+	public void setDimensions(DimensionsJSON dimensions) {
+		this.dimensions = dimensions;
+	}
+
 	public ProductJSON() {
 
 	}
@@ -127,23 +137,36 @@ public class ProductJSON {
 
 	public void setItems(List<ItemJSON> items) {
 		this.items = items;
-	}	
-	
+	}
+
 	public ItemJSON getItemToDisplayOnShowcase() {
-		if(this.itemToDisplayOnShowcase == null){
+		if (this.itemToDisplayOnShowcase == null) {
 			this.itemToDisplayOnShowcase = getItemWithLowerPriceFor();
 		}
 		return this.itemToDisplayOnShowcase;
 	}
-	
+
 	public ItemJSON getItemWithLowerPriceFor() {
 		ItemJSON itemCheaper = items.get(0);
 		for (ItemJSON item : items) {
-			if( itemCheaper.isPriceForGreaterThan(item.getPriceFor()) ) {
+			if (itemCheaper.isPriceForGreaterThan(item.getPriceFor())) {
 				itemCheaper = item;
 			}
 		}
 		return itemCheaper;
 	}
-	
+
+	public String getURI(String name) {
+
+		if (name != null) {
+			for (LinkJSON link : links) {
+				if (name.equals(link.getName())) {
+					return link.getHref();
+				}
+			}
+		}
+
+		return null;
+	}
+
 }

@@ -326,6 +326,19 @@ ul {
 	font-size: 0.9em;
 }
 
+/* -----------PRODUTOS BUSCA----------- */
+
+.product ul li {		
+	display: inline-block;
+	margin-bottom: 5%;
+}
+
+.product .product-information *{
+	text-align: center;
+	display: block;
+}
+
+
 /* -----------Carrousel de Produtos----------- */
 .featured-products article {
 	position: relative;
