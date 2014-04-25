@@ -60,7 +60,6 @@ ul {
 	padding: 8.5px 30px;
 	background-color: #FF4800;
 	cursor: pointer;
-	border-radius: 5px;
 	position: absolute;
 	top: 0px;
 }
@@ -78,7 +77,6 @@ ul {
 	/* border: 1px solid blue; */
 	padding: 4px 0px;
 	display: inline-block;
-	
 }
 
 .menu-item {
@@ -255,14 +253,14 @@ ul {
 
 /* -----------BODY----------- */
 .container {
-	/*border: 1px solid red;*/
-	margin: 0% 5% 0% 5%;	
-	padding: 0px 20px 0px 20px;
+	/* border: 1px solid red; */
+	margin: 20px 5% 20px 5%;	
+	padding: 0 2%;
 	position: relative;
 	background-color: white;
 }
 
-.container>section a {
+.container a {
 	color: black;
 }
 
@@ -273,15 +271,10 @@ ul {
 
 .featured-products {
 	padding: 0% 5%;
-	margin-top: 20px;
 }
 
 .top-sellers-products {
 	margin-top: 20px;
-}
-
-.top-sellers-products:last-child {
-	margin-bottom: 20px;
 }
 
 .top-sellers-products h3{

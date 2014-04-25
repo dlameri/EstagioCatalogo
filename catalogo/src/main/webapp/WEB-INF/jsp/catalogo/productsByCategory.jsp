@@ -7,12 +7,50 @@
 	</head>
 	<body>
 		<div class="container">
-			<h2>${category.name}</h2>
-			<ul>
-				<c:forEach items="${products}"  var="product">
-					<li>${product.name}</li>
-				</c:forEach>
-			</ul>
+			<nav class="side-nav">
+				<span class="category-title">${category.name}com nome muito grande</span>
+				<ul class="subcategory-nav">
+					<c:forEach items="${category.subcategories}" var="subcategory">
+						<li class="subcategory-item-nav"><a href="${pageContext.request.contextPath}/subcategory/${subcategory.id}/product">${subcategory.name}</a></li>
+					</c:forEach>
+					<li class="subcategory-item-nav"><a href="${pageContext.request.contextPath}/subcategory/${subcategory.id}/product">subcategoria de teste</a></li>
+					<li class="subcategory-item-nav"><a href="${pageContext.request.contextPath}/subcategory/${subcategory.id}/product">subcategoria de teste</a></li>
+					<li class="subcategory-item-nav"><a href="${pageContext.request.contextPath}/subcategory/${subcategory.id}/product">subcategoria de teste</a></li>
+					<li class="subcategory-item-nav"><a href="${pageContext.request.contextPath}/subcategory/${subcategory.id}/product">subcategoria de teste</a></li>
+					<li class="subcategory-item-nav"><a href="${pageContext.request.contextPath}/subcategory/${subcategory.id}/product">subcategoria de teste</a></li>
+					<li class="subcategory-item-nav"><a href="${pageContext.request.contextPath}/subcategory/${subcategory.id}/product">subcategoria de teste</a></li>
+					<li class="subcategory-item-nav"><a href="${pageContext.request.contextPath}/subcategory/${subcategory.id}/product">subcategoria de teste</a></li>
+					<li class="subcategory-item-nav"><a href="${pageContext.request.contextPath}/subcategory/${subcategory.id}/product">subcategoria de teste</a></li>
+					<li class="subcategory-item-nav"><a href="${pageContext.request.contextPath}/subcategory/${subcategory.id}/product">subcategoria de teste</a></li>
+					<li class="subcategory-item-nav"><a href="${pageContext.request.contextPath}/subcategory/${subcategory.id}/product">subcategoria de teste</a></li>
+					<li class="subcategory-item-nav"><a href="${pageContext.request.contextPath}/subcategory/${subcategory.id}/product">subcategoria de teste</a></li>
+					<li class="subcategory-item-nav"><a href="${pageContext.request.contextPath}/subcategory/${subcategory.id}/product">subcategoria de teste</a></li>
+					<li class="subcategory-item-nav"><a href="${pageContext.request.contextPath}/subcategory/${subcategory.id}/product">subcategoria de teste</a></li>
+					<li class="subcategory-item-nav"><a href="${pageContext.request.contextPath}/subcategory/${subcategory.id}/product">subcategoria de teste</a></li>
+					<li class="subcategory-item-nav"><a href="${pageContext.request.contextPath}/subcategory/${subcategory.id}/product">subcategoria de teste</a></li>
+				</ul>
+			</nav>
+			<section class="products-by-category">
+				<ul>
+					<c:forEach items="${products}"  var="product">
+						<li>
+							<article>
+								<header>
+									<a href="./product/${product.id}"><img src="${product.itemToDisplayOnShowcase.imageMain.showcaseUrl}" alt="" class="product-main-image"></a>
+								</header>
+								<div class="product-information">
+									<span class="product-name"><a href="./product/${product.id}">${product.name}</a></span>
+									<div class="product-price-box">
+										<span class="price">De: ${product.itemToDisplayOnShowcase.formattedPriceFrom}</span> | 
+										<span class="price-sale">Por: ${product.itemToDisplayOnShowcase.formattedPriceFor}</span>
+									</div>
+									<span class="installment">ou em ${product.itemToDisplayOnShowcase.lastInstallment}</span>
+								</div>
+							</article>
+						</li>
+					</c:forEach>
+				</ul>
+			</section>
 		</div>
 	</body>
 </html>
