@@ -36,10 +36,10 @@
 						<li>
 							<article>
 								<header>
-									<a href="./product/${product.id}"><img src="${product.itemToDisplayOnShowcase.imageMain.showcaseUrl}" alt="" class="product-main-image"></a>
+									<a href="${pageContext.request.contextPath}/product/${product.id}"><img src="${product.itemToDisplayOnShowcase.imageMain.showcaseUrl}" alt="" class="product-main-image"></a>
 								</header>
 								<div class="product-information">
-									<span class="product-name"><a href="./product/${product.id}">${product.name}</a></span>
+									<span class="product-name"><a href="${pageContext.request.contextPath}/${product.id}">${product.name}</a></span>
 									<div class="product-price-box">
 										<span class="price">De: ${product.itemToDisplayOnShowcase.formattedPriceFrom}</span> | 
 										<span class="price-sale">Por: ${product.itemToDisplayOnShowcase.formattedPriceFor}</span>

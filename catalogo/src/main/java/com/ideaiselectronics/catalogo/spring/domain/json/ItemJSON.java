@@ -6,9 +6,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
 import com.ideaiselectronics.catalogo.spring.domain.catalog.Installment;
 import com.ideaiselectronics.catalogo.util.Formatter;
 
+@JsonIgnoreProperties(ignoreUnknown=true)
 public class ItemJSON {
 	
 	private Long id;

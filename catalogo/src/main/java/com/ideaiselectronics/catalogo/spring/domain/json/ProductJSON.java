@@ -2,6 +2,9 @@ package com.ideaiselectronics.catalogo.spring.domain.json;
 
 import java.util.List;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown=true)
 public class ProductJSON {
 
 	private Long id;
@@ -21,15 +24,6 @@ public class ProductJSON {
 	private List<ItemJSON> items;
 	private ItemJSON itemToDisplayOnShowcase;
 	private DimensionsJSON dimensions;
-
-	/*----Getters and Setters----*/
-	public DimensionsJSON getDimensions() {
-		return dimensions;
-	}
-
-	public void setDimensions(DimensionsJSON dimensions) {
-		this.dimensions = dimensions;
-	}
 
 	public ProductJSON() {
 
@@ -138,6 +132,14 @@ public class ProductJSON {
 	public void setItems(List<ItemJSON> items) {
 		this.items = items;
 	}
+	
+	public DimensionsJSON getDimensions() {
+		return dimensions;
+	}
+
+	public void setDimensions(DimensionsJSON dimensions) {
+		this.dimensions = dimensions;
+	}
 
 	public ItemJSON getItemToDisplayOnShowcase() {
 		if (this.itemToDisplayOnShowcase == null) {
@@ -155,9 +157,8 @@ public class ProductJSON {
 		}
 		return itemCheaper;
 	}
-
+	
 	public String getURI(String name) {
-
 		if (name != null) {
 			for (LinkJSON link : links) {
 				if (name.equals(link.getName())) {

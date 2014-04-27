@@ -46,7 +46,7 @@
 
 			<div class="cart">
 				<span class="shopping-cart">Carrinho</span>
-				<span class="qtCart"></span>
+				<span class="qtCart">${cartItemsQuantity}</span>
 			</div>
 
 			<nav id="main-nav" class="main-menu">

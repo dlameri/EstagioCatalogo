@@ -11,7 +11,7 @@
 
 	<context:component-scan base-package="com.ideaiselectronics.catalogo"/>
 
-    <context:property-placeholder location="classpath:restIntegration/stock-integration.properties, classpath:restIntegration/checkout-integration.properties"/>
+    <context:property-placeholder location="classpath:restIntegration/stock-integration.properties, classpath:restIntegration/checkout-integration.properties, classpath:restIntegration/catalog-integration.properties"/>
     
     <bean id="apiStockUrlBase" class="java.lang.String">  
     	<constructor-arg value="${stock.api}"/>
@@ -34,7 +34,13 @@
 	</bean>
 	
 	<bean id="applicationUrlBase" class="java.lang.String">  
-    	<constructor-arg value="http://localhost:8081/catalogo/"/>  
+    	<constructor-arg value="${catalog.applicationUrlBase}"/>
+	</bean>
+	<bean id="applicationDomain" class="java.lang.String" autowire="byName">
+    	<constructor-arg value="${catalog.applicationDomain}"/>  
+	</bean>
+	<bean id="applicationRootPath" class="java.lang.String" autowire="byName">
+    	<constructor-arg value="${catalog.applicationRootPath}"/>  
 	</bean>
 
 </beans>

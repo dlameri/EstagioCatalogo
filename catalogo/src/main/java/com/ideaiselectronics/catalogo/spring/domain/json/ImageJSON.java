@@ -1,5 +1,8 @@
 package com.ideaiselectronics.catalogo.spring.domain.json;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown=true)
 public class ImageJSON {
 	
 	private Long id;

@@ -2,6 +2,9 @@ package com.ideaiselectronics.catalogo.spring.domain.json;
 
 import java.util.List;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown=true)
 public class CategoryJSON {
 	
 	private Long id;
@@ -13,13 +16,6 @@ public class CategoryJSON {
 	
 	public CategoryJSON() {
 
-	}
-
-	public CategoryJSON(Long id, String name, Boolean active, List<LinkJSON> links) {
-		this.id = id;
-		this.name = name;
-		this.active = active;
-		this.links = links;
 	}
 	
 	public Long getId() {

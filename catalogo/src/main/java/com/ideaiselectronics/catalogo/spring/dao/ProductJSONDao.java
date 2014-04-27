@@ -23,33 +23,23 @@ public class ProductJSONDao extends AbstractDao implements ProductDaoBehavior {
 	protected String stockUrlProduct;
 	
 	@Override
+	public List<ProductJSON> list() {
+		return (List<ProductJSON>) restClient.get(stockUrlProduct, new GenericType< List<ProductJSON> >(){});
+	}
+	
+	@Override
 	public ProductJSON findById(Long id) {
 		return (ProductJSON) restClient.get(stockUrlProduct + id, new GenericType<ProductJSON>(){});
 	}
 
 	@Override
-	public List<ProductJSON> list() {
-		return (List<ProductJSON>) restClient.get(stockUrlProduct, new GenericType< List<ProductJSON> >(){});
-	}
-
-	@Override
-	public List<ProductJSON> listOrderByRank(int quantity) {
+	public List<ProductJSON> listOrderBySalesRank(Integer quantity) {
 		return (List<ProductJSON>) restClient.get(stockUrlProduct + "?maxResults=" + quantity, new GenericType< List<ProductJSON> >(){});
 	}
-
+	
 	@Override
-	public List<ProductJSON> findByCategoryId(Long idCategory) {
-		return (List<ProductJSON>) restClient.get(stockUrlProduct + "bycategoryid/" + idCategory, new GenericType< List<ProductJSON> >(){});
-	}
-
-	@Override
-	public List<ProductJSON> findBySubcategoryId(Long idSubcategory) {
-		return (List<ProductJSON>) restClient.get(stockUrlProduct + "bysubcategoryid/"+ idSubcategory, new GenericType< List<ProductJSON> >(){});
-	}
-
-	@Override
-	public List<ProductJSON> findByName(String name) {
-		return (List<ProductJSON>) restClient.get(stockUrlProduct + "search/"+ name, new GenericType< List<ProductJSON> >(){});
+	public List<ProductJSON> search(String textToSearch) {
+		return (List<ProductJSON>) restClient.get(stockUrlProduct + "search/"+ textToSearch, new GenericType< List<ProductJSON> >(){});
 	}
 
 	@Override
@@ -58,14 +48,8 @@ public class ProductJSONDao extends AbstractDao implements ProductDaoBehavior {
 	}
 
 	@Override
-	public List<ProductJSON> listTopSellersProducts(int quantity) {
-		return this.listOrderByRank(quantity);
-	}	
-	
-	@Override
-	public List<DimensionsJSON> setDimensions(Long productId) {
-		
-		return (List<DimensionsJSON>) restClient.get(stockUrlProduct + productId + "dimensions", new GenericType< List<DimensionsJSON> >() {});
+	public DimensionsJSON getDimensions(Long productId) {
+		return (DimensionsJSON) restClient.get(stockUrlProduct + productId + "/dimensions", new GenericType< DimensionsJSON >(){});
 	}
 
 }
