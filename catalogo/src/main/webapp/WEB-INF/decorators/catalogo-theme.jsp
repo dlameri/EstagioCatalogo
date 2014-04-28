@@ -17,11 +17,20 @@
 	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
 	<script type="text/javascript" src="<c:url value="/resources/carousel/jquery.bxslider/jquery.bxslider.js"/>"></script>
 	<script type="text/javascript" src="<c:url value="/resources/js/javascript-home.js"/>"></script>
-	<script type="text/javascript" src="<c:url value="/resources/js/shoppingcart.js"/>"></script>
+	
 	<link rel="stylesheet" href="<c:url value="/resources/carousel/jquery.bxslider/jquery.bxslider.css"/>">
 	<link rel="stylesheet" href="<c:url value="/resources/css/carousels-bxslider.css"/>">
-	<link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>">
+
+	<!-- Pagination
+	<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="<c:url value="/resources/js/bootstrap-paginator.js"/>"></script>
+    <script type="text/javascript" src="<c:url value="/resources/js/pagination.js"/>"></script>-->
+
+    <link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>">
 	<link rel="stylesheet" href="<c:url value="/resources/css/style-products-category.css"/>">
+
 </head>
 <body>
 

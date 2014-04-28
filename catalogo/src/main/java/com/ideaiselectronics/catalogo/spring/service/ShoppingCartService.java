@@ -18,7 +18,7 @@ public class ShoppingCartService  implements ShoppingCartServiceBehavior {
 	
 	@Autowired @Qualifier("shoppingCartJSONDao")
 	private ShoppingCartDaoBehavior shoppingCartDao;
-	private final String ADD_ITEM_CHECKOUT = "ideaiselectronics.com:9082/Checkout/shoppingcart/codItem/"; 
+	private final String ADD_ITEM_CHECKOUT = "http://ideaiselectronics.com:9082/Checkout/shoppingcart/codItem/"; 
 
 	@Override
 	public Boolean hasCartTopCookie( HttpServletRequest request ) {
