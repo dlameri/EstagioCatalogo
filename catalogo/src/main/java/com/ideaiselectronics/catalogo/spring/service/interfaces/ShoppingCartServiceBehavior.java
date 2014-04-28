@@ -1,7 +1,10 @@
 package com.ideaiselectronics.catalogo.spring.service.interfaces;
 
+import java.io.IOException;
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 public interface ShoppingCartServiceBehavior {
 	
@@ -13,6 +16,6 @@ public interface ShoppingCartServiceBehavior {
 	
 	public String getTotalQuantityItems(HttpServletRequest request);
 	
-	public Boolean addItemToShoppingCart(Long itemId);
+	public void addItemToShoppingCart(HttpServletResponse response, Long itemId) throws IOException;
 
 }

@@ -24,14 +24,11 @@ public class ShoppingCartController extends BaseController {
 	@RequestMapping( value="/addItem", method = RequestMethod.POST )
 	public void addToShoppingCart( @RequestParam("itemId") Long itemId, HttpServletRequest request, HttpServletResponse response ){
 		try {
-			response.sendRedirect( "http://ideaiselectronics.com:9082/Checkout/shoppingcart/codItem/"+itemId );
+			shoppingCartService.addItemToShoppingCart( response, itemId );
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		/*if( shoppingCartService.addItemToShoppingCart( itemId ) ){
-			return "redirect: ./../"; //redirecionar para a pagina de sucesso
-		}
-		return "redirect: ./../"; //redirecionar para a pagina de erro*/
-	}	
+		
+	}
 
 }

@@ -1,7 +1,10 @@
 package com.ideaiselectronics.catalogo.spring.service;
 
+import java.io.IOException;
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -15,6 +18,7 @@ public class ShoppingCartService  implements ShoppingCartServiceBehavior {
 	
 	@Autowired @Qualifier("shoppingCartJSONDao")
 	private ShoppingCartDaoBehavior shoppingCartDao;
+	private final String ADD_ITEM_CHECKOUT = "ideaiselectronics.com:9082/Checkout/shoppingcart/codItem/"; 
 
 	@Override
 	public Boolean hasCartTopCookie( HttpServletRequest request ) {
@@ -36,8 +40,8 @@ public class ShoppingCartService  implements ShoppingCartServiceBehavior {
 	}
 	
 	@Override
-	public Boolean addItemToShoppingCart( Long itemId ) {
-		return shoppingCartDao.addToShoppingCart( itemId );
+	public void addItemToShoppingCart( HttpServletResponse response, Long itemId ) throws IOException {
+		response.sendRedirect( ADD_ITEM_CHECKOUT + itemId );
 	}
 	
 	private Cookie getCookieByName( Cookie[] cookies, String name ) {
