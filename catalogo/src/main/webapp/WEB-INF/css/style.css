@@ -22,6 +22,81 @@ ul {
 	padding: 0px;
 }
 
+/* -----------ERROR 404 ----------- */
+
+.error{
+	font-family: "Dosis",sans-serif;
+	background: url("http://localhost:8081/catalogo/resources/images/gandalf.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+ 	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+}
+
+.serverError{
+	font-family: "Dosis",sans-serif;
+	background: url("http://localhost:8081/catalogo/resources/images/enterprise.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+ 	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+}
+
+
+.ops{
+	font-size: 100px;
+	margin-left: 60px;
+	text-shadow: 1px 1px 50px white;
+}
+
+.erro-http{
+	color: #f6bd0d;
+	font-size: 80px;
+	margin-left: 20px;
+	text-shadow: 1px 1px 50px white;
+}
+
+.serverError .nao-encontrada{
+	font-size: 25px;
+	margin-left: 60px;
+	display: block;
+	text-shadow: 1px 1px 50px white;
+}
+
+.serverError .seta-esquerda {
+	top:335px;
+}
+
+.serverError .nao-encontrada{
+	text-shadow: 1px 1px 20px white;
+}
+
+.nao-encontrada{
+	font-size: 40px;
+	margin-left: 60px;
+	display: block;
+	text-shadow: 1px 1px 50px white;
+}
+
+.walk-on-home-boy{
+	font-size: 40px;
+	margin-top: 60px;
+	margin-left: 60px;
+	display: block;
+	text-decoration: underline;
+}
+
+.seta-esquerda {
+	width: 0;
+	height: 0;
+	position:absolute;
+	margin-left: -15px;
+	top:355px;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	border-right:10px solid #fff;
+}
+
 /* -----------HEADER----------- */
 
 .container-header {
