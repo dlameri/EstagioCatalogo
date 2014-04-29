@@ -4,7 +4,6 @@
 <%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator" prefix="decorator" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,13 +19,9 @@
 	
 	<link rel="stylesheet" href="<c:url value="/resources/carousel/jquery.bxslider/jquery.bxslider.css"/>">
 	<link rel="stylesheet" href="<c:url value="/resources/css/carousels-bxslider.css"/>">
-
-	<!-- Pagination
-	<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="<c:url value="/resources/js/bootstrap-paginator.js"/>"></script>
-    <script type="text/javascript" src="<c:url value="/resources/js/pagination.js"/>"></script>-->
+    
+    <script type="text/javascript" src="<c:url value="/resources/js/jquery.paging.min.js"/>"></script>
+    <script type="text/javascript" src="<c:url value="/resources/js/pagination.js"/>"></script>
 
     <link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>">
 	<link rel="stylesheet" href="<c:url value="/resources/css/style-products-category.css"/>">
@@ -48,13 +43,23 @@
 			</div>
 			
 			<div class="login-or-register">
-				<span>Olá, visitante!</span>
-				<a href="">Cadastre-se</a>
-				<a href="">Entre</a>
+			
+				<c:if test="${customerName != null}">
+					<span>Olá, ${customerName}!</span>
+					<a href="${pageContext.request.contextPath}/customer/customerDetails">Minha conta</a>
+					<a href="${pageContext.request.contextPath}/customer/authenticate/logout">Logout</a>
+				</c:if>
+				
+				<c:if test="${customerName == null}">
+					<span>Olá, visitante!</span>
+					<a href="${pageContext.request.contextPath}/customer/register">Cadastre-se</a>
+					<a href="${pageContext.request.contextPath}/customer/authenticate/loginForm">Entre</a>
+				</c:if>
+					
 			</div>
-
+			
 			<div class="cart">
-				<span class="shopping-cart">Carrinho</span>
+				<a href="${pageContext.request.contextPath}/shoppingCart/"><span class="shopping-cart">Carrinho</span><a>
 				<span class="qtCart">${cartItemsQuantity}</span>
 			</div>
 

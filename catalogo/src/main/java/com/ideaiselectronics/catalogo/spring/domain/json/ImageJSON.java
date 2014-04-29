@@ -19,6 +19,17 @@ public class ImageJSON {
 
 	}
 
+	public ImageJSON(String defaultUrl) {
+		productUrl = defaultUrl;
+		showcaseUrl = defaultUrl;
+		promo = defaultUrl;
+		productUrl = defaultUrl;
+		superzoomUrl = defaultUrl;
+		shoppingCartUrl = defaultUrl;
+		androidShowcaseUrl = defaultUrl;
+		androidProductUrl = defaultUrl;
+	}
+
 	public Long getId() {
 		return id;
 	}

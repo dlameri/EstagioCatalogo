@@ -44,11 +44,6 @@ public class ProductService implements ProductServiceBehavior {
 		}
 		return topSellersProductsByCategory;
 	}
-
-	private void fillProductJSON(ProductJSON productJSON) {
-		setItems( productJSON );
-		setImages( productJSON );
-	}
 	
 	@Override
 	public List<ProductJSON> listProductsByCategory( Long categoryId ) {
@@ -62,6 +57,27 @@ public class ProductService implements ProductServiceBehavior {
 	@Override
 	public List<ProductJSON> listProductsBySubcategory( Long subcategoryId ) {
 		return subcategoryDao.listProductsBySubcategory( subcategoryId );
+	}
+
+	@Override
+	public ProductJSON getProductWithAllPropertiesFilled( Long productId ) {
+		ProductJSON product = productDao.findById( productId );
+		setItems(product);
+		setImages( product );
+		setDimensions( product );
+		return product;
+	}
+
+	@Override
+	public List<ProductJSON> search( String textToSearch ) {
+		return productDao.search( textToSearch );
+	}
+
+	@Override
+	public List<ProductJSON> listPaginatedProducts( Long categoryId, Integer firstResult, Integer maxResults ) {
+		List<ProductJSON> products = categoryDao.listPaginatedProducts( categoryId, firstResult, maxResults );
+		fillProducts(products);
+		return products;
 	}
 	
 	private void setItems( ProductJSON productJSON ) {
@@ -79,19 +95,20 @@ public class ProductService implements ProductServiceBehavior {
 	private void setDimensions( ProductJSON productJSON ) {
 		productJSON.setDimensions( productDao.getDimensions( productJSON.getId() ) );
 	}
-
-	@Override
-	public ProductJSON getProductWithAllPropertiesFilled( Long productId ) {
-		ProductJSON product = productDao.findById( productId );
-		setItems(product);
-		setImages( product );
-		setDimensions( product );
-		return product;
+	
+	private void fillProductJSON(ProductJSON productJSON) {
+		setItems( productJSON );
+		setImages( productJSON );
 	}
-
-	@Override
-	public List<ProductJSON> search( String textToSearch ) {
-		return productDao.search( textToSearch );
+	
+	private void fillProducts( List<ProductJSON> products ) {
+		if( products != null ){
+			for (ProductJSON productJSON : products) {
+				setItems( productJSON );
+				setImages( productJSON );
+				setDimensions( productJSON );
+			}
+		}
 	}
 
 }
