@@ -1,6 +1,5 @@
 package com.ideaiselectronics.catalogo.spring.domain.stock;
 
-import java.math.BigDecimal;
 
 public class Installment {
 
