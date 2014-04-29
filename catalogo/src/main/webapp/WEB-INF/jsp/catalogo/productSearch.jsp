@@ -9,7 +9,7 @@
 		<div class="container">
 			<section class="product">
 				<h3>Produtos</h3>
-				<ul>
+				<ul class="paginatedProducts">
 					<c:forEach items="${products}"  var="product">
 						<li>
 							<article>

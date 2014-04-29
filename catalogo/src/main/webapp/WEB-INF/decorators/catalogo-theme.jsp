@@ -36,7 +36,7 @@
 			<div id="search-area">
 				<form method="get" action="${pageContext.request.contextPath}/product/search" name="searchProduct">
 					<div class="search-box">
-						<input type="text" name="name" id="input-search-text">
+						<input type="text" name="productName" id="input-search-text">
 						<input type="submit" value="Pesquisar" id="input-search-submit" class="search-icon">
 					</div>
 				</form>
@@ -65,15 +65,15 @@
 
 			<nav id="main-nav" class="main-menu">
 				<ul class="menu">
-					<c:forEach items="${menuCategories}"  var="category">
-						<li class="menu-item"><a href="${pageContext.request.contextPath}/category/${category.id}/product">${category.name}</a>
-							<ul class="sub-menu">
-								<c:forEach items="${category.subcategories}" var="subcategory">
-									<li class="submenu-item"><a href="${pageContext.request.contextPath}/subcategory/${subcategory.id}/product">${subcategory.name}</a></li>
-								</c:forEach>
-							</ul>
-						</li>
-					</c:forEach>
+				<!-- 	<c:forEach items="${menuCategories}"  var="category">
+					<li class="menu-item"><a href="${pageContext.request.contextPath}/category/${category.id}/product">${category.name}</a>
+						<ul class="sub-menu">
+							<c:forEach items="${category.subcategories}" var="subcategory">
+								<li class="submenu-item"><a href="${pageContext.request.contextPath}/subcategory/${subcategory.id}/product">${subcategory.name}</a></li>
+							</c:forEach>
+						</ul>
+					</li>
+				</c:forEach> -->
 				</ul>
 			</nav>		
 		</div>

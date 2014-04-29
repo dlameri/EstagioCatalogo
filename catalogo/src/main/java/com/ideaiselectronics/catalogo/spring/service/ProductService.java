@@ -30,8 +30,10 @@ public class ProductService implements ProductServiceBehavior {
 	@Override
 	public List<ProductJSON> listTopSellersProducts( Integer quantity ) {
 		List<ProductJSON> topSellersProducts = productDao.listOrderBySalesRank( quantity );
-		for (ProductJSON productJSON : topSellersProducts) {
-			fillProductJSON(productJSON);
+		if( topSellersProducts != null ){
+			for (ProductJSON productJSON : topSellersProducts) {
+				fillProductJSON(productJSON);
+			}
 		}
 		return topSellersProducts;
 	}
@@ -70,7 +72,9 @@ public class ProductService implements ProductServiceBehavior {
 
 	@Override
 	public List<ProductJSON> search( String textToSearch ) {
-		return productDao.search( textToSearch );
+		List<ProductJSON> products = productDao.search( textToSearch );
+		fillProducts( products );
+		return products;
 	}
 
 	@Override

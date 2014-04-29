@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ideaiselectronics.catalogo.spring.service.interfaces.CategoryServiceBehavior;
+import com.ideaiselectronics.catalogo.spring.service.interfaces.CustomerServiceBehavior;
 import com.ideaiselectronics.catalogo.spring.service.interfaces.ShoppingCartServiceBehavior;
 
 @Component
@@ -23,6 +24,8 @@ public abstract class BaseController {
 	protected CategoryServiceBehavior categoryService;
 	@Autowired @Qualifier("shoppingCartService")
 	protected ShoppingCartServiceBehavior shoppingCartService;
+	@Autowired @Qualifier("customerService")
+	protected CustomerServiceBehavior customerService;
 	
 	protected static final Integer INICIAL_QUANTITY_ITEM = 0;
 	
@@ -35,6 +38,7 @@ public abstract class BaseController {
 		view.addObject( "menuCategories", categoryService.listCategoriesWithSubcategories() );
 		
 		addCartTopCookie( request, response, view );
+		view.addObject( "customerName", customerService.getLoggedCustomerName( request ) );
 		
 		return view;
 	}

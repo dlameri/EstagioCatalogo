@@ -52,6 +52,24 @@ function requestPage(urlToSend) {
 
 function createProducts(data) {
 	$.each(data, function(index) {
-		$('.productsList').append('<li>Nome: <a href="productForm?id='+data[index].id+'">'+data[index].name+'</a></li>');	
+		$('.paginatedProducts').clear();
+		$('.paginatedProducts').append('
+			<li>
+				<article>
+					<header>
+						<a href="${pageContext.request.contextPath}/product/${'+data[index].id+'}"><img src="${product.itemToDisplayOnShowcase.imageMain.showcaseUrl}" alt="" class="product-main-image"></a>
+					</header>
+					<div class="product-information">
+						<span class="product-name"><a href="${pageContext.request.contextPath}/${product.id}">${product.name}</a></span>
+						<div class="product-price-box">
+							<span class="price">De: ${product.itemToDisplayOnShowcase.formattedPriceFrom}</span> | 
+							<span class="price-sale">Por: ${product.itemToDisplayOnShowcase.formattedPriceFor}</span>
+						</div>
+						<span class="installment">ou em ${product.itemToDisplayOnShowcase.lastInstallment}</span>
+					</div>
+				</article>
+			</li>
+			<li>Nome: <a href="productForm?id='+data[index].id+'">'+data[index].name+'</a></li>
+		');	
 	});
 };
