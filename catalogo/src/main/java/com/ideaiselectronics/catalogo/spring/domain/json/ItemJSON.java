@@ -187,10 +187,10 @@ public class ItemJSON {
 	public ImageJSON getUrlImageMain() {
 		for (ImageJSON image : images) {
 			if(image.getMain()){
-				return new ImageJSON( AppConfig.getUrlProductDefaultImage(); 
-//				return image;
+				return image;
 			}
 		}
+		
 		return new ImageJSON( AppConfig.getUrlProductDefaultImage() );
 	}
 	

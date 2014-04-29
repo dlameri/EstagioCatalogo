@@ -3,20 +3,23 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Página não encontrada</title>
-		<link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>">
 		<link href='http://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>">
+		
+		<title>Página não encontrada</title>
+		
 	</head>
 
-	<body class="error">
+	<body class="serverError">
 		<div>
 			<strong class="ops">Ops!</strong>
-			<span class="erro-http"> 404 </span>
-			<strong class="nao-encontrada"> I have no memory of this place </strong>
+			<span class="erro-http"> 500 </span>
+			<strong class="nao-encontrada"> Estamos com um problema na Entreprise! 
+			Spock já está analisando nossos servidores </strong>
 			
 			<a href="javascript:window.history.go(-1)" class="walk-on-home-boy">
-			<div class="seta-esquerda"> </div> 
-			VOLTAR
+				<div class="seta-esquerda"> </div> 
+				VOLTAR
 			</a>
 			
 		</div>	

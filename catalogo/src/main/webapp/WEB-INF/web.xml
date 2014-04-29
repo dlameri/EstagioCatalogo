@@ -5,41 +5,28 @@
 	<display-name>Ideais Eletronics</display-name>
 	 
 	<welcome-file-list>
-		<welcome-file>/src/main/webapp/pages/jsp/showcase.jsp</welcome-file>
+		<welcome-file>/WEB-INF/jsp/catalogo/store.jsp</welcome-file>
 	</welcome-file-list>
 	
-	
-	 <!-- Prior to Servlet 3.0 define either an error-code or an exception-type but not both -->
 	 <error-page>
-	  <!-- Define error page to react on Java exception -->
-	  <exception-type>java.lang.Throwable</exception-type>
-	  <!-- The location of the resource to display in response to the error will point to the Spring MVC handler method -->
-	  <location>/WEB-INF/jsp/catalogo/notFound.jsp</location>
+	  	<exception-type>java.lang.Throwable</exception-type>
+	  	<location>/WEB-INF/jsp/error/notFound.jsp</location>
 	 </error-page>
 	 
 	 <error-page>
-	  <error-code>404</error-code>
-	  <location>/WEB-INF/jsp/catalogo/notFound.jsp</location>
-	 </error-page>
-	 
-	 <!-- Prior to Servlet 3.0 define either an error-code or an exception-type but not both -->
-	 <error-page>
-	  <!-- Define error page to react on Java exception -->
-	  <exception-type>java.lang.Throwable</exception-type>
-	  <!-- The location of the resource to display in response to the error will point to the Spring MVC handler method -->
-	  <location>/WEB-INF/jsp/catalogo/serverError.jsp</location>
+		  <error-code>404</error-code>
+		  <location>/WEB-INF/jsp/error/notFound.jsp</location>
 	 </error-page>
 	 
 	 <error-page>
-	  <error-code>500</error-code>
-	  <location>/WEB-INF/jsp/catalogo/serverError.jsp</location>
+		  <exception-type>java.lang.Throwable</exception-type>
+		  <location>/WEB-INF/jsp/error/serverError.jsp</location>
 	 </error-page>
 	 
-	 
-	 
-	 
-	 
-	 
+	 <error-page>
+		  <error-code>500</error-code>
+		  <location>/WEB-INF/jsp/catalogo/error/serverError.jsp</location>
+	 </error-page>
 	
 	<servlet>
         <servlet-name>springMvcServlet</servlet-name>

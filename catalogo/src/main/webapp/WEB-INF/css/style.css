@@ -26,7 +26,7 @@ ul {
 
 .error{
 	font-family: "Dosis",sans-serif;
-	background: url("http://localhost:8081/catalogo/resources/images/gandalf.jpg") no-repeat center center fixed;
+	background: url("../images/gandalf.jpg") no-repeat center center fixed;
 	-webkit-background-size: cover;
  	-moz-background-size: cover;
   	-o-background-size: cover;
@@ -35,7 +35,7 @@ ul {
 
 .serverError{
 	font-family: "Dosis",sans-serif;
-	background: url("http://localhost:8081/catalogo/resources/images/enterprise.jpg") no-repeat center center fixed;
+	background: url("../images/enterprise.jpg") no-repeat center center fixed;
 	-webkit-background-size: cover;
  	-moz-background-size: cover;
   	-o-background-size: cover;
