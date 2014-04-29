@@ -14,6 +14,8 @@ public interface ProductServiceBehavior {
 	
 	public List<ProductJSON> listProductsBySubcategory(Long subcategoryId);
 	
+	public List<ProductJSON> listPaginatedProducts(Long categoryId, Integer firstResult, Integer maxResults);
+	
 	public ProductJSON getProductWithAllPropertiesFilled(Long productId);
 	
 	public List<ProductJSON> search(String textToSearch);

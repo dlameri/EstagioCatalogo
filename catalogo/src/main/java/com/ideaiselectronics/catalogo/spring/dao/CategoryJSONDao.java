@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.ws.rs.core.GenericType;
 
+
+
 //import org.jboss.resteasy.util.GenericType; retorna um linkedHashMap ao inves de um List, nao sei pq
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -46,6 +48,12 @@ public class CategoryJSONDao extends AbstractDao implements CategoryDaoBehavior 
 	@Override
 	public List<ProductJSON> listTopSellersProducts(Long categoryId) {
 		return (List<ProductJSON>) restClient.get(stockUrlCategory + categoryId + "/topproducts", new GenericType< List<ProductJSON> >(){});
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<ProductJSON> listPaginatedProducts(Long categoryId, Integer firstResult, Integer maxResults) {
+		return (List<ProductJSON>) restClient.get(stockUrlCategory + categoryId + "/product?maxResults=" + maxResults + "&firstResult=" + firstResult, new GenericType< List<ProductJSON> >(){});
 	}
 
 }

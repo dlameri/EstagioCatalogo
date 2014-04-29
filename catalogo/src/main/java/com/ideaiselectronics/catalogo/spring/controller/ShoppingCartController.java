@@ -14,21 +14,29 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ideaiselectronics.catalogo.spring.service.interfaces.ShoppingCartServiceBehavior;
 
-@Controller("shoppingCart")
+@Controller("shoppingCartController")
 @RequestMapping("/shoppingCart")
 public class ShoppingCartController extends BaseController {
 	
 	@Autowired @Qualifier("shoppingCartService")
 	private ShoppingCartServiceBehavior shoppingCartService;
 	
-	@RequestMapping( value="/addItem", method = RequestMethod.POST )
+	@RequestMapping( value = "/", method = RequestMethod.GET )
+	public void redirectCheckoutShoppingCart( HttpServletResponse response ) {
+		try {
+			shoppingCartService.redirectToCheckoutShoppingCart( response );
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@RequestMapping( value = "/addItem", method = RequestMethod.POST )
 	public void addToShoppingCart( @RequestParam("itemId") Long itemId, HttpServletRequest request, HttpServletResponse response ){
 		try {
 			shoppingCartService.addItemToShoppingCart( response, itemId );
 		} catch (IOException e) {
 			e.printStackTrace();
-		}
-		
+		}		
 	}
 
 }

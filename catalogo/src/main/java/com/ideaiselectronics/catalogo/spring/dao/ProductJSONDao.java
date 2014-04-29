@@ -12,6 +12,7 @@ import com.ideaiselectronics.catalogo.spring.domain.json.ProductJSON;
 
 
 
+
 //import org.jboss.resteasy.util.GenericType; retorna um linkedHashMap ao inves de um List, nao sei pq
 import javax.ws.rs.core.GenericType;
 

@@ -9,6 +9,7 @@ import java.util.Locale;
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 import com.ideaiselectronics.catalogo.spring.domain.catalog.Installment;
+import com.ideaiselectronics.catalogo.util.AppConfig;
 import com.ideaiselectronics.catalogo.util.Formatter;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -166,21 +167,14 @@ public class ItemJSON {
 		}
 		return discount;
 	}
-
-	public void setInstallments(BigDecimal priceFor) {
-		if (priceFor == null) {
-			setPriceFor(priceFor);
-		}
-		installments = calculateInstallments(priceFor);
-	}
-
+	
 	public List<Installment> getInstallments() {
-		if (installments == null) {
-			setInstallments(priceFor);
+		if(installments == null){
+			installments = calculateInstallments(priceFor);
 		}
 		return installments;
 	}
-
+	
 	public Installment getLastInstallment() {
 		if (lastInstallment == null) {
 			lastInstallment = findLastInstallment(installments);
@@ -188,19 +182,20 @@ public class ItemJSON {
 		return lastInstallment;
 	}
 
+	public boolean isPriceForGreaterThan(BigDecimal price) {
+		return this.priceFor.compareTo(price) == 1;
+	}
+	
 	public ImageJSON getUrlImageMain() {
 		for (ImageJSON image : images) {
 			if (image.getMain()) {
 				return image;
 			}
 		}
-		return new ImageJSON(); 
+		
+		return new ImageJSON( AppConfig.getUrlProductDefaultImage() );
 	}
-
-	public boolean isPriceForGreaterThan(BigDecimal price) {
-		return this.priceFor.compareTo(price) == 1;
-	}
-
+	
 	public int calculateDiscount(BigDecimal priceFrom, BigDecimal priceFor) {
 		double porcentagem = (((Double.valueOf(priceFor.doubleValue()) / Double
 				.valueOf(priceFrom.doubleValue())) - 1) * 100) * -1;

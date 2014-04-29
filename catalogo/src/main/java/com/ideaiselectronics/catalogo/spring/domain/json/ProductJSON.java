@@ -2,6 +2,7 @@ package com.ideaiselectronics.catalogo.spring.domain.json;
 
 import java.util.List;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown=true)
@@ -143,12 +144,12 @@ public class ProductJSON {
 
 	public ItemJSON getItemToDisplayOnShowcase() {
 		if (this.itemToDisplayOnShowcase == null) {
-			this.itemToDisplayOnShowcase = getItemWithLowerPriceFor();
+			this.itemToDisplayOnShowcase = takeItemWithLowerPriceFor();
 		}
 		return this.itemToDisplayOnShowcase;
 	}
 
-	public ItemJSON getItemWithLowerPriceFor() {
+	public ItemJSON takeItemWithLowerPriceFor() {
 		ItemJSON itemCheaper = items.get(0);
 		for (ItemJSON item : items) {
 			if (itemCheaper.isPriceForGreaterThan(item.getPriceFor())) {
