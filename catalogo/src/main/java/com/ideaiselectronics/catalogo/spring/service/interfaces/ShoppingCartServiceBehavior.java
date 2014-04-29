@@ -18,4 +18,6 @@ public interface ShoppingCartServiceBehavior {
 	
 	public void addItemToShoppingCart(HttpServletResponse response, Long itemId) throws IOException;
 
+	public void redirectToCheckoutShoppingCart(HttpServletResponse response) throws IOException;
+
 }

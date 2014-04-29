@@ -51,6 +51,7 @@
 					</c:forEach>
 				</ul>
 				<div id="pagination"></div>
+				<input type="hidden" id="categoryId" value="${category.id}">
 			</section>
 		</div>
 	</body>

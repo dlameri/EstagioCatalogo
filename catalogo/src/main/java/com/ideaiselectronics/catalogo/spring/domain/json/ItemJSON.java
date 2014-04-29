@@ -9,6 +9,7 @@ import java.util.Locale;
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 import com.ideaiselectronics.catalogo.spring.domain.catalog.Installment;
+import com.ideaiselectronics.catalogo.util.AppConfig;
 import com.ideaiselectronics.catalogo.util.Formatter;
 
 @JsonIgnoreProperties(ignoreUnknown=true)
@@ -189,7 +190,8 @@ public class ItemJSON {
 				return image;
 			}
 		}
-		return new ImageJSON(); //cria um NullObject para a imagem?  -- strings vazias, vai dar null pointer caso bata aqui!!
+		
+		return new ImageJSON( AppConfig.getUrlProductDefaultImage() );
 	}
 	
 	public int calculateDescount(BigDecimal priceFrom, BigDecimal priceFor) {

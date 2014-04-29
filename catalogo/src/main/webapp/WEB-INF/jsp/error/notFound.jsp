@@ -3,9 +3,10 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Página não encontrada</title>
-		<link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>">
 		<link href='http://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>">
+		
+		<title>Página não encontrada</title>
 	</head>
 
 	<body class="error">
@@ -15,8 +16,8 @@
 			<strong class="nao-encontrada"> "I have no memory of this place" </strong>
 			
 			<a href="javascript:window.history.go(-1)" class="walk-on-home-boy">
-			<div class="seta-esquerda"> </div> 
-			VOLTAR
+				<div class="seta-esquerda"></div>
+				VOLTAR 
 			</a>
 			
 		</div>	

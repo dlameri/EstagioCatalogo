@@ -18,7 +18,7 @@ public class ShoppingCartService  implements ShoppingCartServiceBehavior {
 	
 	@Autowired @Qualifier("shoppingCartJSONDao")
 	private ShoppingCartDaoBehavior shoppingCartDao;
-	private final String ADD_ITEM_CHECKOUT = "http://ideaiselectronics.com:9082/Checkout/shoppingcart/codItem/"; 
+	private final String SHOPPING_CART_CHECKOUT = "http://ideaiselectronics.com:9082/Checkout/shoppingCart/"; 
 
 	@Override
 	public Boolean hasCartTopCookie( HttpServletRequest request ) {
@@ -41,7 +41,12 @@ public class ShoppingCartService  implements ShoppingCartServiceBehavior {
 	
 	@Override
 	public void addItemToShoppingCart( HttpServletResponse response, Long itemId ) throws IOException {
-		response.sendRedirect( ADD_ITEM_CHECKOUT + itemId );
+		response.sendRedirect( SHOPPING_CART_CHECKOUT + "codItem/" + itemId );
+	}
+	
+	@Override
+	public void redirectToCheckoutShoppingCart(HttpServletResponse response) throws IOException {
+		response.sendRedirect( SHOPPING_CART_CHECKOUT );
 	}
 	
 	private Cookie getCookieByName( Cookie[] cookies, String name ) {
