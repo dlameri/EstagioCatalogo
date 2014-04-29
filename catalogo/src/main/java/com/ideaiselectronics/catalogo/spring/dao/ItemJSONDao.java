@@ -18,21 +18,21 @@ public class ItemJSONDao extends AbstractDao implements ItemDaoBehavior {
 	@Autowired
 	private String stockUrlItem;  
 
-	@Override
-	public ItemJSON findById(Long id) {
-		return (ItemJSON) restClient.get(stockUrlItem + id, new GenericType< ItemJSON >() {});
-	}
-	
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<ItemJSON> list() {
-		return (List<ItemJSON>) restClient.get(stockUrlItem, new GenericType< List<ItemJSON> >() {});
+		return (List<ItemJSON>) restClient.get(stockUrlItem, new GenericType< List<ItemJSON> >(){});
+	}
+	
+	@Override
+	public ItemJSON findById(Long id) {
+		return (ItemJSON) restClient.get(stockUrlItem + id, new GenericType< ItemJSON >(){});
 	}
 	
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<ImageJSON> listImages(Long itemId) {
-		return (List<ImageJSON>) restClient.get(stockUrlItem + itemId + "/image", new GenericType< List<ImageJSON> >() {});
+		return (List<ImageJSON>) restClient.get(stockUrlItem + itemId + "/image", new GenericType< List<ImageJSON> >(){});
 	}
 
 }

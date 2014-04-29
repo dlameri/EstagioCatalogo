@@ -7,9 +7,9 @@ import com.ideaiselectronics.catalogo.spring.domain.json.ItemJSON;
 
 public interface ItemDaoBehavior {
 	
-	public ItemJSON findById(Long id);
-	
 	public List<ItemJSON> list();
+	
+	public ItemJSON findById(Long id);
 	
 	public List<ImageJSON> listImages(Long itemId);
 

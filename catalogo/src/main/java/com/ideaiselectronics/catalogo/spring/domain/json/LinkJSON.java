@@ -1,5 +1,8 @@
 package com.ideaiselectronics.catalogo.spring.domain.json;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown=true)
 public class LinkJSON {
 	
 	private String href;
@@ -7,11 +10,6 @@ public class LinkJSON {
 	
 	public LinkJSON() {
 
-	}
-
-	public LinkJSON(String href, String name) {
-		this.href = href;
-		this.name = name;
 	}
 	
 	public String getHref() {

@@ -14,8 +14,8 @@
 				<h1>${product.shortDescription}</h1>
 				
 				<hr>
-				<p><strong class="priceFrom">De: ${product.items[0].formatedPriceFrom}</strong>
-				<p><strong class="priceFor">Por: ${product.items[0].formatedPriceFor} </strong>
+				<p><strong class="priceFrom">De: ${product.items[0].formattedPriceFrom}</strong>
+				<p><strong class="priceFor">Por: ${product.items[0].formattedPriceFor} </strong>
 				<p class="discount">( desconto de: ${product.items[0].discount} % )</p>
 				<span class="installment">${product.items[0].lastInstallment} sem juros</span>
 				
@@ -74,7 +74,7 @@
 			
 			<c:forEach items="${product.items}" var="item">
 				${item.sku} <br>
-				<form action="${pageContext.request.contextPath}/shoppingCart/add" method="post">
+				<form action="${pageContext.request.contextPath}/shoppingCart/addItem" method="post">
 					<input type="hidden" name="itemId" value="${item.id}">
 					<input type="submit" class="BuyButton" value="">
 				</form>

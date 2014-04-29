@@ -2,23 +2,18 @@ package com.ideaiselectronics.catalogo.spring.domain.json;
 
 import java.util.List;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown=true)
 public class SubcategoryJSON {
 	
 	private Long id;
 	private String name;
 	private Boolean active;
 	private List<LinkJSON> links;
-	private List<ProductJSON> products;
 	
 	public SubcategoryJSON() {
 
-	}
-
-	public SubcategoryJSON(Long id, String name, Boolean active, List<LinkJSON> links) {
-		this.id = id;
-		this.name = name;
-		this.active = active;
-		this.links = links;
 	}
 
 	public Long getId() {
@@ -51,14 +46,6 @@ public class SubcategoryJSON {
 
 	public void setLinks(List<LinkJSON> links) {
 		this.links = links;
-	}
-
-	public List<ProductJSON> getProducts() {
-		return products;
-	}
-
-	public void setProducts(List<ProductJSON> products) {
-		this.products = products;
 	}
 
 }

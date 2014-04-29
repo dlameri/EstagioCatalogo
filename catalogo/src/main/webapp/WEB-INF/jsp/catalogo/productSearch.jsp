@@ -5,7 +5,6 @@
 	<head>
 		<title>Vitrine do Site</title>
 	</head>
-
 	<body>
 		<div class="container">
 			<section class="product">
@@ -29,13 +28,7 @@
 						</li>
 					</c:forEach>
 				</ul>
-			</section>			
-			
-			
-			
-			
-				
-			
+			</section>
 		</div>
 	</body>
 </html>
