@@ -9,15 +9,15 @@
 	<body>
 				
 		<div class="container">
-			<img alt="imagem do produto" src="${product.items[0].images[0].productUrl}">
+			<img alt="imagem do produto" src="${product.itemToDisplayOnShowcase.imageMain.productUrl}">
 			<div class="details">
 				<h1>${product.shortDescription}</h1>
 				
 				<hr>
-				<p><strong class="priceFrom">De: ${product.items[0].formattedPriceFrom}</strong>
-				<p><strong class="priceFor">Por: ${product.items[0].formattedPriceFor} </strong>
-				<p class="discount">( desconto de: ${product.items[0].discount} % )</p>
-				<span class="installment">${product.items[0].lastInstallment} sem juros</span>
+				<p><strong class="priceFrom">De: ${product.itemToDisplayOnShowcase.formattedPriceFrom}</strong>
+				<p><strong class="priceFor">Por: ${product.itemToDisplayOnShowcase.formattedPriceFor} </strong>
+				<p class="discount">( desconto de: ${product.itemToDisplayOnShowcase.discount} % )</p>
+				<span class="installment">${product.itemToDisplayOnShowcase.lastInstallment} sem juros</span>
 				
 				<p><strong>Parcelas</strong></p>
 				<ul class="installments">
@@ -25,6 +25,12 @@
 			    		<li>${entry.number}x de R$ ${entry.value}</li>
 					</c:forEach>
 				</ul>
+				
+<%-- 			<c:forEach items="${product.items}" var="item"> --%>
+				<form action="${pageContext.request.contextPath}/shoppingCart/addItem" method="post">
+					<input type="submit" class="BuyButton" value="Comprar">
+				</form>
+<%-- 			</c:forEach> --%>
 
 			</div>
 			
@@ -71,14 +77,6 @@
 				</tr>
 				
 			</table>
-			
-			<c:forEach items="${product.items}" var="item">
-				${item.sku} <br>
-				<form action="${pageContext.request.contextPath}/shoppingCart/addItem" method="post">
-					<input type="hidden" name="itemId" value="${item.id}">
-					<input type="submit" class="BuyButton" value="">
-				</form>
-			</c:forEach>
 		</div>
 	</body>
 </html>

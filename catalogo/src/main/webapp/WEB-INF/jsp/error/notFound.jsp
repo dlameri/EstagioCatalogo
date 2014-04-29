@@ -13,7 +13,7 @@
 		<div>
 			<strong class="ops">Ops!</strong>
 			<span class="erro-http"> 404 </span>
-			<strong class="nao-encontrada"> I have no memory of this place </strong>
+			<strong class="nao-encontrada"> "I have no memory of this place" </strong>
 			
 			<a href="javascript:window.history.go(-1)" class="walk-on-home-boy">
 				<div class="seta-esquerda"></div>

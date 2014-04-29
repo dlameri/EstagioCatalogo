@@ -15,7 +15,8 @@
 			<strong class="ops">Ops!</strong>
 			<span class="erro-http"> 500 </span>
 			<strong class="nao-encontrada"> Estamos com um problema na Entreprise! 
-			Spock já está analisando nossos servidores </strong>
+			- Spock: analise de danos em andamento!
+			- Cap. Kirk: Levantar Escudos! </strong>
 			
 			<a href="javascript:window.history.go(-1)" class="walk-on-home-boy">
 				<div class="seta-esquerda"> </div> 
