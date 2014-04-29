@@ -10,5 +10,5 @@
 		<mapping class="com.ideaiseletronics.catalogo.spring.domain.Image" />
 		<mapping class="com.ideaiseletronics.catalogo.spring.domain.Dimensions" />
 	</session-factory>
-    
+
 </hibernate-configuration>

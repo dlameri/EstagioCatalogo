@@ -20,7 +20,7 @@ public class JsonUtilTest {
 	
 	@Before
 	public void setUp() {
-		objectInJsonFormat = "";		
+		objectInJsonFormat = "";
 	}
 	
 	@Test

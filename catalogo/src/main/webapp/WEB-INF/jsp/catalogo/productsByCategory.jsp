@@ -50,6 +50,7 @@
 						</li>
 					</c:forEach>
 				</ul>
+				<div id="pagination"></div>
 			</section>
 		</div>
 	</body>
