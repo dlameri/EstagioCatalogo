@@ -30,9 +30,9 @@ public class ProductController extends BaseController {
 	}
 
 	@RequestMapping( value = "/search", method = RequestMethod.GET )
-	public ModelAndView searchProduct( @RequestParam(value = "name", required = false) String productName, HttpServletRequest request, HttpServletResponse response ) {
+	public ModelAndView searchProduct( @RequestParam(value = "productName", required = false) String productName, HttpServletRequest request, HttpServletResponse response ) {
 		ModelAndView view = getBaseView( request, response, "catalogo/productSearch" );
-		view.addObject( "product", productService.search( productName ) );
+		view.addObject( "products", productService.search( productName ) );
 		
 		return view;
 	}
