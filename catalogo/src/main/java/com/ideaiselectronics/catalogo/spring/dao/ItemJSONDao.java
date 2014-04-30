@@ -16,13 +16,14 @@ import com.ideaiselectronics.catalogo.spring.domain.json.ItemJSON;
 public class ItemJSONDao extends AbstractDao implements ItemDaoBehavior {
 	
 	@Autowired
-	private String stockUrlItem;  
+	private String stockUrlItem;
 
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<ItemJSON> list() {
 		return (List<ItemJSON>) restClient.get(stockUrlItem, new GenericType< List<ItemJSON> >(){});
 	}
+
 	
 	@Override
 	public ItemJSON findById(Long id) {

@@ -29,7 +29,7 @@ public class StoreController extends BaseController {
 		view.addObject( "topSellersProducts", productService.listTopSellersProducts( TOP_SELLERS_QUANTITY ) );
 		view.addObject( "topSellersProductsFirstSection", productService.listTopSellersProductsByCategory( TOP_SELLERS_CATEGORY_ID_FIRST_SECTION ) );
 		view.addObject( "topSellersProductsSecondSection", productService.listTopSellersProductsByCategory( TOP_SELLERS_CATEGORY_ID_SECOND_SECTION ) );
-		/*retornar do servico produtos em destaque!*/
+		view.addObject( "promoProducts", productService.getPromoProducts() );
 		
 		return view;
     }

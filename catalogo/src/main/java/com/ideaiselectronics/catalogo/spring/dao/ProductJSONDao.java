@@ -2,6 +2,9 @@ package com.ideaiselectronics.catalogo.spring.dao;
 
 import java.util.List;
 
+//import org.jboss.resteasy.util.GenericType; retorna um linkedHashMap ao inves de um List, nao sei pq
+import javax.ws.rs.core.GenericType;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,12 +12,6 @@ import com.ideaiselectronics.catalogo.spring.dao.interfaces.ProductDaoBehavior;
 import com.ideaiselectronics.catalogo.spring.domain.json.DimensionsJSON;
 import com.ideaiselectronics.catalogo.spring.domain.json.ItemJSON;
 import com.ideaiselectronics.catalogo.spring.domain.json.ProductJSON;
-
-
-
-
-//import org.jboss.resteasy.util.GenericType; retorna um linkedHashMap ao inves de um List, nao sei pq
-import javax.ws.rs.core.GenericType;
 
 @SuppressWarnings("unchecked") 
 @Service
@@ -51,6 +48,11 @@ public class ProductJSONDao extends AbstractDao implements ProductDaoBehavior {
 	@Override
 	public DimensionsJSON getDimensions(Long productId) {
 		return (DimensionsJSON) restClient.get(stockUrlProduct + productId + "/dimensions", new GenericType< DimensionsJSON >(){});
+	}
+	
+	@Override
+	public List<ProductJSON> getPromoProducts(Boolean promo) {
+		return (List<ProductJSON>) restClient.get(stockUrlProduct + "?promo="+promo, new GenericType< List<ProductJSON> >(){});
 	}
 
 }
