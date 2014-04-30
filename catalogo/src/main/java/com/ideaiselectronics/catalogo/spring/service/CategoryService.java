@@ -19,8 +19,10 @@ public class CategoryService implements CategoryServiceBehavior {
 	@Override
 	public List<CategoryJSON> listCategoriesWithSubcategories() {
 		List<CategoryJSON> categoriesJSON = categoryDao.list();
-		for (CategoryJSON categoryJSON : categoriesJSON) {
-			categoryJSON.setSubcategories( categoryDao.listSubcategories( categoryJSON.getId() ) );
+		if ( categoriesJSON != null ){
+			for (CategoryJSON categoryJSON : categoriesJSON) {
+				categoryJSON.setSubcategories( categoryDao.listSubcategories( categoryJSON.getId() ) );
+			}
 		}
 		return categoriesJSON;
 	}

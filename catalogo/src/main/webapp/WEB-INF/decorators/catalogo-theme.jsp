@@ -36,7 +36,7 @@
 			<div id="search-area">
 				<form method="get" action="${pageContext.request.contextPath}/product/search" name="searchProduct">
 					<div class="search-box">
-						<input type="text" name="name" id="input-search-text">
+						<input type="text" name="productName" id="input-search-text">
 						<input type="submit" value="Pesquisar" id="input-search-submit" class="search-icon">
 					</div>
 				</form>
@@ -59,7 +59,7 @@
 			</div>
 			
 			<div class="cart">
-				<a href="${pageContext.request.contextPath}/shoppingCart/"><span class="shopping-cart">Carrinho</span><a>
+				<span class="shopping-cart"><a href="${pageContext.request.contextPath}/shoppingCart/">Carrinho</a></span>
 				<span class="qtCart">${cartItemsQuantity}</span>
 			</div>
 
@@ -73,7 +73,7 @@
 								</c:forEach>
 							</ul>
 						</li>
-					</c:forEach>
+					</c:forEach> 
 				</ul>
 			</nav>		
 		</div>

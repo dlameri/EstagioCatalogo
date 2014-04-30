@@ -2,6 +2,8 @@ package com.ideaiselectronics.catalogo.spring.service;
 
 import java.io.IOException;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Service;
@@ -31,6 +33,24 @@ public class CustomerService implements CustomerServiceBehavior {
 	@Override
 	public void redirectToCheckoutLogout(HttpServletResponse response) throws IOException {
 		response.sendRedirect( CUSTOMER_CHECKOUT + "authenticate/logout" );		
+	}
+
+	@Override
+	public String getLoggedCustomerName( HttpServletRequest request ) {
+		Cookie cookie = getCookieByName( request.getCookies(), CustomerServiceBehavior.CUSTOMER_COOKIE );
+		if( cookie != null ){
+			return cookie.getValue();
+		}
+		return null; //lancar uma excecao aqui
+	}
+	
+	private Cookie getCookieByName( Cookie[] cookies, String name ) {
+		for (int i = 0; i < cookies.length; i++) {
+			if( cookies[i].getName().equals( name ) ) {
+				return cookies[i];
+			}
+		}
+		return null;
 	}
 
 }

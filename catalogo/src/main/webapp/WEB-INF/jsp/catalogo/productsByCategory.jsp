@@ -31,7 +31,7 @@
 				</ul>
 			</nav>
 			<section class="products-by-category">
-				<ul>
+				<ul class="paginatedProducts">
 					<c:forEach items="${products}"  var="product">
 						<li>
 							<article>

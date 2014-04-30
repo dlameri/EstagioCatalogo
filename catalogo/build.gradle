@@ -59,7 +59,9 @@ dependencies {
     compile 'mysql:mysql-connector-java:5.1.28'
 	compile ('org.hibernate:hibernate-entitymanager:3.5.0-Final')
 	compile 'net.sf.ehcache:ehcache-core:2.5.2'
-
+	
+	testCompile "org.mockito:mockito-all:1.9.5"
+	
 	/*Integracao rest*/
 	compile 'org.jboss.resteasy:resteasy-servlet-initializer:3.0.6.Final'
 	compile 'org.jboss.resteasy:resteasy-jaxb-provider:3.0.6.Final'

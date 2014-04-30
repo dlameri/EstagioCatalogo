@@ -12,9 +12,9 @@ import com.ideaiselectronics.catalogo.spring.domain.catalog.Installment;
 import com.ideaiselectronics.catalogo.util.AppConfig;
 import com.ideaiselectronics.catalogo.util.Formatter;
 
-@JsonIgnoreProperties(ignoreUnknown=true)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ItemJSON {
-	
+
 	private Long id;
 	private Long sku;
 	private BigDecimal priceFrom;
@@ -24,22 +24,24 @@ public class ItemJSON {
 	private Integer stock;
 	private Integer rank;
 	private Boolean active;
+
 	private String formattedPriceFrom;
 	private String formattedPriceFor;
 	private List<LinkJSON> links = new ArrayList<LinkJSON>();
 	private Integer count;
-	
+
 	/* atributos usados para vizualizacao nos jsp - nao fazem parte do json */
 	private List<ImageJSON> images;
 	private ImageJSON imageMain;
 	private Integer discount;
 	private List<Installment> installments;
+
 	private Installment lastInstallment;
-	
+
 	public ItemJSON() {
 
 	}
-	
+
 	public Long getId() {
 		return id;
 	}
@@ -143,7 +145,7 @@ public class ItemJSON {
 	public void setCount(Integer count) {
 		this.count = count;
 	}
-	
+
 	public List<ImageJSON> getImages() {
 		return images;
 	}
@@ -153,15 +155,15 @@ public class ItemJSON {
 	}
 
 	public ImageJSON getImageMain() {
-		if(imageMain == null) {
+		if (imageMain == null) {
 			imageMain = getUrlImageMain();
 		}
 		return imageMain;
 	}
 
 	public Integer getDiscount() {
-		if(discount == null) {
-			discount = calculateDescount(priceFrom, priceFor); 
+		if (discount == null) {
+			discount = calculateDiscount(priceFrom, priceFor);
 		}
 		return discount;
 	}
@@ -174,7 +176,7 @@ public class ItemJSON {
 	}
 	
 	public Installment getLastInstallment() {
-		if(lastInstallment == null) {
+		if (lastInstallment == null) {
 			lastInstallment = findLastInstallment();
 		}
 		return lastInstallment;
@@ -186,7 +188,7 @@ public class ItemJSON {
 	
 	public ImageJSON getUrlImageMain() {
 		for (ImageJSON image : images) {
-			if(image.getMain()){
+			if (image.getMain()) {
 				return image;
 			}
 		}
@@ -194,36 +196,39 @@ public class ItemJSON {
 		return new ImageJSON( AppConfig.getUrlProductDefaultImage() );
 	}
 	
-	public int calculateDescount(BigDecimal priceFrom, BigDecimal priceFor) {
-		double porcentagem = (((Double.valueOf(priceFor.doubleValue()) / Double.valueOf(priceFrom.doubleValue())) - 1) * 100) * -1;
-		porcentagem = Double.valueOf(String.format(Locale.US, "%.0f", Math.floor(porcentagem)));
+	public int calculateDiscount(BigDecimal priceFrom, BigDecimal priceFor) {
+		double porcentagem = (((Double.valueOf(priceFor.doubleValue()) / Double
+				.valueOf(priceFrom.doubleValue())) - 1) * 100) * -1;
+		porcentagem = Double.valueOf(String.format(Locale.US, "%.0f",
+				Math.floor(porcentagem)));
 		return (int) porcentagem;
 	}
-	
+
 	public List<Installment> calculateInstallments(BigDecimal priceFor) {
 		int installment = 1;
 		installments = new ArrayList<Installment>();
 		double value = Double.valueOf(priceFor.doubleValue()) / installment;
-		
-		do{
-			installments.add(
-					new Installment(installment, Formatter.valueFormater(new BigDecimal(value).setScale(2, RoundingMode.HALF_EVEN))));
-			
+
+		do {
+			installments.add(new Installment(installment, Formatter
+					.valueFormater(new BigDecimal(value).setScale(2,
+							RoundingMode.HALF_EVEN))));
+
 			installment++;
 			value = Double.valueOf(priceFor.doubleValue()) / installment;
-		} while(installment <= 12 && value >= 10.00);
-				
+		} while (installment <= 12 && value >= 10.00);
+
 		return installments;
 	}
-	
+
 	public Installment findLastInstallment() {
-		if(lastInstallment == null) {
-			if(installments == null) {
-				installments = calculateInstallments(priceFor);
+		if (lastInstallment == null) {
+			if (this.installments == null) {
+				this.installments = calculateInstallments(priceFor);
 			}
-			lastInstallment = installments.get(installments.size()-1);
+			lastInstallment = installments.get(installments.size() - 1);
 		}
 		return lastInstallment;
 	}
-	
+
 }

@@ -7,7 +7,6 @@
 		<title>${product.name}</title>
 	</head>
 	<body>
-				
 		<div class="container">
 			<img alt="imagem do produto" src="${product.itemToDisplayOnShowcase.imageMain.productUrl}">
 			<div class="details">
@@ -28,6 +27,7 @@
 				
 <%-- 			<c:forEach items="${product.items}" var="item"> --%>
 				<form action="${pageContext.request.contextPath}/shoppingCart/addItem" method="post">
+					<input type="hidden" name="itemId" value="${product.itemToDisplayOnShowcase.id}">
 					<input type="submit" class="BuyButton" value="Comprar">
 				</form>
 <%-- 			</c:forEach> --%>

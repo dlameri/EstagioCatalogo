@@ -30,7 +30,11 @@ public class ProductController extends BaseController {
 	}
 
 	@RequestMapping( value = "/search", method = RequestMethod.GET )
+<<<<<<< HEAD
 	public ModelAndView searchProduct( @RequestParam(value = "productName", required = false) String productName, HttpServletRequest request, HttpServletResponse response ) {
+=======
+	public ModelAndView searchProduct( @RequestParam(value = "name") String productName, HttpServletRequest request, HttpServletResponse response ) {
+>>>>>>> 84220f46ae5ab3f050b9811d518e7a2a1b4735e8
 		ModelAndView view = getBaseView( request, response, "catalogo/productSearch" );
 		view.addObject( "products", productService.search( productName ) );
 		
