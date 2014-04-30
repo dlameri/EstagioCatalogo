@@ -119,7 +119,8 @@ ul {
 	width: 100%;
 	padding: 10px 0px 10px 0px;
 	/*background-color: rgba(31, 31, 31, 0.95);*/
-	background-color: #9c0105;
+/* 	background-color: #9c0105; */
+	background-color: #0000FF;
 	position: fixed;
 	top: 0;
 	z-index: 1;
@@ -130,11 +131,12 @@ ul {
 .logo {
 	/*border: 1px solid pink;*/
 	display: inline-block;
+	position:relative;
 	width: 100%;
 	height: 36px;
 	margin: 0px;
 	text-align: center;
-	font-size: 2em;
+	font-size: 190%;
 }
 
 .main-nav {
@@ -166,14 +168,12 @@ ul {
 	/*border: 1px solid pink;*/
 	display: inline-block;
 	padding: 4px 4px;
-
 }
 
 .menu-item:hover {
-	background-color: white;
+	background-color: #ffffff;
 	-webkit-border-top-left-radius: 5px;
 	-webkit-border-top-right-radius: 5px;
-
 }
 
 .menu-item:hover > a {
@@ -181,9 +181,29 @@ ul {
 	border-bottom: 1px solid #9C0105;
 }
 
+.submenu-item:hover{
+	background-color: #FFFFCC;
+	cursor: pointer;
+}
+
+.sub-menu{
+	border-style: solid;
+	border-right-width: 0em;
+	border-left-width: 0em;
+	border-top-width: 0em;
+	border-bottom-width: 8px;
+	border-bottom-color: #0000FF;
+}
+
+.submenu-item:hover a{
+	color: #000;
+}
+
 .menu li{
 	position: relative;
 }
+
+
 
 .menu li:hover > ul{
 	position: absolute;
@@ -213,32 +233,34 @@ ul {
 #search-area {
 	/*border: 1px solid black;*/
 	display: inline-block;
+	padding: 4px 3px;
 	position: absolute;
 	top: 0px;
-	left: 20px;
-	width: 30%;
+	left: 30px;
+	width: 29%;
+	border-radius:400px;
+	background-color: #ffffff;
 }
 
 .search-box {
 	/*border: 1px solid blue;*/
 	position: relative;
-	top: 2.5px;
-	
+	top: 2px;
 }
 
 #input-search-text {
-	/*border: 1px solid black;*/
 	border: none;
 	width: 80%;
 	height: 30px;
-	padding: 0px 5px;
+	padding: 0px 1%;
 	font-size: 1em;
 	color: black;
-	background-color: white;
+	outline:none;
+	margin-left: 3px;
+/* 	background-color: white; */
 }
 
 #input-search-submit {
-	/*border: 1px solid orange;*/
 	border: none;
 	height: 30px;
 	margin: 0px;
@@ -246,7 +268,6 @@ ul {
 	padding: 0px 5px;
 	cursor: pointer;
 	color: white;
-	background-color: #7F7570;
 }
 
 .search-icon {
@@ -257,10 +278,8 @@ ul {
 	vertical-align: top;
 	text-indent: -999999px;
 	cursor: pointer;
-	border-radius: 5px;
-	background: url('../images/icons/search-icon-white.png') no-repeat center center;
+	background: url('../images/icons/search-icon-black.png') no-repeat center center;
 	background-size: 20px 20px;
-	background-color: #FF4D07;
 }
 
 .login-or-register {
