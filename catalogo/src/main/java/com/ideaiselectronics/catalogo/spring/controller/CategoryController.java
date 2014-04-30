@@ -30,24 +30,18 @@ public class CategoryController extends BaseController {
 	public ModelAndView productsByCategory( @PathVariable("categoryId") Long categoryId, HttpServletRequest request, HttpServletResponse response ) {
 		ModelAndView view = getBaseView( request, response, "catalogo/productsByCategory" );
 		view.addObject( "category", categoryService.getCategoryWithSubcategories( categoryId ) );
-		view.addObject( "products", productService.listProductsByCategory( categoryId ) );
+		view.addObject( "count", productService.getTotalQuantityProductsByCategory( categoryId ) );
 		
 		return view;
 	}
 	
 	@RequestMapping( value="/{categoryId}/paginatedProduct", method = RequestMethod.GET )
 	@ResponseBody
-	public String productsByCategoryPaginated( @PathVariable("categoryId") Long categoryId, @RequestParam("maxResults") Integer maxResults, @RequestParam("firstResult") Integer firstResult, HttpServletRequest request, HttpServletResponse response ) {
+	public String productsByCategoryPaginated( @PathVariable("categoryId") Long categoryId, @RequestParam("maxResults") Integer maxResults, @RequestParam("firstResult") Integer firstResult, HttpServletRequest request ) {		
 		List<ProductJSON> products = productService.listPaginatedProducts( categoryId, firstResult, maxResults );
-		return convertToJSON( products );
-	}
-	
-	private String convertToJSON(List<ProductJSON> products) {
-		String json = "";
-		for (ProductJSON productJSON : products) {
-			json = json.concat( JsonUtil.writeObjectToJson(productJSON) );
-		}
-		return json;
+		request.setAttribute( "count", products.size() );
+		
+		return JsonUtil.writeObjectToJson( products );
 	}
 	
 }

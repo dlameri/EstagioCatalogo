@@ -21,4 +21,6 @@ public interface ProductServiceBehavior {
 	public List<ProductJSON> search(String textToSearch);
 
 	public List<ProductJSON> getPromoProducts();
+	
+	public Integer getTotalQuantityProductsByCategory(Long categoryId);
 }

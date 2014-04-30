@@ -49,11 +49,7 @@ public class ProductService implements ProductServiceBehavior {
 	
 	@Override
 	public List<ProductJSON> listProductsByCategory( Long categoryId ) {
-		List<ProductJSON> products = categoryDao.listProductsByCategory( categoryId );
-		for (ProductJSON productJSON : products) {
-			fillProductJSON(productJSON);
-		}
-		return products;
+		return categoryDao.listProductsByCategory( categoryId );
 	}
 	
 	@Override
@@ -82,6 +78,27 @@ public class ProductService implements ProductServiceBehavior {
 		List<ProductJSON> products = categoryDao.listPaginatedProducts( categoryId, firstResult, maxResults );
 		fillProducts(products);
 		return products;
+	}
+	
+	@Override
+	public List<ProductJSON> getPromoProducts() {
+		List<ProductJSON> products = productDao.getPromoProducts(true);
+		if( products != null ){
+			for (ProductJSON productJSON : products) {
+				setItems( productJSON );
+				setImages( productJSON );
+			}
+		}
+		return products;
+	}
+	
+	@Override
+	public Integer getTotalQuantityProductsByCategory( Long categoryId ) {
+		List<ProductJSON> products = categoryDao.listProductsByCategory( categoryId );
+		if( products != null ) {
+			return products.get( 0 ).getCount();
+		}
+		return Integer.valueOf( 0 );
 	}
 	
 	private void setItems( ProductJSON productJSON ) {
@@ -113,18 +130,6 @@ public class ProductService implements ProductServiceBehavior {
 				setDimensions( productJSON );
 			}
 		}
-	}
-
-	@Override
-	public List<ProductJSON> getPromoProducts() {
-		List<ProductJSON> products = productDao.getPromoProducts(true);
-		if( products != null ){
-			for (ProductJSON productJSON : products) {
-				setItems( productJSON );
-				setImages( productJSON );
-			}
-		}
-		return products;
 	}
 
 }

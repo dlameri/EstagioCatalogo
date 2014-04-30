@@ -1,32 +1,42 @@
 $(function() {
-	//createPagination();
-	
+	// $('.subcategory-item-nav').click();
+	createPagination();
 });
 
+/*function setRequestAjax(element) {
+	url = '/category/'+categoryId+'/paginatedProduct?maxResults='+limit+'&firstResult='+offset;
+	element.click( createPagination(url) );
+};*/
+
 function createPagination() {
-	var totalCount = 1 ;
+	var totalCount = $('#count').val();
 	var categoryId = $('#categoryId').val();
+	var appContext = $('#context').val();
 	var limit = 10;
 
 	$('#pagination').paging(totalCount, {
-		format: "[ < > ] . (qq -) nnncnnn (- pp)",
+		format: '[< ncnnn >]',
 	 	perpage: limit,
 	 	lapping: 1,
 	 	page: 1,
 
 		onSelect: function (page) {
-			var offset = page -1;
-			url = '/category/'+categoryId+'/paginatedProduct?maxResults='+limit+'&firstResult='+offset;
-			requestPage();
+			offset = (page -1) * limit;
+			url = 'http://ideaiselectronics.com:8081/catalogo/category/'+categoryId+'/paginatedProduct?maxResults='+limit+'&firstResult='+offset;
+			requestPage(url);
 		},
 		onFormat: function (type) {
 			switch (type) {
 			case 'block': // n and c
 				return '<a>' + this.value + '</a>';
-			case 'next': // >
-				return '<a>&gt;</a>';
+			case 'next':
+				if (this.active){
+					return '<a href="produtos/?page=' + this.value + '" class="next">></a>';
+				}
+				alert(this.value);
+				return '<a>></a>';
 			case 'prev': // <
-				return '<a>&lt;</a>';
+				return '<a><</a>';
 			case 'first': // [
 				return '<a>first</a>';
 			case 'last': // ]
@@ -42,17 +52,28 @@ function requestPage(urlToSend) {
 		type : "GET",
 		url : urlToSend,
 		dataType : 'json',
-		beforeSend : console.log("Enviando dados para o servidor"),
-		success : function(data) {
+		beforeSend : function() {
+			console.log('Enviando dados para o servidor');
+			console.log(urlToSend);
+		},
+		success: function(data) {
+			console.log('Retornou ' + data[0].count + ' produtos');
 			createProducts(data);
+		},
+		error: function(XMLHttpRequest, textStatus, errorThrown) {
+			alert('Erro ao executar a requisicao ajax ' + errorThrown);
+		},
+		complete: function() {
+			console.log('Encerrando requisicao ajax');	
 		}
-		
 	});
 };
 
 function createProducts(data) {
+	$('.paginatedProducts').empty();
 	$.each(data, function(index) {
-		$('.paginatedProducts').clear();
+		$('.paginatedProducts').append(data[index].id + ' ');
+	});
 //		$('.paginatedProducts').append('
 //			<li>
 //				<article>
@@ -71,5 +92,5 @@ function createProducts(data) {
 //			</li>
 //			<li>Nome: <a href="productForm?id='+data[index].id+'">'+data[index].name+'</a></li>
 //		');	
-	});
+//	});
 };

@@ -26,10 +26,10 @@ public class StoreController extends BaseController {
 	@RequestMapping( value = "/", method = RequestMethod.GET )
     public ModelAndView initializeShowcase( HttpServletResponse response, HttpServletRequest request ) {
 		ModelAndView view = getBaseView( request, response, "catalogo/store" );
+		view.addObject( "promoProducts", productService.getPromoProducts() );
 		view.addObject( "topSellersProducts", productService.listTopSellersProducts( TOP_SELLERS_QUANTITY ) );
 		view.addObject( "topSellersProductsFirstSection", productService.listTopSellersProductsByCategory( TOP_SELLERS_CATEGORY_ID_FIRST_SECTION ) );
 		view.addObject( "topSellersProductsSecondSection", productService.listTopSellersProductsByCategory( TOP_SELLERS_CATEGORY_ID_SECOND_SECTION ) );
-		view.addObject( "promoProducts", productService.getPromoProducts() );
 		
 		return view;
     }

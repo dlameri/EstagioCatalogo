@@ -4,6 +4,9 @@
 <html>
 	<head>
 		<title>${category.name}</title>
+		<content tag="pagination-script">
+			<script type="text/javascript" src="<c:url value="/resources/js/pagination.js"/>"></script>
+		</content>
 	</head>
 	<body>
 		<div class="container">
@@ -32,7 +35,7 @@
 			</nav>
 			<section class="products-by-category">
 				<ul class="paginatedProducts">
-					<c:forEach items="${products}"  var="product">
+					<!-- <c:forEach items="${products}"  var="product">
 						<li>
 							<article>
 								<header>
@@ -48,10 +51,12 @@
 								</div>
 							</article>
 						</li>
-					</c:forEach>
+					</c:forEach> -->
 				</ul>
 				<div id="pagination"></div>
 				<input type="hidden" id="categoryId" value="${category.id}">
+				<input type="hidden" id="context" value="${pageContext.request.contextPath}">
+				<input type="hidden" id="count" value="${count}">
 			</section>
 		</div>
 	</body>

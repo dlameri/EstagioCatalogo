@@ -19,9 +19,10 @@
 	
 	<link rel="stylesheet" href="<c:url value="/resources/carousel/jquery.bxslider/jquery.bxslider.css"/>">
 	<link rel="stylesheet" href="<c:url value="/resources/css/carousels-bxslider.css"/>">
-    
-    <script type="text/javascript" src="<c:url value="/resources/js/jquery.paging.min.js"/>"></script>
-    <script type="text/javascript" src="<c:url value="/resources/js/pagination.js"/>"></script>
+
+	<script type="text/javascript" src="<c:url value="/resources/js/jquery.paging.min.js"/>"></script>
+
+	<decorator:getProperty property="page.pagination-script"></decorator:getProperty>
 
     <link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>">
 	<link rel="stylesheet" href="<c:url value="/resources/css/style-products-category.css"/>">

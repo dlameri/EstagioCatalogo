@@ -46,6 +46,12 @@ public class CategoryJSONDao extends AbstractDao implements CategoryDaoBehavior 
 	
 	@SuppressWarnings("unchecked")
 	@Override
+	public List<ProductJSON> listOneProductByCategory(Long categoryId) {
+		return (List<ProductJSON>) restClient.get(stockUrlCategory + categoryId + "/product?maxResults=1", new GenericType< List<ProductJSON> >(){});
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
 	public List<ProductJSON> listTopSellersProducts(Long categoryId) {
 		return (List<ProductJSON>) restClient.get(stockUrlCategory + categoryId + "/topproducts", new GenericType< List<ProductJSON> >(){});
 	}

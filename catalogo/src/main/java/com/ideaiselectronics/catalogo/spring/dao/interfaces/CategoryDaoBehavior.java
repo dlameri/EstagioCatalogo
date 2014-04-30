@@ -16,6 +16,8 @@ public interface CategoryDaoBehavior {
 	
 	public List<ProductJSON> listProductsByCategory(Long categoryId);
 	
+	public List<ProductJSON> listOneProductByCategory(Long categoryId);	
+	
 	public List<ProductJSON> listTopSellersProducts(Long categoryId);
 	
 	public List<ProductJSON> listPaginatedProducts(Long categoryId, Integer firstResult, Integer maxResults);
