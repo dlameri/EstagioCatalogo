@@ -115,4 +115,16 @@ public class ProductService implements ProductServiceBehavior {
 		}
 	}
 
+	@Override
+	public List<ProductJSON> getPromoProducts() {
+		List<ProductJSON> products = productDao.getPromoProducts(true);
+		if( products != null ){
+			for (ProductJSON productJSON : products) {
+				setItems( productJSON );
+				setImages( productJSON );
+			}
+		}
+		return products;
+	}
+
 }

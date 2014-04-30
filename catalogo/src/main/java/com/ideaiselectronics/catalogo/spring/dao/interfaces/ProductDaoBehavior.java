@@ -20,4 +20,6 @@ public interface ProductDaoBehavior {
 
 	public DimensionsJSON getDimensions(Long productId);
 
+	public List<ProductJSON> getPromoProducts(Boolean promo);
+
 }

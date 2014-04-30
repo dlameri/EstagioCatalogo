@@ -19,4 +19,6 @@ public interface ProductServiceBehavior {
 	public ProductJSON getProductWithAllPropertiesFilled(Long productId);
 	
 	public List<ProductJSON> search(String textToSearch);
+
+	public List<ProductJSON> getPromoProducts();
 }

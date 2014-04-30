@@ -10,7 +10,7 @@
 		<div class="container">
 			<section class="featured-products">
 				<ul class="carousel-featured-products">
-					<c:forEach items="${topSellersProducts}"  var="product" >
+					<c:forEach items="${promoProducts}"  var="product" >
   						<li>
 							<article>
 								<a href="./product/${product.id}">
