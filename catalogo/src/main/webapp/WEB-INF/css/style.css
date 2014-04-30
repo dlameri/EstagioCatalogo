@@ -26,7 +26,7 @@ ul {
 
 .error{
 	font-family: "Dosis",sans-serif;
-	background: url("../images/gandalf.jpg") no-repeat center center fixed;
+	background: url("http://localhost:8081/catalogo/resources/images/gandalf.jpg") no-repeat center center fixed;
 	-webkit-background-size: cover;
  	-moz-background-size: cover;
   	-o-background-size: cover;
@@ -35,13 +35,21 @@ ul {
 
 .serverError{
 	font-family: "Dosis",sans-serif;
-	background: url("../images/enterprise.jpg") no-repeat center center fixed;
+	background: url("http://localhost:8081/catalogo/resources/images/enterprise.jpg") no-repeat center center fixed;
 	-webkit-background-size: cover;
  	-moz-background-size: cover;
   	-o-background-size: cover;
   	background-size: cover;
 }
 
+.badRequest{
+	font-family: "Dosis",sans-serif;
+	background: url("http://localhost:8081/catalogo/resources/images/better-call-saul.png") no-repeat center center fixed;
+	-webkit-background-size: cover;
+ 	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+}
 
 .ops{
 	font-size: 100px;
@@ -64,7 +72,7 @@ ul {
 }
 
 .serverError .seta-esquerda {
-	top:335px;
+	top: 400px;
 }
 
 .serverError .nao-encontrada{
@@ -414,13 +422,6 @@ tr>td:FIRST-CHILD{
 tr>td:last-child{
 	background-color: #f9f9f9;
 }
-
-
-
-
-
-
-
 
 /* -----------PRODUTOS BUSCA----------- */
 

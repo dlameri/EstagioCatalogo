@@ -4,7 +4,7 @@ $(function() {
 });
 
 function createPagination() {
-	var totalCount = ;
+	var totalCount = 1 ;
 	var categoryId = $('#categoryId').val();
 	var limit = 10;
 
