@@ -59,21 +59,21 @@
 			</div>
 			
 			<div class="cart">
-				<a href="${pageContext.request.contextPath}/shoppingCart/"><span class="shopping-cart">Carrinho</span><a>
+				<span class="shopping-cart"><a href="${pageContext.request.contextPath}/shoppingCart/">Carrinho</a></span>
 				<span class="qtCart">${cartItemsQuantity}</span>
 			</div>
 
 			<nav id="main-nav" class="main-menu">
 				<ul class="menu">
-				<!-- 	<c:forEach items="${menuCategories}"  var="category">
-					<li class="menu-item"><a href="${pageContext.request.contextPath}/category/${category.id}/product">${category.name}</a>
-						<ul class="sub-menu">
-							<c:forEach items="${category.subcategories}" var="subcategory">
-								<li class="submenu-item"><a href="${pageContext.request.contextPath}/subcategory/${subcategory.id}/product">${subcategory.name}</a></li>
-							</c:forEach>
-						</ul>
-					</li>
-				</c:forEach> -->
+					<c:forEach items="${menuCategories}"  var="category">
+						<li class="menu-item"><a href="${pageContext.request.contextPath}/category/${category.id}/product">${category.name}</a>
+							<ul class="sub-menu">
+								<c:forEach items="${category.subcategories}" var="subcategory">
+									<li class="submenu-item"><a href="${pageContext.request.contextPath}/subcategory/${subcategory.id}/product">${subcategory.name}</a></li>
+								</c:forEach>
+							</ul>
+						</li>
+					</c:forEach> 
 				</ul>
 			</nav>		
 		</div>

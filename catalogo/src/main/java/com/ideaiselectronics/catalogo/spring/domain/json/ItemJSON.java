@@ -177,7 +177,7 @@ public class ItemJSON {
 	
 	public Installment getLastInstallment() {
 		if (lastInstallment == null) {
-			lastInstallment = findLastInstallment(installments);
+			lastInstallment = findLastInstallment();
 		}
 		return lastInstallment;
 	}
@@ -221,7 +221,7 @@ public class ItemJSON {
 		return installments;
 	}
 
-	public Installment findLastInstallment(List<Installment> installments) {
+	public Installment findLastInstallment() {
 		if (lastInstallment == null) {
 			if (this.installments == null) {
 				this.installments = calculateInstallments(priceFor);
