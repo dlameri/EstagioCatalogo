@@ -14,7 +14,7 @@
 						<li>
 							<article>
 								<header>
-									<a href="./product/${product.id}"><img src="${product.itemToDisplayOnShowcase.imageMain.showcaseUrl}" alt="" class="product-main-image"></a>
+									<a href="${pageContext.request.contextPath}/product/${product.id}"><img src="${product.itemToDisplayOnShowcase.imageMain.showcaseUrl}" alt="" class="product-main-image"></a>
 								</header>
 								<div class="product-information">
 									<span class="product-name"><a href="${pageContext.request.contextPath}/product/${product.id}">${product.name}</a></span>
