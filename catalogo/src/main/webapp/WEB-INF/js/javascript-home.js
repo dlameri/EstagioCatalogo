@@ -30,7 +30,10 @@ function setCarouselFeaturedProductsBehaviour() {
 	$('.carousel-featured-products').bxSlider({
 		// mode: 'fade', depois voltar com isso
 		auto: true,
-		autoControls: true,
+		autoHover: true,
+		autoControls: false,
+		tickerHover: true,
+		speed: 750,
 		pause: 3000
 	});
 }
