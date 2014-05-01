@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="javax.servlet.jsp.PageContext" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -13,13 +14,13 @@
 					<c:forEach items="${promoProducts}"  var="product" >
   						<li>
 							<article>
-								<a href="./product/${product.id}">
+								<a href="${pageContext.request.contextPath}/product/${product.id}">
 									<header>
 										<img src="${product.itemToDisplayOnShowcase.imageMain.promo}" alt="" class="product-image-promo">
 									</header>
 								</a>
 								<div class="product-information-carousel">
-									<span class="product-name-carousel"><a href="./product/${product.id}"><strong>${product.name}</strong></a></span>
+									<span class="product-name-carousel"><a href="${pageContext.request.contextPath}/product/${product.id}"><strong>${product.name}</strong></a></span>
 									<span class="short-description">${product.shortDescription}</span>
 									<div class="product-price-box-carousel">
 										<span class="price">de: ${product.itemToDisplayOnShowcase.formattedPriceFrom}</span>
@@ -40,10 +41,10 @@
 						<li>
 							<article>
 								<header>
-									<a href="./product/${topSellerProduct.id}"><img src="${topSellerProduct.itemToDisplayOnShowcase.imageMain.showcaseUrl}" alt="" class="product-main-image"></a>
+									<a href="${pageContext.request.contextPath}/product/${topSellerProduct.id}"><img src="${topSellerProduct.itemToDisplayOnShowcase.imageMain.showcaseUrl}" alt="" class="product-main-image"></a>
 								</header>
 								<div class="product-information">
-									<span class="product-name"><a href="./product/${topSellerProduct.id}">${topSellerProduct.name}</a></span>
+									<span class="product-name"><a href="${pageContext.request.contextPath}/product/${topSellerProduct.id}">${topSellerProduct.name}</a></span>
 									<div class="product-price-box">
 										<span class="price">De: ${topSellerProduct.itemToDisplayOnShowcase.formattedPriceFrom}</span> | 
 										<span class="price-sale">Por: ${topSellerProduct.itemToDisplayOnShowcase.formattedPriceFor}</span>
@@ -63,10 +64,10 @@
 						<li>
 							<article>
 								<header>
-									<a href="./product/${topSellerProduct.id}"><img src="${topSellerProduct.itemToDisplayOnShowcase.imageMain.showcaseUrl}" alt="" class="product-main-image"></a>
+									<a href="${pageContext.request.contextPath}/product/${topSellerProduct.id}"><img src="${topSellerProduct.itemToDisplayOnShowcase.imageMain.showcaseUrl}" alt="" class="product-main-image"></a>
 								</header>
 								<div class="product-information">
-									<span class="product-name"><a href="./product/${topSellerProduct.id}">${topSellerProduct.name}</a></span>
+									<span class="product-name"><a href="${pageContext.request.contextPath}/product/${topSellerProduct.id}">${topSellerProduct.name}</a></span>
 									<div class="product-price-box">
 										<span class="price">De: ${topSellerProduct.itemToDisplayOnShowcase.formattedPriceFrom}</span> | 
 										<span class="price-sale">Por: ${topSellerProduct.itemToDisplayOnShowcase.formattedPriceFor}</span>

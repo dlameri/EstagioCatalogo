@@ -47,28 +47,24 @@ public class ItemJSONTest {
 
 	}
 
-	/* Bonito, depois vc refaz esse teste, se der, pq a alteracao que vc fez na classe
-	 * de dominio deu ruim no site
-	 * 
-	 * @Test
+	@Test
 	public void testingLastInstallment() {
 		itemJSON.setPriceFor(priceFor);
-		Installment actualLastInstallment = itemJSON
-				.findLastInstallment(expectedInstallments = installmentsExampleBelow12());
+		Installment actualLastInstallment = itemJSON.findLastInstallment();
 		Installment expectedLastInstallment = new Installment(10, "10,00");
 
 		assertEquals(expectedLastInstallment, actualLastInstallment);
-	}*/
-	
+	}
+
 	@Test
-	public void testingPriceForGreaterThanPriceWithLowerValue(){
+	public void testingPriceForGreaterThanPriceWithLowerValue() {
 		itemJSON.setPriceFor(priceFor);
 		boolean actual = itemJSON.isPriceForGreaterThan(new BigDecimal(91.00));
 		assertEquals(true, actual);
 	}
-	
+
 	@Test
-	public void testingPriceForGreaterThanPriceWithGreaterValue(){
+	public void testingPriceForGreaterThanPriceWithGreaterValue() {
 		itemJSON.setPriceFor(priceFor);
 		boolean actual = itemJSON.isPriceForGreaterThan(new BigDecimal(111.00));
 		assertEquals(false, actual);
