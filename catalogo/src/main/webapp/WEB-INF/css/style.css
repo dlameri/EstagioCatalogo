@@ -482,10 +482,14 @@ tr>td:last-child {
 .product ul li {
 	display: inline-block;
 	margin-bottom: 5%;
+	max-width: 30%;
+}
+
+.product .product-name{
+	margin-bottom: 3%;
 }
 
 .product .product-information * {
-	text-align: center;
 	display: block;
 }
 
@@ -568,7 +572,6 @@ tr>td:last-child {
 
 .details h1{
 	font-size: 120%;
-
 }
 
 .container>img {
@@ -618,7 +621,6 @@ ul.installments {
 
 .BuyButton:hover {
 	background-color: #551A8B;
-
 }
 
 .priceFrom {
