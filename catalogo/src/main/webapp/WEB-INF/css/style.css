@@ -376,7 +376,7 @@ ul {
 
 /* -----------CARROUSEL (TEXTOS FORMATADOS)----------- */
 .product-name-carousel {
-	font-size: 2em;
+	font-size: 120%;
 }
 
 .short-description {
@@ -562,7 +562,13 @@ tr>td:last-child {
 	display: inline-block;
 	position: relative;
 	left: 15%;
+	max-width:50%;
 	bottom: 2em;
+}
+
+.details h1{
+	font-size: 120%;
+
 }
 
 .container>img {
@@ -594,10 +600,10 @@ ul.installments {
 	display: inline-block;
 	cursor: pointer;
 	font-weight: bolder;
-	background-color: #D20808;
+	background: #1a3661;
 	box-shadow: 3px 3px #888;
 	color: white;
-	padding: 4% 12%;
+	padding: 4% 10%;
 	text-decoration: none;
 	box-sizing: border-box;
 	font-family: Helvetica, Arial, sans-serif;
@@ -606,12 +612,13 @@ ul.installments {
 	border-style: solid;
 	border-width: 1px;
 	position: relative;
-	bottom: 7.5em;
+	bottom: 3em;
 	left: 58%;
 }
 
 .BuyButton:hover {
-	background-color: #FF3300;
+	background-color: #551A8B;
+
 }
 
 .priceFrom {
@@ -624,11 +631,9 @@ ul.installments {
 }
 
 .discount {
-	position: absolute;
-	top: 92px;
-	left: 75px;
+	position: relative;
 	font-size: 12px;
-	color: green;
+	color: #006400;
 }
 
 /*------- pagination -------*/
