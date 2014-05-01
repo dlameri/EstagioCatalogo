@@ -18,12 +18,14 @@
 				<p class="discount">( desconto de: ${product.itemToDisplayOnShowcase.discount} % )</p>
 				<span class="installment">${product.itemToDisplayOnShowcase.lastInstallment} sem juros</span>
 				
-				<p><strong>Parcelas</strong></p>
-				<ul class="installments">
-					<c:forEach items="${product.items[0].installments}" var="entry">
-			    		<li>${entry.number}x de R$ ${entry.value}</li>
-					</c:forEach>
-				</ul>
+				<div class="installments-box">
+					<p><strong>Parcelas</strong></p>
+					<ul class="installments">
+						<c:forEach items="${product.items[0].installments}" var="entry">
+				    		<li>${entry.number}x de R$ ${entry.value}</li>
+						</c:forEach>
+					</ul>
+					</div>
 				
 <%-- 			<c:forEach items="${product.items}" var="item"> --%>
 				<form action="${pageContext.request.contextPath}/shoppingCart/addItem" method="post">
