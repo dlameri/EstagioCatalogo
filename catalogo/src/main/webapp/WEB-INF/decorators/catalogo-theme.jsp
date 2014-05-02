@@ -38,7 +38,10 @@
 
 	<header id="main-header">
 		<div class="container-header">
-			<h1 class="logo"><a href="${pageContext.request.contextPath}">Ideais Electronics</a></h1>
+			
+			<h1 class="logo">
+			<span class="logotipo"></span>
+			<a href="${pageContext.request.contextPath}">Ideais Electronics</a></h1>
 			
 			<div id="search-area">
 				<form method="get" action="${pageContext.request.contextPath}/product/search" name="searchProduct">

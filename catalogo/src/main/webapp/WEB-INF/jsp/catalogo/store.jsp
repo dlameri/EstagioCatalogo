@@ -21,7 +21,7 @@
 								</a>
 								<div class="product-information-carousel">
 									<span class="product-name-carousel"><a href="${pageContext.request.contextPath}/product/${product.id}"><strong>${product.name}</strong></a></span>
-									<span class="short-description">${product.shortDescription}</span>
+<%-- 									<span class="short-description">${product.shortDescription}</span> --%>
 									<div class="product-price-box-carousel">
 										<span class="price">de: ${product.itemToDisplayOnShowcase.formattedPriceFrom}</span>
 										<span>por: <span class="price-for"><strong>${product.itemToDisplayOnShowcase.formattedPriceFor}</strong></span></span>
