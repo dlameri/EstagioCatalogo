@@ -719,6 +719,10 @@ ul.installments {
 	bottom: 4.5em;
 }
 
+.productsSearch ul {
+	text-align: center;
+}
+
 /* div.pagination span.disabled {
 	padding: 2px 5px 2px 5px;
 	margin: 2px;
