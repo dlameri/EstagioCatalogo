@@ -17,6 +17,8 @@ public interface ProductDaoBehavior {
 	public List<ItemJSON> listItems(Long productId);
 	
 	public List<ProductJSON> search(String textToSearch);
+	
+	public List<ProductJSON> searchPaginated(String textToSearch, Integer firstResult, Integer maxResults);
 
 	public DimensionsJSON getDimensions(Long productId);
 

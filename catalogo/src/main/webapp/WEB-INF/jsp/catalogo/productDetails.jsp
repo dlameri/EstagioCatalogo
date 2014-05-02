@@ -10,40 +10,34 @@
 			<img alt="imagem do produto" src="${product.itemToDisplayOnShowcase.imageMain.productUrl}">
 			<div class="details-product">
 				<h1>${product.shortDescription}</h1>
-				
 				<hr>
-					<div class="price-info-box">
-						<p><strong class="priceFrom">De: ${product.itemToDisplayOnShowcase.formattedPriceFrom}</strong>
-						<p><strong class="priceFor">Por: ${product.itemToDisplayOnShowcase.formattedPriceFor} </strong>
-						<p class="discount">( desconto de: ${product.itemToDisplayOnShowcase.discount} % )</p>
-						<span class="installment2">${product.itemToDisplayOnShowcase.lastInstallment} sem juros</span>
-						
-						<ul class="see-all-installments">
-							<li> mais parcelas </li>
-								<ul class="installments">
-									<li> <strong> <p>Parcelas:</p> </strong> </li>
-										<c:forEach items="${product.items[0].installments}" var="entry">
-								    		<li>${entry.number}x de R$ ${entry.value}</li>
-										</c:forEach>
-								</ul>
-						</ul>
-					</div>
+				<div class="price-info-box">
+					<p><strong class="priceFrom">De: ${product.itemToDisplayOnShowcase.formattedPriceFrom}</strong>
+					<p><strong class="priceFor">Por: ${product.itemToDisplayOnShowcase.formattedPriceFor} </strong>
+					<p class="discount">( desconto de: ${product.itemToDisplayOnShowcase.discount} % )</p>
+					<span class="installment2">${product.itemToDisplayOnShowcase.lastInstallment} sem juros</span>
+					
+					<ul class="see-all-installments">
+						<li> ver parcelas </li>
+							<ul class="installments">
+								<li> <strong> <p>Parcelas:</p> </strong> </li>
+									<c:forEach items="${product.items[0].installments}" var="entry">
+							    		<li>${entry.number}x de R$ ${entry.value}</li>
+									</c:forEach>
+							</ul>
+					</ul>
 				</div>
-				
-<%-- 			<c:forEach items="${product.items}" var="item"> --%>
 				<form action="${pageContext.request.contextPath}/shoppingCart/addItem" method="post">
 					<input type="hidden" name="itemId" value="${product.itemToDisplayOnShowcase.id}">
 					<input type="submit" class="BuyButton" value="Comprar">
 				</form>
-<%-- 			</c:forEach> --%>
-
 			</div>
-			
-			<br>
-			<br>
-			<br>
-			
-			<p>${product.longDescription}</p>
+		</div>
+		
+
+		<div class="content">
+		
+			${product.longDescription}
 			
 			<h1>Informações Técnicas</h1>
 

@@ -3,15 +3,17 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title> Ideais Eletronics</title>
+		<content tag="pagination-script">
+			<script type="text/javascript" src="<c:url value="/resources/js/pagination.js"/>"></script>
+		</content>
 	</head>
 	<body>
 		<div class="container">
 			<section class="product">
-				<h3>Produtos</h3>
+				<h2>Resultados de busca para "${textToSearch}"</h2>
 				<ul class="paginatedProducts">
 					<c:forEach items="${products}"  var="product">
-						<li>
+						<!-- <li>
 							<article>
 								<header>
 									<a href="${pageContext.request.contextPath}/product/${product.id}"><img src="${product.itemToDisplayOnShowcase.imageMain.showcaseUrl}" alt="" class="product-main-image"></a>
@@ -25,9 +27,16 @@
 									<span class="installment">ou em ${product.itemToDisplayOnShowcase.lastInstallment}</span>
 								</div>
 							</article>
-						</li>
+						</li> -->
 					</c:forEach>
 				</ul>
+				<div class="loading"></div>
+				<div class="pagination">
+					<input type="hidden" id="page" value="productsSearch">
+					<input type="hidden" id="textToSearch" value="${textToSearch}">
+					<input type="hidden" id="context" value="${pageContext.request.contextPath}">
+					<input type="hidden" id="productsCounted" value="${productsCounted}">
+				</div>
 			</section>
 		</div>
 	</body>
