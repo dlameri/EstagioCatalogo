@@ -3,7 +3,6 @@ package com.ideaiselectronics.catalogo.spring.dao;
 import java.util.List;
 
 
-
 //import org.jboss.resteasy.util.GenericType; retorna um linkedHashMap ao inves de um List, nao sei pq
 import javax.ws.rs.core.GenericType;
 
@@ -35,7 +34,19 @@ public class SubcategoryJSONDao extends AbstractDao implements SubcategoryDaoBeh
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<ProductJSON> listProductsBySubcategory(Long subcategoryId) {
-		return (List<ProductJSON>) restClient.get(stockUrlSubcategory + subcategoryId + "/product", new GenericType<ProductJSON>(){});
+		return (List<ProductJSON>) restClient.get(stockUrlSubcategory + subcategoryId + "/product", new GenericType< List<ProductJSON> >(){});
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<ProductJSON> listPaginatedProducts(Long subcategoryId, Integer firstResult, Integer maxResults) {
+		return (List<ProductJSON>) restClient.get(stockUrlSubcategory + subcategoryId + "/product?maxResults=" + maxResults + "&firstResult=" + firstResult, new GenericType< List<ProductJSON> >(){});
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<ProductJSON> listOneProductBySubcategory(Long subcategoryId) {
+		return (List<ProductJSON>) restClient.get(stockUrlSubcategory + subcategoryId + "/product?maxResults=1", new GenericType< List<ProductJSON> >(){});
 	}
 
 }

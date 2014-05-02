@@ -14,13 +14,21 @@ public interface ProductServiceBehavior {
 	
 	public List<ProductJSON> listProductsBySubcategory(Long subcategoryId);
 	
-	public List<ProductJSON> listPaginatedProducts(Long categoryId, Integer firstResult, Integer maxResults);
+	public List<ProductJSON> listPaginatedProductsByCategory(Long categoryId, Integer firstResult, Integer maxResults);
+	
+	public List<ProductJSON> listPaginatedProductsBySubcategory(Long subcategoryId, Integer firstResult, Integer maxResults);
 	
 	public ProductJSON getProductWithAllPropertiesFilled(Long productId);
 	
 	public List<ProductJSON> search(String textToSearch);
+	
+	public List<ProductJSON> searchPaginatedProducts(String textToSearch, Integer firstResult, Integer maxResults);
 
 	public List<ProductJSON> getPromoProducts();
 	
 	public Integer getTotalQuantityProductsByCategory(Long categoryId);
+
+	public Integer getTotalQuantityProductsBySubcategory(Long subcategoryId);
+
+	public Integer getTotalQuantityProductsFound(String productName);
 }

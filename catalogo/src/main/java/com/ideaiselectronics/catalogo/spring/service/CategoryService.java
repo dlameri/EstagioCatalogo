@@ -33,5 +33,10 @@ public class CategoryService implements CategoryServiceBehavior {
 		category.setSubcategories( categoryDao.listSubcategories( category.getId() ) );
 		return category;
 	}
+
+	@Override
+	public CategoryJSON getCategory( Long categoryId ) {
+		return categoryDao.findById( categoryId );
+	}
 	
 }

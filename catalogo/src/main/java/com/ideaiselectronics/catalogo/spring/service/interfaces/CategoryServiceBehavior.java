@@ -9,5 +9,7 @@ public interface CategoryServiceBehavior {
 	public List<CategoryJSON> listCategoriesWithSubcategories();
 	
 	public CategoryJSON getCategoryWithSubcategories(Long categoryId);
+	
+	public CategoryJSON getCategory(Long categoryId);
 
 }

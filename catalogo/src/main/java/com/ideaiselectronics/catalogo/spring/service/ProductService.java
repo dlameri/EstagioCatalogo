@@ -72,10 +72,24 @@ public class ProductService implements ProductServiceBehavior {
 		fillProducts( products );
 		return products;
 	}
+	
+	@Override
+	public List<ProductJSON> searchPaginatedProducts( String textToSearch, Integer firstResult, Integer maxResults ) {
+		List<ProductJSON> products = productDao.searchPaginated( textToSearch, firstResult, maxResults );
+		fillProducts( products );
+		return products;
+	}
 
 	@Override
-	public List<ProductJSON> listPaginatedProducts( Long categoryId, Integer firstResult, Integer maxResults ) {
+	public List<ProductJSON> listPaginatedProductsByCategory( Long categoryId, Integer firstResult, Integer maxResults ) {
 		List<ProductJSON> products = categoryDao.listPaginatedProducts( categoryId, firstResult, maxResults );
+		fillProducts(products);
+		return products;
+	}
+	
+	@Override
+	public List<ProductJSON> listPaginatedProductsBySubcategory( Long subcategoryId, Integer firstResult, Integer maxResults ) {
+		List<ProductJSON> products = subcategoryDao.listPaginatedProducts( subcategoryId, firstResult, maxResults );
 		fillProducts(products);
 		return products;
 	}
@@ -94,7 +108,26 @@ public class ProductService implements ProductServiceBehavior {
 	
 	@Override
 	public Integer getTotalQuantityProductsByCategory( Long categoryId ) {
-		List<ProductJSON> products = categoryDao.listProductsByCategory( categoryId );
+		List<ProductJSON> products = categoryDao.listOneProductByCategory( categoryId );
+		if( products != null ) {
+			return products.get( 0 ).getCount();
+		}
+		return Integer.valueOf( 0 );
+	}
+	
+	@Override
+	public Integer getTotalQuantityProductsBySubcategory( Long subcategoryId ) {
+		List<ProductJSON> products = subcategoryDao.listOneProductBySubcategory( subcategoryId );
+		if( products != null ) {
+//			return products.get( 0 ).getCount();
+			return 220;//retornando valor forcado pq ainda servico do estoque ainda nao retorna quantidade total retornada;
+		}
+		return Integer.valueOf( 0 );
+	}
+	
+	@Override
+	public Integer getTotalQuantityProductsFound( String productName ) {
+		List<ProductJSON> products = productDao.searchPaginated( productName, 0, 1);
 		if( products != null ) {
 			return products.get( 0 ).getCount();
 		}

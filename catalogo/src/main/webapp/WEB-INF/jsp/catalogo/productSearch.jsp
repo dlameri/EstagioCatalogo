@@ -3,21 +3,23 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Vitrine do Site</title>
+		<content tag="pagination-script">
+			<script type="text/javascript" src="<c:url value="/resources/js/pagination.js"/>"></script>
+		</content>
 	</head>
 	<body>
 		<div class="container">
 			<section class="product">
-				<h3>Produtos</h3>
+				<h2>Resultados de busca para "${textToSearch}"</h2>
 				<ul class="paginatedProducts">
 					<c:forEach items="${products}"  var="product">
-						<li>
+						<!-- <li>
 							<article>
 								<header>
-									<a href="./product/${product.id}"><img src="${product.itemToDisplayOnShowcase.imageMain.showcaseUrl}" alt="" class="product-main-image"></a>
+									<a href="${pageContext.request.contextPath}/product/${product.id}"><img src="${product.itemToDisplayOnShowcase.imageMain.showcaseUrl}" alt="" class="product-main-image"></a>
 								</header>
 								<div class="product-information">
-									<span class="product-name"><a href="./product/${product.id}">${product.name}</a></span>
+									<span class="product-name"><a href="${pageContext.request.contextPath}/product/${product.id}">${product.name}</a></span>
 									<div class="product-price-box">
 										<span class="price">De: ${product.itemToDisplayOnShowcase.formattedPriceFrom}</span>
 										<span class="price-sale">Por: ${product.itemToDisplayOnShowcase.formattedPriceFor}</span>
@@ -25,9 +27,16 @@
 									<span class="installment">ou em ${product.itemToDisplayOnShowcase.lastInstallment}</span>
 								</div>
 							</article>
-						</li>
+						</li> -->
 					</c:forEach>
 				</ul>
+				<div class="loading"></div>
+				<div class="pagination">
+					<input type="hidden" id="page" value="productsSearch">
+					<input type="hidden" id="textToSearch" value="${textToSearch}">
+					<input type="hidden" id="context" value="${pageContext.request.contextPath}">
+					<input type="hidden" id="productsCounted" value="${productsCounted}">
+				</div>
 			</section>
 		</div>
 	</body>

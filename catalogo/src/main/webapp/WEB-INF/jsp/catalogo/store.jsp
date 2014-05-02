@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Vitrine do Site</title>
+		
 	</head>
 
 	<body>
@@ -35,7 +35,7 @@
 			</section>
 
 			<section class="top-sellers-products">
-				<h3>Produtos mais vendidos</h3>
+				<h3>Os mais vendidos</h3>
 				<ul class="carousel-top-sellers-products">
 					<c:forEach items="${topSellersProducts}"  var="topSellerProduct">
 						<li>
@@ -58,7 +58,7 @@
 			</section>
 
 			<section class="top-sellers-products">
-				<h3>Produtos mais vendidos</h3>
+				<h3>${categoryNameFirstSection}</h3>
 				<ul class="carousel-top-sellers-products">
 					<c:forEach items="${topSellersProductsFirstSection}"  var="topSellerProduct">
 						<li>
@@ -81,7 +81,7 @@
 			</section>
 
 			<section class="top-sellers-products">
-				<h3>Produtos mais vendidos</h3>
+				<h3>${categoryNameSecondSection}</h3>
 				<ul class="carousel-top-sellers-products">
 					<c:forEach items="${topSellersProductsSecondSection}"  var="topSellerProduct">
 						<li>

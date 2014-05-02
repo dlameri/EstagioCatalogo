@@ -28,7 +28,7 @@ function setSearchAreaBehaviour() {
 
 function setCarouselFeaturedProductsBehaviour() {
 	$('.carousel-featured-products').bxSlider({
-		// mode: 'fade', depois voltar com isso
+		mode: 'fade',
 		auto: true,
 		autoControls: true,
 		pause: 3000
@@ -43,6 +43,7 @@ function setCarouselTopSellersProductsBehaviour() {
 	  	slideWidth: 250,
 	    slideMargin: 10,
 	    speed: 1900,
-	    infiniteLoop: false
+	    infiniteLoop: false,
+	    hideControlOnEnd: true
 	});
 }

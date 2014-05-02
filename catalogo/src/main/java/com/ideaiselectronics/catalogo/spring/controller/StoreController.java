@@ -28,7 +28,9 @@ public class StoreController extends BaseController {
 		ModelAndView view = getBaseView( request, response, "catalogo/store" );
 		view.addObject( "promoProducts", productService.getPromoProducts() );
 		view.addObject( "topSellersProducts", productService.listTopSellersProducts( TOP_SELLERS_QUANTITY ) );
+		view.addObject( "categoryNameFirstSection", categoryService.getCategory( TOP_SELLERS_CATEGORY_ID_FIRST_SECTION ).getName() );
 		view.addObject( "topSellersProductsFirstSection", productService.listTopSellersProductsByCategory( TOP_SELLERS_CATEGORY_ID_FIRST_SECTION ) );
+		view.addObject( "categoryNameSecondSection", categoryService.getCategory( TOP_SELLERS_CATEGORY_ID_SECOND_SECTION ).getName() );
 		view.addObject( "topSellersProductsSecondSection", productService.listTopSellersProductsByCategory( TOP_SELLERS_CATEGORY_ID_SECOND_SECTION ) );
 		
 		return view;

@@ -11,19 +11,25 @@
 	
 	<title><decorator:title default="Ideais Electronics"/></title>
 
-	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 	<script type="text/javascript" src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"> -->
+	<!-- JQuery -->
+	<script type="text/javascript" src="<c:url value="/resources/js/jquery-1.10.2.min.js"/>"></script>
+	<script type="text/javascript" src="<c:url value="/resources/js/jquery-ui.js"/>"></script>
+
+	<!-- BxSlider Carousel -->
 	<script type="text/javascript" src="<c:url value="/resources/carousel/jquery.bxslider/jquery.bxslider.js"/>"></script>
-	<script type="text/javascript" src="<c:url value="/resources/js/javascript-home.js"/>"></script>
-	
 	<link rel="stylesheet" href="<c:url value="/resources/carousel/jquery.bxslider/jquery.bxslider.css"/>">
+	<script type="text/javascript" src="<c:url value="/resources/js/carousels-behaviors.js"/>"></script>
 	<link rel="stylesheet" href="<c:url value="/resources/css/carousels-bxslider.css"/>">
-
+	
+	<!-- JQuery Paging Plugin -->
 	<script type="text/javascript" src="<c:url value="/resources/js/jquery.paging.min.js"/>"></script>
-
 	<decorator:getProperty property="page.pagination-script"></decorator:getProperty>
+	<link rel="stylesheet" href="<c:url value="/resources/css/pagination-style.css"/>">
 
+	<!-- Pages CSS -->
     <link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>">
 	<link rel="stylesheet" href="<c:url value="/resources/css/style-products-category.css"/>">
 
@@ -37,7 +43,7 @@
 			<div id="search-area">
 				<form method="get" action="${pageContext.request.contextPath}/product/search" name="searchProduct">
 					<div class="search-box">
-						<input type="text" name="productName" id="input-search-text">
+						<input type="text" name="productName" id="input-search-text" placeholder="Procurando alguma coisa?">
 						<input type="submit" value="Pesquisar" id="input-search-submit" class="search-icon">
 					</div>
 				</form>
@@ -60,7 +66,7 @@
 			</div>
 			
 			<div class="cart">
-				<span class="shopping-cart"><a href="${pageContext.request.contextPath}/shoppingCart/">Carrinho</a></span>
+				<a href="${pageContext.request.contextPath}/shoppingCart/"><span class="shopping-cart">Carrinho</span></a>
 				<span class="qtCart">${cartItemsQuantity}</span>
 			</div>
 
