@@ -32,50 +32,47 @@
 					<input type="submit" class="BuyButton" value="Comprar">
 				</form>
 			</div>
-		</div>
-		
-
-		<div class="content">
-		
-			${product.longDescription}
-			
-			<h1>Informações Técnicas</h1>
-
-			<table>
-				<tr>
-					<td>Preço</td>
-					<td><strong>${product.items[0].priceFor}</strong></td>
-				</tr>
-				<tr>
-					<td>Garantia</td>
-					<td>${product.warranty}</td>
-				</tr>
-				<tr>
-					<td>Peso</td>
-					<td>${product.weight}</td>
-				</tr>
-				<tr>
-					<td>Marca</td>
-					<td>${product.brand}</td>
-				</tr>
-				<tr>
-					<td>Modelo</td>
-					<td>${product.model}</td>
-				</tr>
-				<tr>
-					<td>Altura</td>
-					<td>${product.dimensions.height}</td>
-				</tr>
-				<tr>
-					<td>Largura</td>
-					<td>${product.dimensions.width}</td>
-				</tr>
-				<tr>
-					<td>Comprimento</td>
-					<td>${product.dimensions.depth}</td>
-				</tr>
+			<div class="content">
+				${product.longDescription}
 				
-			</table>
+				<h1>Informações Técnicas</h1>
+
+				<table>
+					<tr>
+						<td>Preço</td>
+						<td><strong>${product.items[0].priceFor}</strong></td>
+					</tr>
+					<tr>
+						<td>Garantia</td>
+						<td>${product.warranty}</td>
+					</tr>
+					<tr>
+						<td>Peso</td>
+						<td>${product.weight}</td>
+					</tr>
+					<tr>
+						<td>Marca</td>
+						<td>${product.brand}</td>
+					</tr>
+					<tr>
+						<td>Modelo</td>
+						<td>${product.model}</td>
+					</tr>
+					<tr>
+						<td>Altura</td>
+						<td>${product.dimensions.height}</td>
+					</tr>
+					<tr>
+						<td>Largura</td>
+						<td>${product.dimensions.width}</td>
+					</tr>
+					<tr>
+						<td>Comprimento</td>
+						<td>${product.dimensions.depth}</td>
+					</tr>
+					
+				</table>
+			</div>
 		</div>
 	</body>
 </html>
