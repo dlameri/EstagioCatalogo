@@ -299,7 +299,7 @@ ul {
 
 #input-search-text {
 	border: none;
-	width: 85%;
+	width: 80%;
 	color: black;
 	outline: none;
 	margin-left: 15px;
@@ -316,7 +316,7 @@ ul {
 	cursor: pointer;
 	color: white;
 	position: absolute;
-	left: 88%;
+	left: 83%;
 }
 
 .search-icon {
@@ -381,8 +381,8 @@ ul {
 	font-weight: bold;
 	font-size: 10px;
 	position: absolute;
-	top: 15px;
-	right: 30px;
+	top: 35px;
+	right: 51px;
 }
 
 .shopping-cart:hover {
@@ -631,8 +631,7 @@ tr>td:last-child {
 	position: relative;
 	left: 32%;
 	top: -2.5px;
-	
-}
+	width: 75px;}
 
 .see-all-installments:hover>ul {
 	display: block;
@@ -732,5 +731,9 @@ div.pagination span.disabled {
 
 
 div.content>div.descricao:first-of-type {
+	display: none;
+}
+
+div.content>h2:first-of-type {
 	display: none;
 }
