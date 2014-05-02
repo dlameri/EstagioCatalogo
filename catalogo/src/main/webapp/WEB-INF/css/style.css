@@ -757,3 +757,8 @@ div.content>div.descricao:first-of-type {
 div.content>h2:first-of-type {
  	display: none;
  }
+ 
+div.loading{
+	display:none;
+	
+}
