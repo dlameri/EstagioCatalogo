@@ -316,7 +316,7 @@ ul {
 	cursor: pointer;
 	color: white;
 	position: absolute;
-	left: 88%;
+	left: 80%;
 }
 
 .search-icon {
@@ -724,6 +724,8 @@ ul.installments {
 	width: 55%;
 	display: inline-block;
 	position: relative;
+	left: 5%;
+	top: -1.5em;
 }
 
 .details-product h1{
@@ -746,7 +748,12 @@ ul.installments {
 	color: #868686;
 }
 
+ */
 
 div.content>div.descricao:first-of-type {
 	display: none;
-} */
+}
+
+div.content>h2:first-of-type {
+ 	display: none;
+ }
