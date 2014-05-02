@@ -1,6 +1,7 @@
 $(function(){
 	setCarouselFeaturedProductsBehaviour();
 	setCarouselTopSellersProductsBehaviour();
+	setCarouselPhotoProductsBehaviour();
 });
 
 function setSearchAreaBehaviour() {
@@ -48,5 +49,11 @@ function setCarouselTopSellersProductsBehaviour() {
 	    speed: 1900,
 	    infiniteLoop: false,
 	    hideControlOnEnd: true
+	});
+}
+
+function setCarouselPhotoProductsBehaviour(){
+	$('.photo-product-details').bxSlider({
+	  pagerCustom: '#bx-pager'
 	});
 }
