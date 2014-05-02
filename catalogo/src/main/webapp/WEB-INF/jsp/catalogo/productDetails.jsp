@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ page import="javax.servlet.jsp.PageContext" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -7,7 +8,24 @@
 	</head>
 	<body>
 		<div class="container">
-			<img alt="imagem do produto" src="${product.itemToDisplayOnShowcase.imageMain.productUrl}">
+		
+<%-- 			<img alt="imagem do produto" src="${product.itemToDisplayOnShowcase.imageMain.productUrl}"> --%>
+			<ul class="photo-product-details">
+				<c:forEach items="${product.items[0].images}"  var="image" >
+ 					<li><img alt="imagem do produto" src="${image.productUrl}" /></li>
+ 					<li><img alt="imagem do produto" src="${image.productUrl}" /></li>
+ 				</c:forEach>
+			</ul>
+			
+			<div id="bx-pager">
+				<c:forEach items="${product.itemToDisplayOnShowcase.images}"  var="image" >
+	  				<a data-slide-index="${product.itemToDisplayOnShowcase.images[0]}" href=""><img src="http://g-ecx.images-amazon.com/images/G/01/kindle/tequila/dp/KT-slate-02-lg._V399156101_.jpg" /></a>
+	  				<a data-slide-index="1" href=""><img src="http://g-ecx.images-amazon.com/images/G/01/kindle/tequila/dp/KT-slate-02-lg._V399156101_.jpg" /></a>
+	  				<a data-slide-index="2" href=""><img src="http://g-ecx.images-amazon.com/images/G/01/kindle/tequila/dp/KT-slate-02-lg._V399156101_.jpg" /></a>
+	  			</c:forEach>
+			</div>
+		
+		
 			<div class="details-product">
 				<h1>${product.shortDescription}</h1>
 				<hr>

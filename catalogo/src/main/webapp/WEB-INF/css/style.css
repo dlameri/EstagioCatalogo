@@ -712,9 +712,7 @@ ul.installments {
 .details-product {
 	width: 55%;
 	display: inline-block;
-	position: absolute;
-	top: 25%;
-	left: 45%;
+	position: relative;
 }
 
 .details-product>form {
@@ -733,4 +731,8 @@ div.pagination span.disabled {
 
 div.content>div.descricao:first-of-type {
 	display: none;
+}
+
+.content{
+	display: inline-block;
 }
