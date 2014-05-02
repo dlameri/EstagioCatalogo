@@ -21,7 +21,7 @@
 	line-height: 100%;
 }
 
-.products-by-category {
+.products {
 	/*border: 1px solid #666;*/
 	display: inline-block;
 	width: 81%;
@@ -37,12 +37,12 @@
 	display: none;
 }
 
-.products-by-category ul{
+.products ul{
 	display: inline-block;
 	text-align: center;
 }
 
-.products-by-category li {
+.products li {
 	display: inline-block;
 	margin-top: 10px;
 }
@@ -54,4 +54,17 @@
 	display: inline-block;
 	margin-bottom: 10px;
 
+}
+
+.paginatedProducts li {
+	display: inline-block;
+	margin-bottom: 20px;
+	margin-left: 2%;
+	max-width: 30%;
+	min-width: 30%;
+	vertical-align: top;
+}
+
+.paginatedProducts li:last-child {
+	margin-right: 2%;
 }
