@@ -154,7 +154,7 @@ ul {
 	margin: 0px;
 	text-align: center;
 	font-size: 190%;
-	left: 40%;
+	left: 38%;
 }
 
 .logo>a {
@@ -397,6 +397,7 @@ ul {
 	padding: 0 2%;
 	position: relative;
 	background-color: white;
+	margin-bottom: 70px;
 }
 
 .container a {
@@ -465,8 +466,8 @@ ul {
 	font-size: 0.9em;
 }
 
-.installment2{
-	font-size: 1em;		
+.installment2 {
+	font-size: 1em;
 	font-weight: bolder;
 	margin-left: 1%;
 	position: relative;
@@ -480,9 +481,8 @@ ul {
 	text-align: left;
 }
 
-.price-info-box>p{
-	vertical-align:middle;
-	
+.price-info-box>p {
+	vertical-align: middle;
 }
 
 /* -----------PRODUTOS DETALHE----------- */
@@ -592,7 +592,7 @@ tr>td:last-child {
 }
 
 .details h1 {
-	font-size: 120%;
+	font-size: 100%;
 }
 
 .product ul li {
@@ -613,9 +613,10 @@ tr>td:last-child {
 	color: #E6001F;
 	font-weight: 700;
 	position: relative;
-	left: 25%;
-	top: -4.5px;
-	
+	left: 30%;
+	top: -3%;
+	width: 85px;
+	margin: 0px;
 }
 
 .see-all-installments:hover>ul {
@@ -633,17 +634,16 @@ tr>td:last-child {
 	padding: 10px 10px;
 	box-shadow: 5px 5px 5px 5px #888;
 	top: 25px;
-		
+	width: 100px;
 }
-.installments>li:FIRST-CHILD{
+
+.installments>li:FIRST-CHILD {
 	margin-bottom: 5px;
 }
 
-.installments>li{
+.installments>li {
 	font-weight: normal;
-	
 }
-
 
 ul.installments {
 	height: 80px;
@@ -664,8 +664,8 @@ ul.installments {
 	border-color: #000;
 	border-style: solid;
 	position: relative;
-	bottom: 4.0em;
-	left: 75%;
+	bottom: 3%;
+	left: 72%;
 }
 
 .priceFrom {
@@ -684,17 +684,25 @@ ul.installments {
 }
 
 .discount {
-	position: absolute;
+	position: relative;
 	font-size: 12px;
 	color: #006400;
-	top: 27.9em;
-	left: 51%;
+	top: -33%;
+	left: 17%;
 	font-weight: 800;
 }
-.details-product{
-	width: 820px;
-	margin-left: 20%;
+
+.details-product {
+	width: 55%;
 	display: inline-block;
+	position: absolute;
+	top: 25%;
+	left: 45%;
+}
+
+.details-product>form {
+	position: relative;
+	bottom: 4.5em;
 }
 /*------- pagination -------*/
 
@@ -737,4 +745,8 @@ div.pagination span.disabled {
 	margin: 2px;
 	background-color: #3e3e3e;
 	color: #868686;
+}
+
+div.content>div.descricao:first-of-type {
+	display: none;
 }
