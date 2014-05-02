@@ -22,10 +22,19 @@
 }
 
 .products-by-category {
-	/* border: 1px solid #666; */
+	/*border: 1px solid #666;*/
 	display: inline-block;
 	width: 81%;
 	vertical-align: top;
+}
+
+.loading {
+	/* border: 1px solid red; */
+	background: url(./../carousel/jquery.bxslider/images/bx_loader.gif) center center no-repeat #fff;
+	height: 50px;
+	width: 50px;
+	margin: 10% auto;
+	display: none;
 }
 
 .products-by-category ul{

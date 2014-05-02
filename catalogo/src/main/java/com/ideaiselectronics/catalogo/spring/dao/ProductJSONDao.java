@@ -2,6 +2,7 @@ package com.ideaiselectronics.catalogo.spring.dao;
 
 import java.util.List;
 
+
 //import org.jboss.resteasy.util.GenericType; retorna um linkedHashMap ao inves de um List, nao sei pq
 import javax.ws.rs.core.GenericType;
 
@@ -38,6 +39,11 @@ public class ProductJSONDao extends AbstractDao implements ProductDaoBehavior {
 	@Override
 	public List<ProductJSON> search(String textToSearch) {
 		return (List<ProductJSON>) restClient.get(stockUrlProduct + "search/"+ textToSearch, new GenericType< List<ProductJSON> >(){});
+	}
+	
+	@Override
+	public List<ProductJSON> searchPaginated(String textToSearch, Integer firstResult, Integer maxResults) {
+		return (List<ProductJSON>) restClient.get(stockUrlProduct + "search/"+ textToSearch+"?maxResults="+maxResults+"&firstResult="+firstResult, new GenericType< List<ProductJSON> >(){});
 	}
 
 	@Override

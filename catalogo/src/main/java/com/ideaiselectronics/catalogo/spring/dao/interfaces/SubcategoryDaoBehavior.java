@@ -12,5 +12,9 @@ public interface SubcategoryDaoBehavior {
 	public SubcategoryJSON findById(Long id);
 	
 	public List<ProductJSON> listProductsBySubcategory(Long subcategoryId);
+
+	public List<ProductJSON> listPaginatedProducts(Long subcategoryId, Integer firstResult, Integer maxResults);
+
+	public List<ProductJSON> listOneProductBySubcategory(Long subcategoryId);
 	
 }
