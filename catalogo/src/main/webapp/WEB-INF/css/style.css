@@ -299,7 +299,7 @@ ul {
 
 #input-search-text {
 	border: none;
-	width: 85%;
+	width: 80%;
 	color: black;
 	outline: none;
 	margin-left: 15px;
@@ -631,8 +631,7 @@ tr>td:last-child {
 	position: relative;
 	left: 32%;
 	top: -2.5px;
-	
-}
+	width: 75px;}
 
 .see-all-installments:hover>ul {
 	display: block;
@@ -731,8 +730,4 @@ div.pagination span.disabled {
 
 div.content>div.descricao:first-of-type {
 	display: none;
-}
-
-.content{
-	display: inline-block;
 }
