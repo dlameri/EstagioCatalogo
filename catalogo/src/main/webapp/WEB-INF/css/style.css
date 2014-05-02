@@ -151,7 +151,7 @@ ul {
 }
 
 .logo {
-	/*border: 1px solid pink;*/
+	/* border: 1px solid pink; */
 	display: inline-block;
 	position:relative;
 	width: 100%;
@@ -159,7 +159,6 @@ ul {
 	margin: 0px;
 	text-align: center;
 	font-size: 190%;
-	left: 40%;
 }
 
 .logo>a {
@@ -631,9 +630,8 @@ tr>td:last-child {
 	color: #E6001F;
 	font-weight: 700;
 	position: relative;
-	left: 30%;
-	left: 25%;
-	top: -4.5px;
+	left: 32%;
+	top: -2.5px;
 	
 }
 
@@ -682,8 +680,8 @@ ul.installments {
 	border-color: #000;
 	border-style: solid;
 	position: relative;
-	bottom: 4.0em;
-	left: 75%;
+	bottom: 0em;
+	left: 65%;
 }
 
 .priceFrom {
