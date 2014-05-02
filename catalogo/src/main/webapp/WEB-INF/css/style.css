@@ -722,8 +722,7 @@ ul.installments {
 	bottom: 4.5em;
 }
 
-}
-div.pagination span.disabled {
+/* div.pagination span.disabled {
 	padding: 2px 5px 2px 5px;
 	margin: 2px;
 	background-color:#3e3e3e;
@@ -733,4 +732,4 @@ div.pagination span.disabled {
 
 div.content>div.descricao:first-of-type {
 	display: none;
-}
+} */

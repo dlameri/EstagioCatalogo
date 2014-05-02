@@ -20,7 +20,7 @@
 					</c:forEach>
 				</ul>
 			</nav>
-			<section class="products-by-category">
+			<section class="products">
 				<ul class="paginatedProducts">
 					<!-- <c:forEach items="${products}"  var="product">
 						<li>

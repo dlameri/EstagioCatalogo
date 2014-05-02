@@ -67,9 +67,11 @@
 				</c:if>
 					
 			</div>
-			
+
 			<div class="cart">
-				<a href="${pageContext.request.contextPath}/shoppingCart/"><span class="shopping-cart">Carrinho</span></a>
+				<a href="${pageContext.request.contextPath}/shoppingCart/">
+					<span class="shopping-cart">Carrinho</span>
+				</a>
 				<span class="qtCart">${cartItemsQuantity}</span>
 			</div>
 
