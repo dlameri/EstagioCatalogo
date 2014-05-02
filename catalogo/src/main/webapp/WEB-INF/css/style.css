@@ -670,17 +670,19 @@ ul.installments {
 	cursor: pointer;
 	font-weight: bolder;
 	background: #BC0C0C;
-	box-shadow: 3px 3px #888;
+	box-shadow: 2px 2px #888;
 	color: white;
-	padding: 1% 5%;
+	padding: 1.5% 5%;
 	text-decoration: none;
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 20px;
-	border-color: #000;
-	border-style: solid;
 	position: relative;
 	bottom: 0em;
 	left: 65%;
+}
+
+.BuyButton:hover{
+	background-color: #FF0000;
 }
 
 .priceFrom {
