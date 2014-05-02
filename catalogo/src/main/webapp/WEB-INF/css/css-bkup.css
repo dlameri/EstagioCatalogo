@@ -465,26 +465,6 @@ ul {
 	font-size: 0.9em;
 }
 
-.installment2{
-	font-size: 1em;		
-	font-weight: bolder;
-	margin-left: 1%;
-	position: relative;
-	top: 0.8em;
-}
-
-.price-info-box {
-	background-color: #EBEBEB;
-	background-color: #EBEBEB;
-	height: 90px;
-	text-align: left;
-}
-
-.price-info-box>p{
-	vertical-align:middle;
-	
-}
-
 /* -----------PRODUTOS DETALHE----------- */
 table {
 	width: 100%;
@@ -608,41 +588,19 @@ tr>td:last-child {
 }
 
 .see-all-installments {
+	color: red;
 	font-size: 12px;
 	color: #E6001F;
 	font-weight: 700;
-	position: relative;
-	left: 25%;
-	top: -4.5px;
-	
 }
 
 .see-all-installments:hover>ul {
 	display: block;
-	position: absolute;
-	left: 0%;
-	height: auto;
-	top: 45%;
 }
 
 .installments {
 	display: none;
-	color: black;
-	background-color: white;
-	padding: 10px 10px;
-	box-shadow: 5px 5px 5px 5px #888;
-	top: 25px;
-		
 }
-.installments>li:FIRST-CHILD{
-	margin-bottom: 5px;
-}
-
-.installments>li{
-	font-weight: normal;
-	
-}
-
 
 ul.installments {
 	height: 80px;
@@ -653,48 +611,40 @@ ul.installments {
 	display: inline-block;
 	cursor: pointer;
 	font-weight: bolder;
-	background: #BC0C0C;
+	background: #1a3661;
 	box-shadow: 3px 3px #888;
 	color: white;
-	padding: 1% 5%;
+	padding: 4% 10%;
 	text-decoration: none;
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 20px;
 	border-color: #000;
 	border-style: solid;
+	border-width: 1px;
 	position: relative;
-	bottom: 4.0em;
-	left: 75%;
+	bottom: 3em;
+	left: 58%;
+}
+
+.BuyButton:hover {
+	background-color: #551A8B;
 }
 
 .priceFrom {
 	font-size: 12px;
 	text-decoration: line-through;
-	margin-left: 1%;
-	position: relative;
-	top: 0.7em;
 }
 
 .priceFor {
 	font-size: 20px;
-	margin-left: 1%;
-	position: relative;
-	top: 0.6em;
 }
 
 .discount {
-	position: absolute;
+	position: relative;
 	font-size: 12px;
 	color: #006400;
-	top: 27.9em;
-	left: 51%;
-	font-weight: 800;
 }
-.details-product{
-	width: 820px;
-	margin-left: 20%;
-	display: inline-block;
-}
+
 /*------- pagination -------*/
 
 /*

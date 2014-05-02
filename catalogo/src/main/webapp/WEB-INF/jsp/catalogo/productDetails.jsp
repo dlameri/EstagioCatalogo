@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -9,23 +8,27 @@
 	<body>
 		<div class="container">
 			<img alt="imagem do produto" src="${product.itemToDisplayOnShowcase.imageMain.productUrl}">
-			<div class="details">
+			<div class="details-product">
 				<h1>${product.shortDescription}</h1>
 				
 				<hr>
-				<p><strong class="priceFrom">De: ${product.itemToDisplayOnShowcase.formattedPriceFrom}</strong>
-				<p><strong class="priceFor">Por: ${product.itemToDisplayOnShowcase.formattedPriceFor} </strong>
-				<p class="discount">( desconto de: ${product.itemToDisplayOnShowcase.discount} % )</p>
-				<span class="installment">${product.itemToDisplayOnShowcase.lastInstallment} sem juros</span>
-				
-				<div class="installments-box">
-					<p><strong>Parcelas</strong></p>
-					<ul class="installments">
-						<c:forEach items="${product.items[0].installments}" var="entry">
-				    		<li>${entry.number}x de R$ ${entry.value}</li>
-						</c:forEach>
-					</ul>
+					<div class="price-info-box">
+						<p><strong class="priceFrom">De: ${product.itemToDisplayOnShowcase.formattedPriceFrom}</strong>
+						<p><strong class="priceFor">Por: ${product.itemToDisplayOnShowcase.formattedPriceFor} </strong>
+						<p class="discount">( desconto de: ${product.itemToDisplayOnShowcase.discount} % )</p>
+						<span class="installment2">${product.itemToDisplayOnShowcase.lastInstallment} sem juros</span>
+						
+						<ul class="see-all-installments">
+							<li> mais parcelas </li>
+								<ul class="installments">
+									<li> <strong> <p>Parcelas:</p> </strong> </li>
+										<c:forEach items="${product.items[0].installments}" var="entry">
+								    		<li>${entry.number}x de R$ ${entry.value}</li>
+										</c:forEach>
+								</ul>
+						</ul>
 					</div>
+				</div>
 				
 <%-- 			<c:forEach items="${product.items}" var="item"> --%>
 				<form action="${pageContext.request.contextPath}/shoppingCart/addItem" method="post">

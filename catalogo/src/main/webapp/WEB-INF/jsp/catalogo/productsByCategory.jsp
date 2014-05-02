@@ -16,21 +16,6 @@
 					<c:forEach items="${category.subcategories}" var="subcategory">
 						<li class="subcategory-item-nav"><a href="${pageContext.request.contextPath}/subcategory/${subcategory.id}/product">${subcategory.name}</a></li>
 					</c:forEach>
-					<li class="subcategory-item-nav"><a href="${pageContext.request.contextPath}/subcategory/${subcategory.id}/product">subcategoria de teste</a></li>
-					<li class="subcategory-item-nav"><a href="${pageContext.request.contextPath}/subcategory/${subcategory.id}/product">subcategoria de teste</a></li>
-					<li class="subcategory-item-nav"><a href="${pageContext.request.contextPath}/subcategory/${subcategory.id}/product">subcategoria de teste</a></li>
-					<li class="subcategory-item-nav"><a href="${pageContext.request.contextPath}/subcategory/${subcategory.id}/product">subcategoria de teste</a></li>
-					<li class="subcategory-item-nav"><a href="${pageContext.request.contextPath}/subcategory/${subcategory.id}/product">subcategoria de teste</a></li>
-					<li class="subcategory-item-nav"><a href="${pageContext.request.contextPath}/subcategory/${subcategory.id}/product">subcategoria de teste</a></li>
-					<li class="subcategory-item-nav"><a href="${pageContext.request.contextPath}/subcategory/${subcategory.id}/product">subcategoria de teste</a></li>
-					<li class="subcategory-item-nav"><a href="${pageContext.request.contextPath}/subcategory/${subcategory.id}/product">subcategoria de teste</a></li>
-					<li class="subcategory-item-nav"><a href="${pageContext.request.contextPath}/subcategory/${subcategory.id}/product">subcategoria de teste</a></li>
-					<li class="subcategory-item-nav"><a href="${pageContext.request.contextPath}/subcategory/${subcategory.id}/product">subcategoria de teste</a></li>
-					<li class="subcategory-item-nav"><a href="${pageContext.request.contextPath}/subcategory/${subcategory.id}/product">subcategoria de teste</a></li>
-					<li class="subcategory-item-nav"><a href="${pageContext.request.contextPath}/subcategory/${subcategory.id}/product">subcategoria de teste</a></li>
-					<li class="subcategory-item-nav"><a href="${pageContext.request.contextPath}/subcategory/${subcategory.id}/product">subcategoria de teste</a></li>
-					<li class="subcategory-item-nav"><a href="${pageContext.request.contextPath}/subcategory/${subcategory.id}/product">subcategoria de teste</a></li>
-					<li class="subcategory-item-nav"><a href="${pageContext.request.contextPath}/subcategory/${subcategory.id}/product">subcategoria de teste</a></li>
 				</ul>
 			</nav>
 			<section class="products-by-category">
