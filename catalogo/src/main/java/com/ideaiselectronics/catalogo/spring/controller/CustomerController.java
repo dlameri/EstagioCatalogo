@@ -49,7 +49,7 @@ public class CustomerController {
 	@RequestMapping( value = "/authenticate/logout", method = RequestMethod.GET )
 	public void redirectToCheckoutLogout( HttpServletResponse response ) {
 		try {
-			customerService.redirectToCheckoutLogin( response );
+			customerService.redirectToCheckoutLogout(response);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import com.ideaiselectronics.catalogo.spring.dao.interfaces.ShoppingCartDaoBehavior;
 import com.ideaiselectronics.catalogo.spring.service.interfaces.ShoppingCartServiceBehavior;
+import com.ideaiselectronics.catalogo.util.CookieUtil;
 
 @Service
 public class ShoppingCartService  implements ShoppingCartServiceBehavior {
@@ -22,7 +23,7 @@ public class ShoppingCartService  implements ShoppingCartServiceBehavior {
 
 	@Override
 	public Boolean hasCartTopCookie( HttpServletRequest request ) {
-		return request.getCookies() != null && getCookieByName( request.getCookies(), ShoppingCartServiceBehavior.CART_TOP_COOKIE ) != null;
+		return request.getCookies() != null && CookieUtil.getCookieByName( request.getCookies(), ShoppingCartServiceBehavior.CART_TOP_COOKIE ) != null;
 	}
 
 	@Override
@@ -35,7 +36,7 @@ public class ShoppingCartService  implements ShoppingCartServiceBehavior {
 	
 	@Override
 	public String getTotalQuantityItems( HttpServletRequest request ) {
-		Cookie cartTop = getCookieByName( request.getCookies(), ShoppingCartServiceBehavior.CART_TOP_COOKIE );
+		Cookie cartTop = CookieUtil.getCookieByName( request.getCookies(), ShoppingCartServiceBehavior.CART_TOP_COOKIE );
 		return cartTop.getValue();
 	}
 	
@@ -47,17 +48,6 @@ public class ShoppingCartService  implements ShoppingCartServiceBehavior {
 	@Override
 	public void redirectToCheckoutShoppingCart(HttpServletResponse response) throws IOException {
 		response.sendRedirect( SHOPPING_CART_CHECKOUT );
-	}
-	
-	private Cookie getCookieByName( Cookie[] cookies, String name ) {
-		if( cookies != null ){
-			for (int i = 0; i < cookies.length; i++) {
-				if( cookies[i].getName().equals( name ) ) {
-					return cookies[i];
-				}
-			}
-		}
-		return null;
 	}
 	
 }

@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Service;
 
 import com.ideaiselectronics.catalogo.spring.service.interfaces.CustomerServiceBehavior;
+import com.ideaiselectronics.catalogo.util.CookieUtil;
 
 @Service
 public class CustomerService implements CustomerServiceBehavior {
@@ -37,22 +38,11 @@ public class CustomerService implements CustomerServiceBehavior {
 
 	@Override
 	public String getLoggedCustomerName( HttpServletRequest request ) {
-		Cookie cookie = getCookieByName( request.getCookies(), CustomerServiceBehavior.CUSTOMER_COOKIE );
+		Cookie cookie = CookieUtil.getCookieByName( request.getCookies(), CustomerServiceBehavior.CUSTOMER_COOKIE );
 		if( cookie != null ){
 			return cookie.getValue();
 		}
 		return null; //lancar uma excecao aqui
-	}
-	
-	private Cookie getCookieByName( Cookie[] cookies, String name ) {
-		if( cookies != null ){
-			for (int i = 0; i < cookies.length; i++) {
-				if( cookies[i].getName().equals( name ) ) {
-					return cookies[i];
-				}
-			}
-		}
-		return null;
 	}
 
 }
