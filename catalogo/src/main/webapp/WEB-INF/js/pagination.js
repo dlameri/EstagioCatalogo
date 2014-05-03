@@ -106,6 +106,7 @@ function requestResourceViaAjax( urlToSend ) {
 		beforeSend : function() {
 			console.log( 'Enviando dados para o servidor: ' + urlToSend );
 			$( '.loading' ).show();
+			
 		},
 		success: function( data ) {
 			console.log( 'retornou '+data );
@@ -131,6 +132,7 @@ function requestProductsViaAjax( urlToSend ) {
 		beforeSend : function() {
 			console.log( 'Enviando dados para o servidor: ' + urlToSend );
 			$( '.loading' ).show();
+			$('.paginatedProducts').hide();
 		},
 		success: function( data ) {
 			console.log( 'Retornou ' + data.length + ' produtos' );
@@ -142,6 +144,7 @@ function requestProductsViaAjax( urlToSend ) {
 		complete: function() {
 			console.log( 'Encerrando requisicao ajax' );
 			$( '.loading' ).hide();
+			$( '.paginatedProducts' ).show();
 			$( 'html, body' ).animate( { scrollTop: 0 }, 'slow' );
 		}
 	});

@@ -11,7 +11,7 @@
 	<body>
 		<div class="container">
 			<nav class="side-nav">
-				<span class="category-title">${category.name}com nome muito grande</span>
+				<span class="category-title">${category.name}</span>
 				<ul class="subcategory-nav">
 					<c:forEach items="${category.subcategories}" var="subcategory">
 						<li class="subcategory-item-nav" data-subcategory-id="${subcategory.id}">
