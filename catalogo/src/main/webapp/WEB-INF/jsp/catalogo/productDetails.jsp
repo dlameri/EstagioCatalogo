@@ -30,7 +30,7 @@
 						<li> ver parcelas </li>
 							<ul class="installments">
 								<li> <strong> <p>Parcelas:</p> </strong> </li>
-									<c:forEach items="${product.items[0].installments}" var="entry">
+									<c:forEach items="${product.itemToDisplayOnShowcase.installments}" var="entry">
 							    		<li>${entry.number}x de R$ ${entry.value}</li>
 									</c:forEach>
 							</ul>
