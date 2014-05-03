@@ -49,6 +49,7 @@ public abstract class BaseController {
 			view.addObject( "cartItemsQuantity", INICIAL_QUANTITY_ITEM );
 			return;
 		}
+		
 		view.addObject( "cartItemsQuantity", shoppingCartService.getTotalQuantityItems( request ) );
 	}
 

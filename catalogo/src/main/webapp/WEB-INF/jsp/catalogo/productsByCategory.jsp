@@ -15,30 +15,14 @@
 				<ul class="subcategory-nav">
 					<c:forEach items="${category.subcategories}" var="subcategory">
 						<li class="subcategory-item-nav" data-subcategory-id="${subcategory.id}">
-							<a href="">${subcategory.name}</a>
+							<a href="#">${subcategory.name}</a>
 						</li>
 					</c:forEach>
 				</ul>
 			</nav>
 			<section class="products">
 				<ul class="paginatedProducts">
-					<!-- <c:forEach items="${products}"  var="product">
-						<li>
-							<article>
-								<header>
-									<a href="${pageContext.request.contextPath}/product/${product.id}"><img src="${product.itemToDisplayOnShowcase.imageMain.showcaseUrl}" alt="" class="product-main-image"></a>
-								</header>
-								<div class="product-information">
-									<span class="product-name"><a href="${pageContext.request.contextPath}/${product.id}">${product.name}</a></span>
-									<div class="product-price-box">
-										<span class="price">De: ${product.itemToDisplayOnShowcase.formattedPriceFrom}</span> | 
-										<span class="price-sale">Por: ${product.itemToDisplayOnShowcase.formattedPriceFor}</span>
-									</div>
-									<span class="installment">ou em ${product.itemToDisplayOnShowcase.lastInstallment}</span>
-								</div>
-							</article>
-						</li>
-					</c:forEach> -->
+					
 				</ul>
 				<div class="loading"></div>
 				<div class="pagination">

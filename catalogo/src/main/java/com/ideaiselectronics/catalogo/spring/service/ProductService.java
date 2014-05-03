@@ -119,8 +119,7 @@ public class ProductService implements ProductServiceBehavior {
 	public Integer getTotalQuantityProductsBySubcategory( Long subcategoryId ) {
 		List<ProductJSON> products = subcategoryDao.listOneProductBySubcategory( subcategoryId );
 		if( products != null ) {
-//			return products.get( 0 ).getCount();
-			return 220;//retornando valor forcado pq ainda servico do estoque ainda nao retorna quantidade total retornada;
+			return products.get( 0 ).getCount();
 		}
 		return Integer.valueOf( 0 );
 	}
