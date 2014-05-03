@@ -49,7 +49,7 @@
 				<table>
 					<tr>
 						<td>Preço</td>
-						<td><strong>${product.items[0].priceFor}</strong></td>
+						<td><strong>${product.itemToDisplayOnShowcase.priceFor}</strong></td>
 					</tr>
 					<tr>
 						<td>Garantia</td>
