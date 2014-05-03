@@ -1,17 +1,51 @@
 var appContext;
 var limit;
-var productsCounted;
-var text;
 
 $(function(){
 	initializesGlobalVariables();
 
-	console.log( 'Total de produtos da pesquisa['+productsCounted+']' );
-	if( productsCounted > 0 ) {
+	var text = $( '#textToSearch' ).val();
+	var url = getUrlProductsSearchTotalCount( text );
+	var count = requestResourceViaAjax( url );
+	if( count > 0 ) {
 		var url = getUrlSearchProductsPaginated( text );
-		createPagination( url, limit, productsCounted );
+		createPagination( url, limit, count );
 	}
 });
+
+function getUrlProductsSearchTotalCount(textToSearch) {
+	return appContext+'/api/product/search/'+textToSearch+'/totalCounted';
+}
+
+function requestResourceViaAjax( urlToSend ) {
+	var response = 0;
+
+	$.ajax({
+		type : "GET",
+		url : urlToSend,
+		dataType : 'json',
+		async:false,
+
+		beforeSend : function() {
+			console.log( 'Enviando dados para o servidor: ' + urlToSend );
+			$( '.loading' ).show();
+			
+		},
+		success: function( data ) {
+			console.log( 'retornou '+data );
+			response = data;
+		},
+		error: function( XMLHttpRequest, textStatus, errorThrown ) {
+			alert( 'Erro ao executar a requisicao ajax de acesso a recursos para fazer a paginacao' + errorThrown );
+		},
+		complete: function() {
+			console.log( 'Encerrando requisicao ajax' );
+			$( '.loading' ).hide();
+		}
+	});
+
+	return response;
+}
 
 function createPagination( urlToSendRequest, limitProducts, countedProducts ) {
 	$('.pagination').paging( countedProducts, {
@@ -93,7 +127,7 @@ function createProducts( products ) {
 }
 
 function getUrlSearchProductsPaginated( textToSearch ) {
-	return appContext+'/product/search/'+textToSearch+'/paginatedProduct';
+	return appContext+'/api/product/search/'+textToSearch+'/paginatedProduct';
 }
 
 function getLastInstallment(product) {
@@ -102,9 +136,7 @@ function getLastInstallment(product) {
 }
 
 function initializesGlobalVariables(){
-	appContext = $( '#context' ).val();
 	limit = 12;
-	productsCounted = $( '#productsCounted' ).val();
-	text = $( '#textToSearch' ).val();
+	appContext = $( '#context' ).val();
 	console.log( 'Contexto da aplicacao['+appContext+']' );
 }

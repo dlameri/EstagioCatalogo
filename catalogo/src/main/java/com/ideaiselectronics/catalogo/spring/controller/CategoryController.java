@@ -24,7 +24,11 @@ public class CategoryController extends BaseController {
 	public ModelAndView productsByCategory( @PathVariable("categoryId") Long categoryId, HttpServletRequest request, HttpServletResponse response ) {
 		ModelAndView view = getBaseView( request, response, "catalogo/productsByCategory" );
 		view.addObject( "category", categoryService.getCategoryWithSubcategories( categoryId ) );
-		view.addObject( "categoryProductsCounted", productService.getTotalQuantityProductsByCategory( categoryId ) );
+		
+		if( request.getAttribute( "subcategorySelected" ) != null ) {
+			view.addObject( "subcategorySelected", request.getAttribute( "subcategorySelected" ) );
+		}
+		
 		return view;
 	}
 	

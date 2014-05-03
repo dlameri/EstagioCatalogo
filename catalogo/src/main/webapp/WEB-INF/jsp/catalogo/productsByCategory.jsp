@@ -14,22 +14,25 @@
 				<span class="category-title">${category.name}</span>
 				<ul class="subcategory-nav">
 					<c:forEach items="${category.subcategories}" var="subcategory">
-						<li class="subcategory-item-nav" data-subcategory-id="${subcategory.id}">
-							<a href="#">${subcategory.name}</a>
+						<li class="subcategory-item-nav">
+							<a href="${pageContext.request.contextPath}/subcategory/${subcategory.id}/product">${subcategory.name}</a>
 						</li>
 					</c:forEach>
 				</ul>
 			</nav>
 			<section class="products">
+				<nav class="min-nav-category">${category.name}
+					<c:if test="${subcategorySelected != null}">
+						> <span class="min-nav-subcategory" data-subcategory-id="${subcategorySelected.id}">${subcategorySelected.name}</span>
+					</c:if>
+				</nav>
 				<ul class="paginatedProducts">
 					
 				</ul>
 				<div class="loading"></div>
 				<div class="pagination">
-					<input type="hidden" id="page" value="categorySubcategoryProducts">
 					<input type="hidden" id="categoryId" value="${category.id}">
 					<input type="hidden" id="context" value="${pageContext.request.contextPath}">
-					<input type="hidden" id="categoryProductsCounted" value="${categoryProductsCounted}">
 				</div>
 			</section>
 		</div>

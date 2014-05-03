@@ -10,6 +10,7 @@ public class SubcategoryJSON {
 	private Long id;
 	private String name;
 	private Boolean active;
+	private Long categoryId;
 	private List<LinkJSON> links;
 	
 	public SubcategoryJSON() {
@@ -38,6 +39,14 @@ public class SubcategoryJSON {
 
 	public void setActive(Boolean active) {
 		this.active = active;
+	}
+	
+	public Long getCategoryId() {
+		return categoryId;
+	}
+	
+	public void setCategoryId(Long categoryId) {
+		this.categoryId = categoryId;
 	}
 
 	public List<LinkJSON> getLinks() {

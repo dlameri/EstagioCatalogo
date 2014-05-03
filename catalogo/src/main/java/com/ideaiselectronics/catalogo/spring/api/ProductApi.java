@@ -16,24 +16,24 @@ import com.ideaiselectronics.catalogo.spring.service.interfaces.ProductServiceBe
 import com.ideaiselectronics.catalogo.util.JsonUtil;
 
 @Service
-@RequestMapping("/api/category")
-public class CategoryApi {
+@RequestMapping("/api/product")
+public class ProductApi {
 	
 	@Autowired @Qualifier("productService")
 	private ProductServiceBehavior productService;
 	
-	@RequestMapping( value="/{categoryId}/product/totalCounted", method = RequestMethod.GET )
+	@RequestMapping( value="/search/{textToSearch}/totalCounted", method = RequestMethod.GET )
 	@ResponseBody
-	public String getTotalQuantityProductsByCategory( @PathVariable("categoryId") Long categoryId ) {
-		Integer countedProducts = productService.getTotalQuantityProductsByCategory( categoryId );
+	public String getTotalQuantityProductsSearch( @PathVariable("textToSearch") String textToSearch ) {
+		Integer countedProducts = productService.getTotalQuantityProductsFound( textToSearch );
 		return JsonUtil.writeObjectToJson( countedProducts );
 	}
-
-	@RequestMapping( value="/{categoryId}/paginatedProduct", method = RequestMethod.GET )
+	
+	@RequestMapping( value="/search/{textToSearch}/paginatedProduct", method = RequestMethod.GET )
 	@ResponseBody
-	public String productsByCategoryPaginated( @PathVariable("categoryId") Long categoryId, @RequestParam("maxResults") Integer maxResults, @RequestParam("firstResult") Integer firstResult ) {
-		List<ProductJSON> products = productService.listPaginatedProductsByCategory( categoryId, firstResult, maxResults );		
+	public String productsByCategoryPaginated( @PathVariable("textToSearch") String textToSearch, @RequestParam("maxResults") Integer maxResults, @RequestParam("firstResult") Integer firstResult ) {
+		List<ProductJSON> products = productService.searchPaginatedProducts( textToSearch, firstResult, maxResults );		
 		return JsonUtil.writeObjectToJson( products );
 	}
-	
+
 }

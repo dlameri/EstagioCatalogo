@@ -16,10 +16,8 @@
 				</ul>
 				<div class="loading"></div>
 				<div class="pagination">
-					<input type="hidden" id="page" value="productsSearch">
 					<input type="hidden" id="textToSearch" value="${textToSearch}">
 					<input type="hidden" id="context" value="${pageContext.request.contextPath}">
-					<input type="hidden" id="productsCounted" value="${productsCounted}">
 				</div>
 			</section>
 		</div>

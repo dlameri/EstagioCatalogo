@@ -6,23 +6,38 @@ var subcategoryProductsCounted;
 $(function() {
 	initializesGlobalVariables();
 
-	$('.subcategory-item-nav').click( function(){
+	var subcategorySelected = $('.min-nav-subcategory');
+	if( subcategorySelected.length ) {
+		logicPaginationSubcategory(subcategorySelected);
 
-		var subcategoryId = $(this).data("subcategory-id");
-		var url = getUrlSubcategoryTotalCount( subcategoryId );
-		console.log(url);
-		var count = requestResourceViaAjax( url );
-		if( count != 0 ) {
-			createPaginationToSubcategoryProducts( subcategoryId, count );
-		}
-	});
-	
-	if( categoryProductsCounted > 0 ) {
+	}else {
 		var categoryId = $('#categoryId').val();
-		createPaginationToCategoryProducts( categoryId, categoryProductsCounted );
+		var url = getUrlCategoryTotalCount( categoryId );
+		var count = requestResourceViaAjax( url );
+		if( count != 0 ){
+			createPaginationToCategoryProducts( categoryId, count );
+		}
 	}
-	
+
+/*	$('.subcategory-item-nav a').click( function(){
+		logicPaginationSubcategory( $(this) );
+		updateMiniNavegationSubcategory( $(this) );
+	});*/
+
 });
+
+function updateMiniNavegationSubcategory(element) {
+	$('.min-nav-subcategory').html( element.html() );
+}
+
+function logicPaginationSubcategory(element) {
+	var subcategoryId = element.data("subcategory-id");
+	var url = getUrlSubcategoryTotalCount( subcategoryId );
+	var count = requestResourceViaAjax( url );
+	if( count != 0 ) {
+		createPaginationToSubcategoryProducts( subcategoryId, count );
+	}
+}
 
 function createPaginationToCategoryProducts(categoryId, categoryProductsCounted) {
 	urlCategoryProductsRequest = getUrlCategoryProductsPaginated( categoryId );
@@ -34,12 +49,16 @@ function createPaginationToSubcategoryProducts(subcategoryId, subcategoryProduct
 	createPagination( urlSubcategoryProductsRequest, limitProducts, subcategoryProductsCounted );
 }
 
-function getUrlCategoryProductsPaginated(categoryId) {
-	return appContext+'/api/category/'+categoryId+'/paginatedProduct';
+function getUrlCategoryTotalCount(categoryId) {
+	return appContext+'/api/category/'+categoryId+'/product/totalCounted';
 }
 
 function getUrlSubcategoryTotalCount(subcategoryId) {
 	return appContext+'/api/subcategory/'+subcategoryId+'/product/totalCounted';
+}
+
+function getUrlCategoryProductsPaginated(categoryId) {
+	return appContext+'/api/category/'+categoryId+'/paginatedProduct';
 }
 
 function getUrlSubcategoryProductsPaginated(subcategoryId) {
@@ -113,7 +132,7 @@ function requestResourceViaAjax( urlToSend ) {
 			response = data;
 		},
 		error: function( XMLHttpRequest, textStatus, errorThrown ) {
-			alert( 'Erro ao executar a requisicao ajax de subcategoria' + errorThrown );
+			alert( 'Erro ao executar a requisicao ajax de acesso a recursos para fazer a paginacao' + errorThrown );
 		},
 		complete: function() {
 			console.log( 'Encerrando requisicao ajax' );
@@ -165,7 +184,5 @@ function getLastInstallment(product) {
 function initializesGlobalVariables(){
 	limitProducts = 12;
 	appContext = $('#context').val();
-	categoryProductsCounted = $('#categoryProductsCounted').val();
 	console.log('Contexto da aplicacao['+appContext+']');
-	console.log('Total de produtos da categoria['+categoryProductsCounted+']');
 }

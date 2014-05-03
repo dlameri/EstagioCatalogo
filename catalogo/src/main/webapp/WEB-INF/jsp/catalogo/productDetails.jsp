@@ -10,7 +10,7 @@
 		<div class="container">
 			<div class="container-photo">
 				<ul class="photo-product-details">
-					<c:forEach items="${product.items[0].images}"  var="image" >
+					<c:forEach items="${product.itemToDisplayOnShowcase.images}"  var="image" >
 	 					<li><img alt="imagem do produto" src="${image.productUrl}" /></li>
 	 				</c:forEach>
 				</ul>

@@ -39,7 +39,6 @@
 
 .products ul{
 	display: inline-block;
-	text-align: center;
 }
 
 .products li {
@@ -67,4 +66,14 @@
 
 .paginatedProducts li:last-child {
 	margin-right: 2%;
+}
+
+.min-nav-category {
+	color: #666;
+	font-size: 0.9em;
+}
+
+.min-nav-subcategory {
+	color: #9c0105;
+	font-size: 0.9em;
 }
