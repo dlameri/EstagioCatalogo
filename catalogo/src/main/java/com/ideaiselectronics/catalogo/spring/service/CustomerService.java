@@ -23,7 +23,7 @@ public class CustomerService implements CustomerServiceBehavior {
 	
 	@Override
 	public void redirectToCheckoutDetails(HttpServletResponse response) throws IOException {
-		response.sendRedirect( CUSTOMER_CHECKOUT + "/customerDetails" );
+		response.sendRedirect( CUSTOMER_CHECKOUT + "customerDetails" );
 	}
 
 	@Override
