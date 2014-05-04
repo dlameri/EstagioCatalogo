@@ -132,7 +132,7 @@ function requestResourceViaAjax( urlToSend ) {
 			response = data;
 		},
 		error: function( XMLHttpRequest, textStatus, errorThrown ) {
-			alert( 'Erro ao executar a requisicao ajax de acesso a recursos para fazer a paginacao' + errorThrown );
+			console.log( 'Erro ao executar a requisicao ajax de acesso a recursos para fazer a paginacao ' + errorThrown );
 		},
 		complete: function() {
 			console.log( 'Encerrando requisicao ajax' );
@@ -158,7 +158,7 @@ function requestProductsViaAjax( urlToSend ) {
 			createProducts( data );
 		},
 		error: function( XMLHttpRequest, textStatus, errorThrown ) {
-			alert( 'Erro ao executar a requisicao ajax' + errorThrown );
+			console.log( 'Erro ao executar a requisicao ajax ' + errorThrown );
 		},
 		complete: function() {
 			console.log( 'Encerrando requisicao ajax' );

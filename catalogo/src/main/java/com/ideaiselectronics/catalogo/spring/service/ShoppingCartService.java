@@ -37,7 +37,10 @@ public class ShoppingCartService  implements ShoppingCartServiceBehavior {
 	@Override
 	public String getTotalQuantityItems( HttpServletRequest request ) {
 		Cookie cartTop = CookieUtil.getCookieByName( request.getCookies(), ShoppingCartServiceBehavior.CART_TOP_COOKIE );
-		return cartTop.getValue();
+		if( cartTop != null ){
+			return cartTop.getValue();
+		}
+		return null;
 	}
 	
 	@Override

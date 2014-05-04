@@ -109,7 +109,7 @@ public class ProductService implements ProductServiceBehavior {
 	@Override
 	public Integer getTotalQuantityProductsByCategory( Long categoryId ) {
 		List<ProductJSON> products = categoryDao.listOneProductByCategory( categoryId );
-		if( products != null ) {
+		if( products != null && !products.isEmpty() ) {
 			return products.get( 0 ).getCount();
 		}
 		return Integer.valueOf( 0 );
@@ -118,7 +118,7 @@ public class ProductService implements ProductServiceBehavior {
 	@Override
 	public Integer getTotalQuantityProductsBySubcategory( Long subcategoryId ) {
 		List<ProductJSON> products = subcategoryDao.listOneProductBySubcategory( subcategoryId );
-		if( products != null ) {
+		if( products != null && !products.isEmpty() ) {
 			return products.get( 0 ).getCount();
 		}
 		return Integer.valueOf( 0 );
@@ -127,7 +127,7 @@ public class ProductService implements ProductServiceBehavior {
 	@Override
 	public Integer getTotalQuantityProductsFound( String productName ) {
 		List<ProductJSON> products = productDao.searchPaginated( productName, 0, 1);
-		if( products != null ) {
+		if( products != null && !products.isEmpty() ) {
 			return products.get( 0 ).getCount();
 		}
 		return Integer.valueOf( 0 );
