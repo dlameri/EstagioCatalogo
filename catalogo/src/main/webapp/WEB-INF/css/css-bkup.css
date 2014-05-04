@@ -7,7 +7,7 @@ body {
 	margin: 0;
 }
 
-a,a:visited,a:link,a:active {
+a, a:visited, a:link, a:active {
 	text-decoration: none;
 	color: white;
 }
@@ -25,9 +25,7 @@ ul {
 /* -----------ERROR 404 ----------- */
 .error {
 	font-family: "Dosis", sans-serif;
-	background:
-		url("http://localhost:8081/catalogo/resources/images/gandalf.jpg")
-		no-repeat center center fixed;
+	background: url("./../images/gandalf.jpg") no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -36,9 +34,7 @@ ul {
 
 .serverError {
 	font-family: "Dosis", sans-serif;
-	background:
-		url("http://localhost:8081/catalogo/resources/images/enterprise.jpg")
-		no-repeat center center fixed;
+	background: url("./../images/enterprise.jpg") no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -47,9 +43,7 @@ ul {
 
 .badRequest {
 	font-family: "Dosis", sans-serif;
-	background:
-		url("http://localhost:8081/catalogo/resources/images/better-call-saul.png")
-		no-repeat center center fixed;
+	background: url("./../images/better-call-saul.png") no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -111,6 +105,7 @@ ul {
 }
 
 /* -----------HEADER----------- */
+
 .container-header {
 	/*border: 1px solid red;*/
 	margin: 0% 5% 0% 5%;
@@ -122,6 +117,9 @@ ul {
 	/*border: 1px solid green;*/
 	width: 100%;
 	padding: 10px 0px 10px 0px;
+	/*background-color: rgba(31, 31, 31, 0.95);*/
+/* 	background-color: #9c0105; */
+	background-color: #0000FF;
 	position: fixed;
 	top: 0px;
 	z-index: 1;
@@ -147,14 +145,14 @@ ul {
 }
 
 .logo {
-	/*border: 1px solid pink;*/
+	/* border: 1px solid pink; */
 	display: inline-block;
-	position: relative;
+	position:relative;
+	width: 100%;
 	height: 36px;
 	margin: 0px;
 	text-align: center;
 	font-size: 190%;
-	left: 40%;
 }
 
 .logo>a {
@@ -224,7 +222,16 @@ ul {
 	cursor: pointer;
 }
 
-.submenu-item:hover a {
+.sub-menu{
+	border-style: solid;
+	border-right-width: 0em;
+	border-left-width: 0em;
+	border-top-width: 0em;
+	border-bottom-width: 8px;
+	border-bottom-color: #0000FF;
+}
+
+.submenu-item:hover a{
 	color: #000;
 }
 
@@ -232,13 +239,15 @@ ul {
 	position: relative;
 }
 
-.menu li:hover>ul {
+
+
+.menu li:hover > ul{
 	position: absolute;
 	display: block;
 	left: 0;
 }
 
-.sub-menu {
+.sub-menu{
 	color: black;
 	display: none;
 	background-color: white;
@@ -284,7 +293,7 @@ ul {
 
 #input-search-text {
 	border: none;
-	width: 85%;
+	width: 80%;
 	color: black;
 	outline: none;
 	margin-left: 15px;
@@ -301,7 +310,7 @@ ul {
 	cursor: pointer;
 	color: white;
 	position: absolute;
-	left: 88%;
+	left: 80%;
 }
 
 .search-icon {
@@ -313,8 +322,7 @@ ul {
 	vertical-align: top;
 	text-indent: -999999px;
 	cursor: pointer;
-	background: url('../images/icons/search-icon-black.png') no-repeat
-		center center;
+	background: url('../images/icons/search-icon-black.png') no-repeat center center;
 	background-size: 20px 20px;
 }
 
@@ -327,6 +335,7 @@ ul {
 
 .login-or-register span {
 	display: block;
+
 }
 
 .login-or-register a {
@@ -348,8 +357,7 @@ ul {
 	top: 25%;
 	text-indent: -999999px;
 	cursor: pointer;
-	background: url('../images/icons/shopping-cart1-white.png') no-repeat
-		center center;
+	background: url('../images/icons/shopping-cart1-white.png') no-repeat center center;
 	background-size: 70px 60px;
 }
 
@@ -366,12 +374,11 @@ ul {
 	font-size: 10px;
 	position: absolute;
 	top: 35px;
-	right: 55px;
+	right: 51px;
 }
 
 .shopping-cart:hover {
-	background: url('../images/icons/shopping-cart1-white.png') no-repeat
-		center center;
+	background: url('../images/icons/shopping-cart1-white.png') no-repeat center center;
 	background-size: 70px 60px;
 }
 
@@ -397,6 +404,7 @@ ul {
 	padding: 0 2%;
 	position: relative;
 	background-color: white;
+	margin-bottom: 70px;
 }
 
 .container a {
@@ -438,7 +446,7 @@ ul {
 
 .product-main-image {
 	height: 250px;
-	width: 250px;
+	width: 100%;
 }
 
 .product-information {
@@ -463,6 +471,26 @@ ul {
 
 .installment {
 	font-size: 0.9em;
+}
+
+.installment2{
+	font-size: 1em;		
+	font-weight: bolder;
+	margin-left: 1%;
+	position: relative;
+	top: 0.6em;
+}
+
+.price-info-box {
+	background-color: #EBEBEB;
+	background-color: #EBEBEB;
+	height: 90px;
+	text-align: left;
+}
+
+.price-info-box>p {
+	vertical-align: middle;
+	
 }
 
 /* -----------PRODUTOS DETALHE----------- */
@@ -494,6 +522,7 @@ tr>td:last-child {
 	display: block;
 }
 
+
 /* -----------Carrousel de Produtos----------- */
 .featured-products article {
 	position: relative;
@@ -507,7 +536,7 @@ tr>td:last-child {
 .product-information-carousel {
 	display: inline-block;
 	position: absolute;
-	margin: 50px 5%;
+	margin: 15px 5%;
 	margin-left: 10%;
 }
 
@@ -563,7 +592,7 @@ tr>td:last-child {
 }
 
 /* -----------PRODUCT DETAILS----------- */
-.container>.details {
+.container > .details {
 	display: inline-block;
 	position: relative;
 	left: 15%;
@@ -571,8 +600,20 @@ tr>td:last-child {
 	bottom: 2em;
 }
 
+.container-photo{
+	display: inline-block;
+	width: 40%;
+	height: 30%;
+}
+
+.photo-product-details img{
+	height: 300px;
+	margin:auto;
+}
+
+
 .details h1 {
-	font-size: 120%;
+	font-size: 20%;
 }
 
 .product ul li {
@@ -588,18 +629,38 @@ tr>td:last-child {
 }
 
 .see-all-installments {
-	color: red;
 	font-size: 12px;
 	color: #E6001F;
 	font-weight: 700;
-}
+	position: relative;
+	left: 32%;
+	top: -5.5px;
+	width: 75px;}
 
 .see-all-installments:hover>ul {
 	display: block;
+	position: absolute;
+	left: 0%;
+	height: auto;
+	top: 45%;
 }
 
 .installments {
 	display: none;
+	color: black;
+	background-color: white;
+	padding: 10px 10px;
+	box-shadow: 5px 5px 5px 5px #888;
+	top: 25px;
+	width: 100px;
+}
+
+.installments>li:FIRST-CHILD {
+	margin-bottom: 5px;
+}
+
+.installments>li {
+	font-weight: normal;
 }
 
 ul.installments {
@@ -611,79 +672,85 @@ ul.installments {
 	display: inline-block;
 	cursor: pointer;
 	font-weight: bolder;
-	background: #1a3661;
-	box-shadow: 3px 3px #888;
+	background: #BC0C0C;
+	box-shadow: 2px 2px #888;
 	color: white;
-	padding: 4% 10%;
+	padding: 1.5% 5%;
 	text-decoration: none;
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 20px;
-	border-color: #000;
-	border-style: solid;
-	border-width: 1px;
 	position: relative;
-	bottom: 3em;
-	left: 58%;
+	bottom: 0em;
+	left: 65%;
 }
 
-.BuyButton:hover {
-	background-color: #551A8B;
+.BuyButton:hover{
+	background-color: #FF0000;
 }
 
 .priceFrom {
 	font-size: 12px;
 	text-decoration: line-through;
+	margin-left: 1%;
+	position: relative;
+	top: 0.7em;
 }
 
 .priceFor {
 	font-size: 20px;
+	margin-left: 1%;
+	position: relative;
+	top: 0.6em;
 }
 
 .discount {
 	position: relative;
 	font-size: 12px;
 	color: #006400;
+	top: -33%;
+	left: 17%;
+	font-weight: 800;
 }
 
-/*------- pagination -------*/
-
-/*
-Plugin Name: WP-Digg Style Paginator
-Plugin URI: http://www.mis-algoritmos.com/2007/09/09/wp-digg-style-pagination-plugin-v-10/
-Author: Victor De la Rocha
-Author URI: http://www.mis-algoritmos.com
-*/
-div.pagination {
-	font-size: 11px;
-	font-family: Tahoma, Arial, Helvetica, Sans-serif;
-	background-color: #3e3e3e;
-	color: #fff;
+.details-product {
+	width: 55%;
+	display: inline-block;
+	position: relative;
+	left: 5%;
+	top: -1.5em;
 }
 
-div.pagination a {
+.details-product h1{
+	font-size: 1.5em;
+}
+
+.details-product>form {
+	position: relative;
+	bottom: 4.5em;
+}
+
+.productsSearch ul {
+	text-align: center;
+}
+
+/* div.pagination span.disabled {
 	padding: 2px 5px 2px 5px;
 	margin: 2px;
-	background-color: #3e3e3e;
-	text-decoration: none; /* no underline */
-	color: #fff;
-}
-
-div.pagination a:hover,div.pagination a:active {
-	background-color: #ec5210;
-	color: #fff;
-}
-
-div.pagination span.current {
-	padding: 2px 5px 2px 5px;
-	margin: 2px;
-	font-weight: bold;
-	background-color: #313131;
-	color: #fff;
-}
-
-div.pagination span.disabled {
-	padding: 2px 5px 2px 5px;
-	margin: 2px;
-	background-color: #3e3e3e;
+	background-color:#3e3e3e;
 	color: #868686;
+}
+
+ */
+
+div.content>div.descricao:first-of-type {
+	display: none;
+}
+
+div.content>h2:first-of-type {
+ 	display: none;
+ }
+ 
+div.loading{
+	display:none;
+	
 }
