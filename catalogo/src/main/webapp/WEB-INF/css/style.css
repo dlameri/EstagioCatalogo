@@ -5,6 +5,7 @@ html {
 
 body {
 	margin: 0;
+	overflow-x: hidden;
 }
 
 a, a:visited, a:link, a:active {
@@ -259,7 +260,7 @@ ul {
 	border-left-width: 0em;
 	border-top-width: 0em;
 	border-bottom-width: 8px;
-	border-bottom-color: #0000FF;
+	border-bottom-color: #000088;
 }
 
 .sub-menu a {
@@ -478,7 +479,7 @@ ul {
 	font-weight: bolder;
 	margin-left: 1%;
 	position: relative;
-	top: 0.8em;
+	top: 0.6em;
 }
 
 .price-info-box {
@@ -634,7 +635,7 @@ tr>td:last-child {
 	font-weight: 700;
 	position: relative;
 	left: 32%;
-	top: -2.5px;
+	top: -5.5px;
 	width: 75px;}
 
 .see-all-installments:hover>ul {
